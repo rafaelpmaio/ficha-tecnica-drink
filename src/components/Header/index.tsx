@@ -6,16 +6,16 @@ import DrinkName from "../DrinkName";
 import HeaderImage from "../HeaderImage";
 
 interface HeaderProps {
-    listaItens?: IIngredient[]
+    listaIngredientes?: IIngredient[]
 }
 
-export default function Header({listaItens}: HeaderProps) {
+export default function Header({listaIngredientes}: HeaderProps) {
 
     return (
         <header className="card cabecalho">
             <HeaderImage />
             <DrinkName />
-            <CostDisplay listaItens={listaItens}/>
+            <CostDisplay listaItens={listaIngredientes}/>
         </header>
     )
 };

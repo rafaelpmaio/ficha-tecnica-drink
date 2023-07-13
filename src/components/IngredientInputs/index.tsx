@@ -5,10 +5,10 @@ import { IIngredient } from '../../shared/interfaces/IIngredient';
 
 interface IngredientInputsProps {
     listaIngredientes: IIngredient[],
-    setLista: (array: IIngredient[]) => void
+    setListaIngredientes: (array: IIngredient[]) => void
 }
 
-export default function IngredientInputs({ listaIngredientes, setLista }: IngredientInputsProps) {
+export default function IngredientInputs({ listaIngredientes, setListaIngredientes }: IngredientInputsProps) {
 
     const [quantidade, setQuantidade] = useState('');
     const [medida, setMedida] = useState('');
@@ -24,7 +24,7 @@ export default function IngredientInputs({ listaIngredientes, setLista }: Ingred
     }
 
     const addIngredienteLista = (ingrediente: IIngredient) => {
-        setLista([...listaIngredientes, ingrediente]);
+        setListaIngredientes([...listaIngredientes, ingrediente]);
         setQuantidade('');
         setMedida('');
         setIngrediente('');

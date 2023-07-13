@@ -4,18 +4,17 @@ import { IIngredient } from "../../shared/interfaces/IIngredient";
 import IngredientInputs from "../IngredientInputs";
 
 interface IngredientsCardProps {
-    listaItens?: IIngredient[]
+    listaIngredientes?: IIngredient[],
+    setListaIngredientes: (array: IIngredient[]) => void
 }
 
-export default function IngredientsCard({ listaItens = [] }: IngredientsCardProps) {
-    
-    const [lista, setLista] = useState(listaItens);
+export default function IngredientsCard({ listaIngredientes = [], setListaIngredientes }: IngredientsCardProps) {
     
     return (
         <section className="card">
             <h2>Ingredientes</h2>
-            <IngredientsList listaIngredientes={lista} />
-            <IngredientInputs listaIngredientes={lista} setLista={setLista}/>
+            <IngredientsList listaIngredientes={listaIngredientes} />
+            <IngredientInputs listaIngredientes={listaIngredientes} setListaIngredientes={setListaIngredientes}/>
         </section>
     )
 };

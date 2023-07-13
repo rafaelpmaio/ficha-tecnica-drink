@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import IngredientsCard from "../components/IngredientsCard";
 import { IIngredient } from "../shared/interfaces/IIngredient";
@@ -10,11 +10,13 @@ import listaIngredientes from '../shared/records/Drinks.json';
 
 export default function PaginaInicial() {
 
+    const [lista, setLista] = useState(listaIngredientes);
+
     return (
         <>
-            <Header listaItens={listaIngredientes}/>
+            <Header listaIngredientes={lista}/>
             <main>
-                <IngredientsCard listaItens={listaIngredientes}/>
+                <IngredientsCard listaIngredientes={lista} setListaIngredientes={setLista}/>
                 <div className="block">
                 <PreparationCard />
                 <img src={logo} alt="" className="card drink-photo" />
