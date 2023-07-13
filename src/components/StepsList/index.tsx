@@ -14,11 +14,13 @@ export default function StepsList({ lista = [] }: StepsListProps) {
     return (
         <>
             <h3>Descreva o Passo a Passo</h3>
-            <ul >
+            <ul>
                 {listaPassos.map(step => <li className='steps-list'>{step}</li>)}
             </ul>
-            <Input id='step' labelText='Digite o próximo passo' value={passo} aoDigitado={valor => setPasso(valor)} />
-            <Button value='+' aoClickado={() => { setListaPassos([...listaPassos, passo]); setPasso('') }} />
+            <span className='input-button-align'>
+                <Input id='step' labelText='Digite o próximo passo' value={passo} aoDigitado={valor => setPasso(valor)} />
+                <Button value='+' aoClickado={() => { setListaPassos([...listaPassos, passo]); setPasso('') }} />
+            </span>
         </>
     )
 };

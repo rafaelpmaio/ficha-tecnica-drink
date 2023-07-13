@@ -11,13 +11,10 @@ export default function Glassware() {
         <>
             <h3>Glassware</h3>
             {glasswareDisplayed.map(glassware => <p>{glassware}</p>)}
-                <Input
-                    id='glassware'
-                    labelText='Digite o recipiente utilizado (Apenas uma linha permitida)'
-                    value={glassware}
-                    aoDigitado={valor => setGlassware(valor)}
-                />
-                <Button value='+' aoClickado={() => {setGlasswareDisplayed([glassware]); setGlassware('')}} />
-            </>
-            )
-            };
+            <span className='input-button-align'>
+                <Input id='glassware' labelText='Digite o recipiente utilizado' value={glassware} aoDigitado={valor => setGlassware(valor)} />
+                <Button value='+' aoClickado={() => { setGlasswareDisplayed([glassware]); setGlassware('') }} />
+            </span>
+        </>
+    )
+};

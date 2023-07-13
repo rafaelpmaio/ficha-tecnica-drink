@@ -10,8 +10,10 @@ export default function DrinkName() {
     return (
         <div>
             {nameDisplayed.map(name => <h1>{name}</h1>)}
-            <Input id='drink-name' labelText='Digite o nome do drink' value={name} aoDigitado={valor => setName(valor)} />
-            <Button value='+' aoClickado={() => { setNameDisplayed([name]); setName('') }} />
+            <span className='input-button-align'>
+                <Input id='drink-name' labelText='Digite o nome do drink' value={name} aoDigitado={valor => setName(valor)} />
+                <Button value='+' aoClickado={() => { setNameDisplayed([name]); setName('') }} />
+            </span>
         </div>
     )
 };
