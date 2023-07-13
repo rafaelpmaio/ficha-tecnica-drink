@@ -1,0 +1,21 @@
+.ingredients-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.coluna-quantidade {
+    width: 15%;
+}
+
+.coluna-medida {
+    width: 10%;
+}
+
+.coluna-ingrediente {
+    width: 50%;
+}
+
+.coluna-custo {
+    width: 10%;
+}

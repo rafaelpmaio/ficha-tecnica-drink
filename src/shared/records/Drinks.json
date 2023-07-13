@@ -1,0 +1,26 @@
+[
+    {
+        "quantidade": 20,
+        "medida": "gr",
+        "ingrediente": "morango do nordeste",
+        "custo": 15
+    },
+    {
+        "quantidade": 20,
+        "medida": "ml",
+        "ingrediente": "Cointreau",
+        "custo": 30
+    },
+    {
+        "quantidade": 30,
+        "medida": "ml",
+        "ingrediente": "vinho tinto",
+        "custo": 25
+    },
+    {
+        "quantidade": 10,
+        "medida": "ml",
+        "ingrediente": "xarope simples",
+        "custo": 10
+    }
+]

@@ -1,0 +1,26 @@
+@import url('../../styles/_variaveis.css');
+
+input{
+    width: 60%;
+    border-radius: 4px;
+    height: 2em;
+    border: none;
+    margin-bottom: 1.5em;
+}
+
+.label-relative {
+    display: flex;
+    position: relative;
+}
+
+label {
+    position: absolute;
+    color: var(--azul-escuro);
+    bottom: 0.1em;
+    left: 1em;
+    bottom: 1em;
+}
+
+input:focus + label {
+    display: none;
+}
