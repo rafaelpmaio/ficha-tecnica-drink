@@ -65,7 +65,7 @@ export default function IngredientInputs({ listaIngredientes, setLista }: Ingred
                     aoDigitado={valor => setCusto(valor)}
                 />
             </div>
-            <Button value='inserir' aoClickado={() => addIngredienteLista(novoIngrediente)} />
+            <Button value='+' aoClickado={() => addIngredienteLista(novoIngrediente)} />
         </>
     )
 };

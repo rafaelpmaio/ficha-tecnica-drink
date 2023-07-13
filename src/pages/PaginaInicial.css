@@ -10,6 +10,13 @@
     justify-content: space-around;
 }
 
+.teste {
+    display: flex;
+    align-items: center;
+    border: solid;
+    justify-content: space-between;
+}
+
 .drink-photo {
     width: 40%;
     object-fit: contain;
@@ -18,7 +25,7 @@
 
 h1 {
     font-family: var(--fonte-bold);
-    font-size: 3em;
+    font-size: 4em;
     color: var(--rosa);
 }
 
@@ -31,6 +38,6 @@ h2 {
 
 h3 {
     color: var(--roxo);
-    margin-bottom: 2em;
     text-transform: uppercase;
+    margin-bottom: 1.5em;
 }
