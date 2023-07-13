@@ -3,9 +3,9 @@ import React from 'react';
 import './Input.css';
 
 interface InputProps {
-    aoDigitado: (value: string) => void
+    aoDigitado: (value: string | number) => void
     id: string,
-    value: string,
+    value: string | number,
     labelText: string,
     className?: string,
     type?: string,

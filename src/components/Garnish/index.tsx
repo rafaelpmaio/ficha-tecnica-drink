@@ -2,18 +2,22 @@ import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 
-export default function Garnish() {
+interface GarnishProps {
+    garnish: string[],
+    setGarnish: (array: string[]) => void
+}
 
-    const [garnish, setGarnish] = useState('');
-    const [garnishDisplayed, setGarnishDisplayed] = useState<string[]>([])
+export default function Garnish({ garnish, setGarnish}: GarnishProps) {
+
+    const [garnishInput, setGarnishInput] = useState('');
 
     return (
         <>
             <h3>Garnish</h3>
-            {garnishDisplayed.map(garnish => <p>{garnish}</p>)}
+            {garnish.map(garnish => <p>{garnish}</p>)}
             <span className='input-button-align'>
-                <Input id='garnish' labelText='Digite a decoração' value={garnish} aoDigitado={valor => setGarnish(valor)} />
-                <Button value='+' aoClickado={() => { setGarnishDisplayed([garnish]); setGarnish('') }} />
+                <Input id='garnish' labelText='Digite a decoração' value={garnishInput} aoDigitado={valor => setGarnishInput(valor as string)} />
+                <Button value='+' aoClickado={() => { setGarnish([garnishInput]); setGarnishInput('') }} />
             </span>
         </>
     )

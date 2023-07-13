@@ -40,21 +40,21 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
                     labelText='Quantidade'
                     type='number'
                     value={quantidade}
-                    aoDigitado={valor => setQuantidade(valor)}
+                    aoDigitado={valor => setQuantidade(valor as string)}
                 />
                 <Input
                     id='medida'
                     className='coluna-medida'
                     labelText='Medida'
                     value={medida}
-                    aoDigitado={valor => setMedida(valor)}
+                    aoDigitado={valor => setMedida(valor as string)}
                 />
                 <Input
                     id='ingredientes'
                     className='coluna-ingrediente'
                     labelText='Ingrediente'
                     value={ingrediente}
-                    aoDigitado={valor => setIngrediente(valor)}
+                    aoDigitado={valor => setIngrediente(valor as string)}
                 />
                 <Input
                     id='custo'
@@ -62,7 +62,7 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
                     labelText='Custo'
                     type='number'
                     value={custo}
-                    aoDigitado={valor => setCusto(valor)}
+                    aoDigitado={valor => setCusto(valor as string)}
                 />
             </div>
             <Button value='+' aoClickado={() => addIngredienteLista(novoIngrediente)} />

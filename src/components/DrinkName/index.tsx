@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 
-export default function DrinkName() {
+interface DrinkNameProps {
+    drinkName: string[],
+    setDrinkName: (array: string[]) => void
+}
 
-    const [name, setName] = useState('');
-    const [nameDisplayed, setNameDisplayed] = useState<string[]>(['Margarita']);
+export default function DrinkName({ drinkName, setDrinkName }: DrinkNameProps) {
+
+    const [nameInput, setNameInput] = useState('');
 
     return (
         <div>
-            {nameDisplayed.map(name => <h1>{name}</h1>)}
+            {drinkName.map(name => <h1>{name}</h1>)}
             <span className='input-button-align'>
-                <Input id='drink-name' labelText='Digite o nome do drink' value={name} aoDigitado={valor => setName(valor)} />
-                <Button value='+' aoClickado={() => { setNameDisplayed([name]); setName('') }} />
+                <Input id='drink-name' labelText='Digite o nome do drink' value={nameInput} aoDigitado={valor => setNameInput(valor as string)} />
+                <Button value='+' aoClickado={() => { setDrinkName([nameInput]); setNameInput('') }} />
             </span>
         </div>
     )

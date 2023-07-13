@@ -5,14 +5,23 @@ import './Preparation.css';
 
 import React from 'react';
 
-export default function PreparationCard() {
+interface PreparationCardProps {
+    listaSteps: string[],
+    setListaSteps: (array: string[]) => void,
+    garnish: string[],
+    setGarnish: (array: string[]) => void,
+    glassware: string[],
+    setGlassware: (array: string[]) => void
+}
+
+export default function PreparationCard({ listaSteps, setListaSteps, garnish, setGarnish, glassware, setGlassware} :PreparationCardProps ) {
 
     return (
         <section className='card preparation'>
             <h2>Modo de Preparo</h2>
-            <StepsList />
-            <Garnish />
-            <Glassware />
+            <StepsList listaSteps={listaSteps} setListaSteps={setListaSteps}/>
+            <Garnish garnish={garnish} setGarnish={setGarnish}/>
+            <Glassware glassware={glassware} setGlassware={setGlassware}/>
         </section>
     )
 };

@@ -2,18 +2,22 @@ import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 
-export default function Glassware() {
+interface GlasswareProps {
+    glassware: string[],
+    setGlassware: (array: string[]) => void
+}
 
-    const [glassware, setGlassware] = useState('')
-    const [glasswareDisplayed, setGlasswareDisplayed] = useState<string[]>([])
+export default function Glassware({ glassware, setGlassware}:GlasswareProps) {
+
+    const [glasswareInput, setGlasswareInput] = useState('')
 
     return (
         <>
             <h3>Glassware</h3>
-            {glasswareDisplayed.map(glassware => <p>{glassware}</p>)}
+            {glassware.map(glassware => <p>{glassware}</p>)}
             <span className='input-button-align'>
-                <Input id='glassware' labelText='Digite o recipiente utilizado' value={glassware} aoDigitado={valor => setGlassware(valor)} />
-                <Button value='+' aoClickado={() => { setGlasswareDisplayed([glassware]); setGlassware('') }} />
+                <Input id='glassware' labelText='Digite o recipiente utilizado' value={glasswareInput} aoDigitado={valor => setGlasswareInput(valor as string)} />
+                <Button value='+' aoClickado={() => { setGlassware([glasswareInput]); setGlasswareInput('') }} />
             </span>
         </>
     )

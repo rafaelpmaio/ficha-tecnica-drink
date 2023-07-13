@@ -3,23 +3,23 @@ import Input from '../Input';
 import Button from '../Button';
 
 interface StepsListProps {
-    lista?: string[]
+    listaSteps: string[],
+    setListaSteps: (array: string[]) => void
 }
 
-export default function StepsList({ lista = [] }: StepsListProps) {
+export default function StepsList({ listaSteps, setListaSteps }: StepsListProps) {
 
-    const [passo, setPasso] = useState('');
-    const [listaPassos, setListaPassos] = useState<string[]>(lista);
+    const [passoInput, setPassoInput] = useState('');
 
     return (
         <>
             <h3>Descreva o Passo a Passo</h3>
             <ul>
-                {listaPassos.map(step => <li className='steps-list'>{step}</li>)}
+                {listaSteps.map(step => <li className='steps-list'>{step}</li>)}
             </ul>
             <span className='input-button-align'>
-                <Input id='step' labelText='Digite o próximo passo' value={passo} aoDigitado={valor => setPasso(valor)} />
-                <Button value='+' aoClickado={() => { setListaPassos([...listaPassos, passo]); setPasso('') }} />
+                <Input id='step' labelText='Digite o próximo passo' value={passoInput} aoDigitado={valor => setPassoInput(valor as string)} />
+                <Button value='+' aoClickado={() => { setListaSteps([...listaSteps, passoInput]); setPassoInput('') }} />
             </span>
         </>
     )
