@@ -5,7 +5,7 @@ import Button from '../Button';
 export default function DrinkName() {
 
     const [name, setName] = useState('');
-    const [nameDisplayed, setNameDisplayed] = useState<string[]>(['White Cleriquot']);
+    const [nameDisplayed, setNameDisplayed] = useState<string[]>(['Margarita']);
 
     return (
         <div>

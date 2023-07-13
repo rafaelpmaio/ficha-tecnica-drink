@@ -1,26 +1,20 @@
 [
     {
-        "quantidade": 20,
-        "medida": "gr",
-        "ingrediente": "morango do nordeste",
-        "custo": 15
+        "quantidade": 50,
+        "medida": "ml",
+        "ingrediente": "Tequila Prata",
+        "custo": 12
     },
     {
         "quantidade": 20,
         "medida": "ml",
         "ingrediente": "Cointreau",
-        "custo": 30
+        "custo": 8
     },
     {
-        "quantidade": 30,
+        "quantidade": 20,
         "medida": "ml",
-        "ingrediente": "vinho tinto",
-        "custo": 25
-    },
-    {
-        "quantidade": 10,
-        "medida": "ml",
-        "ingrediente": "xarope simples",
-        "custo": 10
+        "ingrediente": "Suco de limão-taiti",
+        "custo": 2
     }
 ]

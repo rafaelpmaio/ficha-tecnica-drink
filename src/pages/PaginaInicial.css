@@ -29,6 +29,7 @@ h1 {
     font-family: var(--fonte-bold);
     font-size: 4em;
     color: var(--rosa);
+    margin-right: 1em;
 }
 
 h2 {
