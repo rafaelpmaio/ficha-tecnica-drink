@@ -16,7 +16,7 @@ export default function DrinkName({ drinkName, setDrinkName }: DrinkNameProps) {
             {drinkName.map(name => <h1>{name}</h1>)}
             <span className='input-button-align'>
                 <Input id='drink-name' labelText='Digite o nome do drink' value={nameInput} aoDigitado={valor => setNameInput(valor as string)} />
-                <Button value='+' aoClickado={() => { setDrinkName([nameInput]); setNameInput('') }} />
+                <Button value='+' aoClickado={() => {setDrinkName([nameInput]); setNameInput('')}} />
             </span>
         </div>
     )

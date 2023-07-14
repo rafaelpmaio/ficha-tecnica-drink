@@ -1,5 +1,8 @@
 import './Button.css'
 import React from 'react';
+import { useCallback } from 'react';
+
+
 
 interface ButtonProps {
     value: string,
@@ -7,9 +10,10 @@ interface ButtonProps {
 }
 
 export default function Button({ value, aoClickado }: ButtonProps) {
+
     return (
-        <button onClick={aoClickado}>
-            {value}
-        </button>
+        <button onClick={ aoClickado}>
+            { value }
+        </button >
     )
 };
