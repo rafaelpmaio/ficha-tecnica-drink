@@ -17,7 +17,10 @@ export default function Glassware({ glassware, setGlassware}:GlasswareProps) {
             {glassware.map(glassware => <p>{glassware}</p>)}
             <span className='input-button-align'>
                 <Input id='glassware' labelText='Digite o recipiente utilizado' value={glasswareInput} aoDigitado={valor => setGlasswareInput(valor as string)} />
-                <Button value='+' aoClickado={() => { setGlassware([glasswareInput]); setGlasswareInput('') }} />
+                <Button value='+' aoClickado={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { 
+                    event.preventDefault()
+                    setGlassware([glasswareInput]); 
+                    setGlasswareInput('') }} />
             </span>
         </>
     )

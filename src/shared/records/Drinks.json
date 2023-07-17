@@ -1,17 +1,20 @@
 [
     {
+        "id": 1,
         "quantidade": 50,
         "medida": "ml",
         "ingrediente": "Tequila Prata",
         "custo": 12
     },
     {
+        "id": 2,
         "quantidade": 20,
         "medida": "ml",
         "ingrediente": "Cointreau",
         "custo": 8
     },
     {
+        "id": 3,
         "quantidade": 20,
         "medida": "ml",
         "ingrediente": "Suco de limão-taiti",

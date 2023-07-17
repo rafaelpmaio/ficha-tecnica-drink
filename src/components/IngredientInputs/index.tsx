@@ -16,6 +16,7 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
     const [custo, setCusto] = useState(0);
 
     let novoIngrediente: IIngredient = {
+        id: 1,
         quantidade: quantidade,
         medida: medida,
         ingrediente: ingrediente,
@@ -30,6 +31,13 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
         setCusto(0);
     }
 
+
+    const aoClickar = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        event.preventDefault();
+        addIngredienteLista(novoIngrediente);
+        // incrementKey();
+    }
+
     return (
         <>
             <div className="ingredients-list">
@@ -39,21 +47,21 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
                     labelText='Quantidade'
                     type='number'
                     value={quantidade}
-                    aoDigitado={valor => setQuantidade(valor as number)}
+                    aoDigitado={valor => setQuantidade(Number.parseFloat(valor))}
                 />
                 <Input
                     id='medida'
                     className='coluna-medida'
                     labelText='Medida'
                     value={medida}
-                    aoDigitado={valor => setMedida(valor as string)}
+                    aoDigitado={valor => setMedida(valor)}
                 />
                 <Input
                     id='ingredientes'
                     className='coluna-ingrediente'
                     labelText='Ingrediente'
                     value={ingrediente}
-                    aoDigitado={valor => setIngrediente(valor as string)}
+                    aoDigitado={valor => setIngrediente(valor)}
                 />
                 <Input
                     id='custo'
@@ -61,10 +69,10 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
                     labelText='Custo'
                     type='number'
                     value={custo}
-                    aoDigitado={valor => setCusto(valor as number)}
+                    aoDigitado={valor => setCusto(Number.parseFloat(valor))}
                 />
             </div>
-            <Button value='+' aoClickado={() => addIngredienteLista(novoIngrediente)} />
+            <Button value='+' aoClickado={aoClickar} />
         </>
     )
 };

@@ -3,7 +3,7 @@ import React from 'react';
 import './Input.css';
 
 interface InputProps {
-    aoDigitado: (value: string | number) => void
+    aoDigitado: (value: string) => void
     id: string,
     value: string | number,
     labelText: string,

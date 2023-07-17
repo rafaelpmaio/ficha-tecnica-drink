@@ -3,6 +3,7 @@
 }
 
 .steps-list {
+    position: relative;
     list-style: none;
     margin-bottom: 1.5em;
 }

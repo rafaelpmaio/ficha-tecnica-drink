@@ -17,7 +17,10 @@ export default function Garnish({ garnish, setGarnish}: GarnishProps) {
             {garnish.map(garnish => <p>{garnish}</p>)}
             <span className='input-button-align'>
                 <Input id='garnish' labelText='Digite a decoração' value={garnishInput} aoDigitado={valor => setGarnishInput(valor as string)} />
-                <Button value='+' aoClickado={() => { setGarnish([garnishInput]); setGarnishInput('') }} />
+                <Button value='+' aoClickado={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { 
+                    event.preventDefault()
+                    setGarnish([garnishInput]); 
+                    setGarnishInput('') }} />
             </span>
         </>
     )

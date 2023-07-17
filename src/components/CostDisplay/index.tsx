@@ -40,9 +40,12 @@ export default function CostDisplay({ listaItens = [], precoVenda, setPrecoVenda
                     id='preco-venda' 
                     labelText='Preço de venda' 
                     value={precoVendaInput} 
-                    aoDigitado={valor => setPrecoVendaInput(valor as number)} 
+                    aoDigitado={valor => setPrecoVendaInput(Number.parseFloat(valor))} 
                 />
-                <Button value='+' aoClickado={() => { setPrecoVenda([precoVendaInput]); setPrecoVendaInput(0) }} />
+                <Button value='+' aoClickado={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { 
+                    event.preventDefault()
+                    setPrecoVenda([precoVendaInput]); 
+                    setPrecoVendaInput(0) }} />
             </span>
         </div>
     )
