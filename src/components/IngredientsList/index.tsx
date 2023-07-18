@@ -1,7 +1,7 @@
 import styles from '../IngredientsCard/IngredientsCard.module.css';
 
 import { IIngredient } from "../../shared/interfaces/IIngredient";
-import IngredientsListItem from '../IngredientsListItem/IngredientsListItem';
+import IngredientsListItem from '../IngredientsListItem';
 
 interface IngredientesListProps {
     listaIngredientes?: IIngredient[]

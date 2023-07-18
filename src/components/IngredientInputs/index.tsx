@@ -10,15 +10,17 @@ interface IngredientInputsProps {
     setListaIngredientes: (array: IIngredient[]) => void
 }
 
+
 export default function IngredientInputs({ listaIngredientes, setListaIngredientes }: IngredientInputsProps) {
 
+    const [id, setId] = useState(0);
     const [quantidade, setQuantidade] = useState(0);
     const [medida, setMedida] = useState('');
     const [ingrediente, setIngrediente] = useState('');
     const [custo, setCusto] = useState(0);
 
     let novoIngrediente: IIngredient = {
-        id: 1,
+        id: id,
         quantidade: quantidade,
         medida: medida,
         ingrediente: ingrediente,
@@ -27,18 +29,18 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
 
     const addIngredienteLista = (ingrediente: IIngredient) => {
         setListaIngredientes([...listaIngredientes, ingrediente]);
+        setId(id + 1)
         setQuantidade(0);
         setMedida('');
         setIngrediente('');
         setCusto(0);
     }
 
-
-    const aoClickar = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const funcoesAoClicar = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
         addIngredienteLista(novoIngrediente);
-        // incrementKey();
-    }
+        console.log(novoIngrediente)
+    };
 
     return (
         <>
@@ -74,7 +76,7 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
                     aoDigitado={valor => setCusto(Number.parseFloat(valor))}
                 />
             </div>
-            <Button value='+' aoClickado={aoClickar} />
+            <Button value='+' aoClickado={funcoesAoClicar} />
         </>
     )
 };

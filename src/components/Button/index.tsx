@@ -13,7 +13,7 @@ interface ButtonProps {
 export default function Button({ value, aoClickado }: ButtonProps) {
 
     return (
-        <button className={styles.button} onClick={ aoClickado}>
+        <button className={styles.button} onClick={aoClickado}>
             { value }
         </button >
     )
