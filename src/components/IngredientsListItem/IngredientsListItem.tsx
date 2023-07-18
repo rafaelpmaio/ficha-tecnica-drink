@@ -1,6 +1,7 @@
 import React from "react";
 import { IIngredient } from "../../shared/interfaces/IIngredient";
 import DeleteButton from "../DeleteButton";
+import styles from '../IngredientsCard/IngredientsCard.module.css';
 
 interface IngredientListItemProps {
     ingredient: IIngredient
@@ -9,11 +10,11 @@ interface IngredientListItemProps {
 export default function IngredientListItem({ ingredient }: IngredientListItemProps) {
     return (
         <>
-            <li key={ingredient.id} className="ingredients-list">
-                <b className="coluna-quantidade">{ingredient.quantidade}</b>
-                <b className="coluna-medida">{ingredient.medida}</b>
-                <b className="coluna-ingrediente">{ingredient.ingrediente}</b>
-                <b className="coluna-custo">{ingredient.custo}</b>
+            <li key={ingredient.id} className={styles.ingredients_list}>
+                <b className={styles.coluna_quantidade}>{ingredient.quantidade}</b>
+                <b className={styles.coluna_medida}>{ingredient.medida}</b>
+                <b className={styles.coluna_ingrediente}>{ingredient.ingrediente}</b>
+                <b className={styles.coluna_custo}>{ingredient.custo}</b>
                 <DeleteButton />
             </li>
         </>

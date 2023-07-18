@@ -1,4 +1,5 @@
-import './IngredientsList.css';
+import styles from '../IngredientsCard/IngredientsCard.module.css';
+
 import { IIngredient } from "../../shared/interfaces/IIngredient";
 import IngredientsListItem from '../IngredientsListItem/IngredientsListItem';
 
@@ -10,11 +11,11 @@ export default function IngredientsList({ listaIngredientes }: IngredientesListP
 
     return (
         <>
-            <h3 className="ingredients-list">
-                <b className="coluna-quantidade">quantidade</b>
-                <b className="coluna-medida">Medida</b>
-                <b className="coluna-ingrediente">Ingredientes</b>
-                <b className="coluna-custo">Custo (R$)</b>
+            <h3 className={styles.ingredients_list}>
+                <b className={styles.coluna_quantidade}>quantidade</b>
+                <b className={styles.coluna_medida}>Medida</b>
+                <b className={styles.coluna_ingrediente}>Ingredientes</b>
+                <b className={styles.coluna_custo}>Custo (R$)</b>
             </h3>
             <ul>
                 { listaIngredientes && listaIngredientes.map((ingrediente) => 

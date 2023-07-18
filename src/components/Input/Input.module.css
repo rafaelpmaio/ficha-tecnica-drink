@@ -7,7 +7,7 @@ input{
     border: none;
 }
 
-.label-relative {
+.label_relative {
     display: flex;
     position: relative;
 }

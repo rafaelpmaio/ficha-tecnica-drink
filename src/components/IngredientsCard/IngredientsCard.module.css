@@ -1,22 +1,22 @@
-.ingredients-list {
+.ingredients_list {
     display: flex;
     position: relative;
     justify-content: space-between;
     margin-bottom: 1.5em;
 }
 
-.coluna-quantidade {
+.coluna_quantidade {
     width: 15%;
 }
 
-.coluna-medida {
+.coluna_medida {
     width: 10%;
 }
 
-.coluna-ingrediente {
+.coluna_ingrediente {
     width: 50%;
 }
 
-.coluna-custo {
+.coluna_custo {
     width: 10%;
 }

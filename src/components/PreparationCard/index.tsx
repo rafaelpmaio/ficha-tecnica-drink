@@ -1,8 +1,9 @@
+import styles from './Preparation.module.css';
+import pageStyles from '../../pages/PaginaInicial.module.css'
+
 import Garnish from '../Garnish';
 import Glassware from '../Glassware';
 import StepsList from '../StepsList';
-import './Preparation.css';
-
 import React from 'react';
 
 interface PreparationCardProps {
@@ -17,7 +18,7 @@ interface PreparationCardProps {
 export default function PreparationCard({ listaSteps, setListaSteps, garnish, setGarnish, glassware, setGlassware} :PreparationCardProps ) {
 
     return (
-        <section className='card preparation'>
+        <section className={`${styles.preparation} ${pageStyles.card}`} >
             <h2>Modo de Preparo</h2>
             <StepsList listaSteps={listaSteps} setListaSteps={setListaSteps}/>
             <Garnish garnish={garnish} setGarnish={setGarnish}/>

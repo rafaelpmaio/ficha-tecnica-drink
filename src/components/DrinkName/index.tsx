@@ -1,3 +1,5 @@
+import pageStyles from '../../pages/PaginaInicial.module.css';
+
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
@@ -14,7 +16,7 @@ export default function DrinkName({ drinkName, setDrinkName }: DrinkNameProps) {
     return (
         <div>
             {drinkName.map(name => <h1 key={name} >{name}</h1>)}
-            <span className='input-button-align'>
+            <span className={pageStyles.input_button_align}>
                 <Input id='drink-name' labelText='Digite o nome do drink' value={nameInput} aoDigitado={valor => setNameInput(valor as string)} />
                 <Button value='+' aoClickado={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                     event.preventDefault()

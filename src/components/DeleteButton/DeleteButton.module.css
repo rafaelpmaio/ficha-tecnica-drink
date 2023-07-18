@@ -1,6 +1,6 @@
 @import url('../../styles/_variaveis.css');
 
-.delete-button {
+.delete_btn {
     position: absolute;
     right: 0;
     width: 20px;

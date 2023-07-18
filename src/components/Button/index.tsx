@@ -1,4 +1,5 @@
-import './Button.css'
+import styles from './Button.module.css'
+
 import React from 'react';
 import { useCallback } from 'react';
 
@@ -12,7 +13,7 @@ interface ButtonProps {
 export default function Button({ value, aoClickado }: ButtonProps) {
 
     return (
-        <button onClick={ aoClickado}>
+        <button className={styles.button} onClick={ aoClickado}>
             { value }
         </button >
     )

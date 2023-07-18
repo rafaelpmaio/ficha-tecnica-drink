@@ -1,3 +1,5 @@
+import pageStyles from '../../pages/PaginaInicial.module.css';
+
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
@@ -15,7 +17,7 @@ export default function Garnish({ garnish, setGarnish}: GarnishProps) {
         <>
             <h3>Garnish</h3>
             {garnish.map(garnish => <p>{garnish}</p>)}
-            <span className='input-button-align'>
+            <span className={pageStyles.input_button_align}>
                 <Input id='garnish' labelText='Digite a decoração' value={garnishInput} aoDigitado={valor => setGarnishInput(valor as string)} />
                 <Button value='+' aoClickado={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { 
                     event.preventDefault()

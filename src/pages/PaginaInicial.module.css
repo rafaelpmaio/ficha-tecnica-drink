@@ -10,19 +10,9 @@
     justify-content: space-around;
 }
 
-.input-button-align {
+.input_button_align {
     display: flex;
     gap: 0.3em;
-}
-
-.drink-photo {
-    width: 40%;
-    object-fit: contain;
-    
-}
-
-ul {
-    padding-left: 0;
 }
 
 h1 {

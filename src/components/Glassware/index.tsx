@@ -1,3 +1,5 @@
+import pageStyles from '../../pages/PaginaInicial.module.css';
+
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
@@ -15,7 +17,7 @@ export default function Glassware({ glassware, setGlassware}:GlasswareProps) {
         <>
             <h3>Glassware</h3>
             {glassware.map(glassware => <p>{glassware}</p>)}
-            <span className='input-button-align'>
+            <span className={pageStyles.input_button_align}>
                 <Input id='glassware' labelText='Digite o recipiente utilizado' value={glasswareInput} aoDigitado={valor => setGlasswareInput(valor as string)} />
                 <Button value='+' aoClickado={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { 
                     event.preventDefault()

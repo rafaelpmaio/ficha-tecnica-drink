@@ -1,6 +1,7 @@
+import styles from './Input.module.css';
+
 import React from 'react';
 
-import './Input.css';
 
 interface InputProps {
     aoDigitado: (value: string) => void
@@ -18,7 +19,7 @@ export default function Input({ id, labelText, className, value, aoDigitado, typ
     }
 
     return (
-        <b className= {`label-relative ${className}`}>
+        <b className= {`${styles.label_relative} ${className}`}>
             <input key={1} type={type} id={id} value={value} onChange={aoAlterado}/>
             <label htmlFor={id}> {labelText} </label> 
         </b>

@@ -1,3 +1,5 @@
+import styles from '../IngredientsCard/IngredientsCard.module.css'
+
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
@@ -40,10 +42,10 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
 
     return (
         <>
-            <div className="ingredients-list">
+            <div className={styles.ingredients_list}>
                 <Input
                     id='quantidade'
-                    className='coluna-quantidade'
+                    className={styles.coluna_quantidade}
                     labelText='Quantidade'
                     type='number'
                     value={quantidade}
@@ -51,21 +53,21 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
                 />
                 <Input
                     id='medida'
-                    className='coluna-medida'
+                    className={styles.coluna_medida}
                     labelText='Medida'
                     value={medida}
                     aoDigitado={valor => setMedida(valor)}
                 />
                 <Input
                     id='ingredientes'
-                    className='coluna-ingrediente'
+                    className={styles.coluna_ingrediente}
                     labelText='Ingrediente'
                     value={ingrediente}
                     aoDigitado={valor => setIngrediente(valor)}
                 />
                 <Input
                     id='custo'
-                    className='coluna-custo'
+                    className={styles.coluna_custo}
                     labelText='Custo'
                     type='number'
                     value={custo}

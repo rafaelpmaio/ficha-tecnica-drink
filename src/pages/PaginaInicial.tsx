@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import IngredientsCard from "../components/IngredientsCard";
-import './PaginaInicial.css';
+import styles from './PaginaInicial.module.css';
 import PreparationCard from "../components/PreparationCard";
-import logo from './drink-logo.png';
 
 import listaIngredientes from '../shared/records/Drinks.json';
 import FormButton from "../components/FormButton";
 import { IDrink } from "../shared/interfaces/IDrink";
 import { calculaCustoProducao, calculaPorcentagemDeCusto } from "../components/CostDisplay";
 import { IIngredient } from "../shared/interfaces/IIngredient";
+import DrinkPhoto from "../components/DrinkPhoto";
 
 export default function PaginaInicial() {
 
@@ -51,7 +51,7 @@ export default function PaginaInicial() {
                 />
                 <main>
                     <IngredientsCard listaIngredientes={lista} setListaIngredientes={setLista} />
-                    <div className="block">
+                    <div className={styles.block}>
                         <PreparationCard 
                             listaSteps={listaSteps} 
                             setListaSteps={setListaSteps}
@@ -60,7 +60,7 @@ export default function PaginaInicial() {
                             glassware={glassware}
                             setGlassware={setGlassware}
                         />
-                        <img src={logo} alt="" className="card drink-photo" />
+                        <DrinkPhoto />
                     </div>
                 </main>
                 <FormButton />

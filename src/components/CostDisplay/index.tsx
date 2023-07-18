@@ -1,3 +1,5 @@
+import pageStyles from '../../pages/PaginaInicial.module.css';
+
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
@@ -34,7 +36,7 @@ export default function CostDisplay({ listaItens = [], precoVenda, setPrecoVenda
             <p>Custo de Produção: {custoProducao}</p>
             {precoVenda.map(preco => <p>Preço de Venda: R${preco}</p>)}
             <p>% de custo: {porcentagemCusto}</p>
-            <span className='input-button-align'>
+            <span className={pageStyles.input_button_align}>
                 <Input 
                     type='number' 
                     id='preco-venda' 

@@ -1,8 +1,4 @@
-.preparation {
-    width: 60%;
-}
-
-.steps-list {
+.steps_list {
     position: relative;
     list-style: none;
     margin-bottom: 1.5em;

@@ -1,4 +1,6 @@
-import './Header.css';
+import styles from './Header.module.css';
+import pageStyle from '../../pages/PaginaInicial.module.css'
+
 import React from "react";
 import CostDisplay from "../CostDisplay";
 import { IIngredient } from "../../shared/interfaces/IIngredient";
@@ -16,7 +18,7 @@ interface HeaderProps {
 export default function Header({listaIngredientes, drinkName, setDrinkName, precoVenda, setPrecoVenda}: HeaderProps) {
 
     return (
-        <header className="card cabecalho">
+        <header className={`${pageStyle.card} ${styles.cabecalho}`}>
             <HeaderImage />
             <DrinkName drinkName={drinkName} setDrinkName={setDrinkName}/>
             <CostDisplay listaItens={listaIngredientes} precoVenda={precoVenda} setPrecoVenda={setPrecoVenda}/>

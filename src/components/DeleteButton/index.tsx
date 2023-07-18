@@ -1,5 +1,6 @@
+import styles from './DeleteButton.module.css';
+
 import { IIngredient } from '../../shared/interfaces/IIngredient';
-import './DeleteButton.css';
 import React from 'react';
 
 function removeItem(key: number, list: IIngredient[] | string[]) {
@@ -8,6 +9,6 @@ function removeItem(key: number, list: IIngredient[] | string[]) {
 
 export default function DeleteButton() {
     return (
-        <input className='delete-button' value='x' onClick={() => {}}/>
+        <input className={styles.delete_btn} value='x' onClick={() => {}}/>
     )
 };
