@@ -5,24 +5,31 @@ import Input from '../Input';
 import Button from '../Button';
 
 interface GarnishProps {
-    garnish: string[],
-    setGarnish: (array: string[]) => void
+    garnish: string,
+    setGarnish: (garnish: string) => void
 }
 
-export default function Garnish({ garnish, setGarnish}: GarnishProps) {
-
+export default function Garnish({ garnish, setGarnish }: GarnishProps) {
     const [garnishInput, setGarnishInput] = useState('');
+
+    const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        event.preventDefault()
+        setGarnish(garnishInput);
+        setGarnishInput('')
+    }
 
     return (
         <>
             <h3>Garnish</h3>
-            {garnish.map(garnish => <p>{garnish}</p>)}
+            {garnish ? <p>{garnish}</p> : ''}
             <span className={pageStyles.input_button_align}>
-                <Input id='garnish' labelText='Digite a decoração' value={garnishInput} aoDigitado={valor => setGarnishInput(valor as string)} />
-                <Button value='+' aoClickado={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { 
-                    event.preventDefault()
-                    setGarnish([garnishInput]); 
-                    setGarnishInput('') }} />
+                <Input 
+                    id='garnish' 
+                    labelText='Digite a decoração' 
+                    value={garnishInput} 
+                    aoDigitado={valor => setGarnishInput(valor)} 
+                />
+                <Button value='+' aoClickado={functionsExecutedOnClick} />
             </span>
         </>
     )

@@ -9,10 +9,10 @@ import React from 'react';
 interface PreparationCardProps {
     listaSteps: string[],
     setListaSteps: (array: string[]) => void,
-    garnish: string[],
-    setGarnish: (array: string[]) => void,
-    glassware: string[],
-    setGlassware: (array: string[]) => void
+    garnish: string,
+    setGarnish: (garnish: string) => void,
+    glassware: string,
+    setGlassware: (glassware: string) => void
 }
 
 export default function PreparationCard({ listaSteps, setListaSteps, garnish, setGarnish, glassware, setGlassware} :PreparationCardProps ) {

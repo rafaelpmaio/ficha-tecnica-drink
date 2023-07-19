@@ -7,41 +7,41 @@ import PreparationCard from "../components/PreparationCard";
 import listaIngredientes from '../shared/records/Drinks.json';
 import FormButton from "../components/FormButton";
 import { IDrink } from "../shared/interfaces/IDrink";
-import { calculaCustoProducao, calculaPorcentagemDeCusto } from "../components/CostDisplay";
 import { IIngredient } from "../shared/interfaces/IIngredient";
 import DrinkPhoto from "../components/DrinkPhoto";
+import calculateCostPrice from "../components/CostDisplay/calculateCostPrice";
+import calculateCostPercentage from "../components/CostDisplay/calculateCostPercentage";
 
 export default function PaginaInicial() {
 
     const [lista, setLista] = useState<IIngredient[]>(listaIngredientes);
-    const [drinkName, setDrinkName] = useState<string[]>(['Margarita']);
+    const [drinkName, setDrinkName] = useState<string>('Margarita');
     const [listaSteps, setListaSteps] = useState<string[]>([]);
-    const [garnish, setGarnish] = useState<string[]>([])
-    const [glassware, setGlassware] = useState<string[]>([])
-    const [precoVenda, setPrecoVenda] = useState<number[]>([])
-    const custoProducao = calculaCustoProducao(lista);
-    const porcentagemCusto = calculaPorcentagemDeCusto(precoVenda[0], custoProducao);
+    const [garnish, setGarnish] = useState<string>('')
+    const [glassware, setGlassware] = useState<string>('')
+    const [precoVenda, setPrecoVenda] = useState<number>(0)
+    const custoProducao = calculateCostPrice(lista);
+    const porcentagemCusto = calculateCostPercentage(precoVenda, custoProducao);
 
-    const novoDrink: IDrink = {
+    const newDrink: IDrink = {
         name: drinkName[0],
         ingredients: lista,
         steps: listaSteps,
-        garnish: garnish[0],
-        glassware: glassware[0],
+        garnish: garnish,
+        glassware: glassware,
         confectionCost: custoProducao,
-        sellPrice: precoVenda[0],
+        sellPrice: precoVenda,
         costPercentage: porcentagemCusto
     }
-
-    const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
+    const functionExecutedOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        alert('teste de captura do objeto drink exibido no console log')
-        console.log(novoDrink);
+        alert('form submited')
+        console.log(newDrink);
     }
 
     return (
         <>
-            <form onSubmit={submitForm}>
+            <form onSubmit={functionExecutedOnSubmit}>
                 <Header 
                     listaIngredientes={lista} 
                     drinkName={drinkName} 
@@ -51,7 +51,7 @@ export default function PaginaInicial() {
                 />
                 <main>
                     <IngredientsCard listaIngredientes={lista} setListaIngredientes={setLista} />
-                    <div className={styles.block}>
+                    <div className={styles.preparation_and_drink_photo_block}>
                         <PreparationCard 
                             listaSteps={listaSteps} 
                             setListaSteps={setListaSteps}

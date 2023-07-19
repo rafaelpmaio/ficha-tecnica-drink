@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 import { IIngredient } from '../../shared/interfaces/IIngredient';
+import createIngredient from './createIngredient';
+import resetInputs from './resetInputs';
 
 interface IngredientInputsProps {
     listaIngredientes: IIngredient[],
     setListaIngredientes: (array: IIngredient[]) => void
 }
-
 
 export default function IngredientInputs({ listaIngredientes, setListaIngredientes }: IngredientInputsProps) {
 
@@ -19,27 +20,16 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
     const [ingrediente, setIngrediente] = useState('');
     const [custo, setCusto] = useState(0);
 
-    let novoIngrediente: IIngredient = {
-        id: id,
-        quantidade: quantidade,
-        medida: medida,
-        ingrediente: ingrediente,
-        custo: custo
-    }
-
-    const addIngredienteLista = (ingrediente: IIngredient) => {
+    let newIngredient = createIngredient(id, quantidade, medida, ingrediente, custo);
+    const addIngredientToList = (ingrediente: IIngredient) => {
         setListaIngredientes([...listaIngredientes, ingrediente]);
-        setId(id + 1)
-        setQuantidade(0);
-        setMedida('');
-        setIngrediente('');
-        setCusto(0);
+        setId(id + 1);
     }
-
-    const funcoesAoClicar = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
-        addIngredienteLista(novoIngrediente);
-        console.log(novoIngrediente)
+        addIngredientToList(newIngredient);
+        resetInputs(setQuantidade, setMedida, setIngrediente, setCusto);
+        console.log(newIngredient)
     };
 
     return (
@@ -76,7 +66,7 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
                     aoDigitado={valor => setCusto(Number.parseFloat(valor))}
                 />
             </div>
-            <Button value='+' aoClickado={funcoesAoClicar} />
+            <Button value='+' aoClickado={functionsExecutedOnClick} />
         </>
     )
 };

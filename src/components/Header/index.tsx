@@ -9,10 +9,10 @@ import HeaderImage from "../HeaderImage";
 
 interface HeaderProps {
     listaIngredientes?: IIngredient[],
-    drinkName: string[],
-    setDrinkName: (array: string[]) => void
-    precoVenda: number[],
-    setPrecoVenda: (array: number[]) => void
+    drinkName: string,
+    setDrinkName: (name: string) => void
+    precoVenda: number,
+    setPrecoVenda: (preco: number) => void
 }
 
 export default function Header({listaIngredientes, drinkName, setDrinkName, precoVenda, setPrecoVenda}: HeaderProps) {

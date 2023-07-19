@@ -11,7 +11,7 @@ export default function IngredientsList({ listaIngredientes }: IngredientesListP
 
     return (
         <>
-            <h3 className={styles.ingredients_list}>
+            <h3 id='titulo-colunas' className={styles.ingredients_list}>
                 <b className={styles.coluna_quantidade}>quantidade</b>
                 <b className={styles.coluna_medida}>Medida</b>
                 <b className={styles.coluna_ingrediente}>Ingredientes</b>
