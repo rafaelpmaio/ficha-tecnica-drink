@@ -5,13 +5,11 @@ import Menu from './components/Menu';
 
 function App() {
   return (
-
     <BrowserRouter>
-    <Menu />
+      <Menu />
       <Routes>
-        <Route path="/" element={<PaginaInicial />}/>
-        <Route path="*" element={<PaginaInicial />}/> /*futuro erro 404*/
-
+        <Route path="/" element={<PaginaInicial />} />
+        <Route path="*" element={<PaginaInicial />} /> /*futuro erro 404*/
       </Routes>
     </BrowserRouter>
   );

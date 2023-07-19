@@ -8,11 +8,11 @@ import createIngredient from './createIngredient';
 import resetInputs from './resetInputs';
 
 interface IngredientInputsProps {
-    listaIngredientes: IIngredient[],
+    ingredientsList: IIngredient[],
     setListaIngredientes: (array: IIngredient[]) => void
 }
 
-export default function IngredientInputs({ listaIngredientes, setListaIngredientes }: IngredientInputsProps) {
+export default function IngredientInputs({ ingredientsList, setListaIngredientes }: IngredientInputsProps) {
 
     const [id, setId] = useState(0);
     const [quantidade, setQuantidade] = useState(0);
@@ -22,7 +22,7 @@ export default function IngredientInputs({ listaIngredientes, setListaIngredient
 
     let newIngredient = createIngredient(id, quantidade, medida, ingrediente, custo);
     const addIngredientToList = (ingrediente: IIngredient) => {
-        setListaIngredientes([...listaIngredientes, ingrediente]);
+        setListaIngredientes([...ingredientsList, ingrediente]);
         setId(id + 1);
     }
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

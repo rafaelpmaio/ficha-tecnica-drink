@@ -4,10 +4,11 @@ import { IIngredient } from "../../shared/interfaces/IIngredient";
 import IngredientsListItem from '../IngredientsListItem';
 
 interface IngredientesListProps {
-    listaIngredientes?: IIngredient[]
+    ingredientsList: IIngredient[],
+    setIngredientsList: (array: IIngredient[]) => void
 }
 
-export default function IngredientsList({ listaIngredientes }: IngredientesListProps) {
+export default function IngredientsList({ setIngredientsList, ingredientsList = [] }: IngredientesListProps) {
 
     return (
         <>
@@ -18,8 +19,8 @@ export default function IngredientsList({ listaIngredientes }: IngredientesListP
                 <b className={styles.coluna_custo}>Custo (R$)</b>
             </h3>
             <ul>
-                { listaIngredientes && listaIngredientes.map((ingrediente) => 
-                    <IngredientsListItem ingredient={ingrediente} />)
+                { ingredientsList && ingredientsList.map((ingrediente) => 
+                    <IngredientsListItem ingredient={ingrediente} ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />)
                 }
             </ul>
         </>

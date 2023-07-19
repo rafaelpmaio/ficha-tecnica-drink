@@ -7,17 +7,17 @@ import IngredientInputs from "../IngredientInputs";
 
 
 interface IngredientsCardProps {
-    listaIngredientes?: IIngredient[],
-    setListaIngredientes: (array: IIngredient[]) => void
+    ingredientsList: IIngredient[],
+    setIngredientsList: (array: IIngredient[]) => void
 }
 
-export default function IngredientsCard({ listaIngredientes = [], setListaIngredientes }: IngredientsCardProps) {
+export default function IngredientsCard({ ingredientsList = [], setIngredientsList }: IngredientsCardProps) {
     
     return (
         <section className={pageStyles.card}>
             <h2>Ingredientes</h2>
-            <IngredientsList listaIngredientes={listaIngredientes} />
-            <IngredientInputs listaIngredientes={listaIngredientes} setListaIngredientes={setListaIngredientes}/>
+            <IngredientsList ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />
+            <IngredientInputs ingredientsList={ingredientsList} setListaIngredientes={setIngredientsList}/>
         </section>
     )
 };
