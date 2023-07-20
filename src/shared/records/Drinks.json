@@ -1,23 +1,44 @@
 [
     {
         "id": 1,
-        "quantidade": 50,
-        "medida": "ml",
-        "ingrediente": "Tequila Prata",
-        "custo": 12
-    },
-    {
-        "id": 2,
-        "quantidade": 20,
-        "medida": "ml",
-        "ingrediente": "Cointreau",
-        "custo": 8
-    },
-    {
-        "id": 3,
-        "quantidade": 20,
-        "medida": "ml",
-        "ingrediente": "Suco de limão-taiti",
-        "custo": 2
+        "name": "Margarita",
+        "ingredients": [
+            {
+                "id": 1,
+                "quantidade": 50,
+                "medida": "ml",
+                "ingrediente": "Tequila Prata",
+                "custo": 12
+            },
+            {
+                "id": 2,
+                "quantidade": 20,
+                "medida": "ml",
+                "ingrediente": "Cointreau",
+                "custo": 8
+            },
+            {
+                "id": 3,
+                "quantidade": 20,
+                "medida": "ml",
+                "ingrediente": "Suco de limão-taiti",
+                "custo": 2
+            }
+        ],
+        "steps": [
+            {
+                "id": 1,
+                "stepDescription": "Primeiro Passo"
+            },
+            {
+                "id": 2,
+                "stepDescription": "Segundo Passo"
+            }
+        ],
+        "garnish": "crosta de sal",
+        "glassware": "taça de vidro",
+        "confectionCost": 22,
+        "sellPrice": 55,
+        "costPercentage": 40
     }
 ]

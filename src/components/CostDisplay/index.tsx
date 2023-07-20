@@ -28,7 +28,7 @@ export default function CostDisplay({ listaItens = [], precoVenda, setPrecoVenda
         <div>
             <p>Custo de Produção: {custoProducao}</p>
             <p>Preço de Venda: R${precoVenda} </p>
-            <p>% de custo: {porcentagemCusto}</p>
+            <p>% de custo: {porcentagemCusto ? porcentagemCusto : ''}</p>
             <span className={pageStyles.input_button_align}>
                 <Input
                     type='number'

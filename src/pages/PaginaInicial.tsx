@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import IngredientsCard from "../components/IngredientsCard";
 import styles from './PaginaInicial.module.css';
 import PreparationCard from "../components/PreparationCard";
-import listaIngredientes from '../shared/records/Drinks.json';
+import drinksList from '../shared/records/Drinks.json';
 import FormButton from "../components/FormButton";
 import { IDrink } from "../shared/interfaces/IDrink";
 import { IIngredient } from "../shared/interfaces/IIngredient";
@@ -14,8 +14,8 @@ import { IStep } from "../shared/interfaces/IStep";
 
 export default function PaginaInicial() {
 
-    const [ingredientsList, setIngredientsList] = useState<IIngredient[]>(listaIngredientes);
-    const [drinkName, setDrinkName] = useState<string>('Margarita');
+    const [ingredientsList, setIngredientsList] = useState<IIngredient[]>([]);
+    const [drinkName, setDrinkName] = useState<string>('');
     const [stepsList, setStepsList] = useState<IStep[]>([]);
     const [garnish, setGarnish] = useState<string>('')
     const [glassware, setGlassware] = useState<string>('')
@@ -24,6 +24,7 @@ export default function PaginaInicial() {
     const porcentagemCusto = calculateCostPercentage(Number.parseFloat(precoVenda), custoProducao);
 
     const newDrink: IDrink = {
+        id:1,
         name: drinkName,
         ingredients: ingredientsList,
         steps: stepsList,

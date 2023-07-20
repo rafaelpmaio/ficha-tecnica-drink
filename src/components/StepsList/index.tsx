@@ -27,9 +27,9 @@ export default function StepsList({ stepsList, setStepsList }: StepsListProps) {
         <>
             <h3>Descreva o Passo a Passo</h3>
             <ul>
-                {stepsList.map(step =>
+                {stepsList.map((step, index) =>
                     <li key={step.id} className={styles.steps_list}>
-                        {step.stepDescription}
+                        <b className={styles.step_prefix}>{`${index + 1}º Passo: `}</b>{step.stepDescription}
                         <DeleteButton
                             itemId={step.id}
                             list={stepsList}

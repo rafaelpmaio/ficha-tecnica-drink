@@ -1,5 +1,13 @@
+@import url('../../styles/_variaveis.css');
+
 .steps_list {
     position: relative;
     list-style: none;
     margin-bottom: 1.5em;
+}
+
+.step_prefix {
+    color: var(--rosa);
+    font-weight: 500;
+    text-transform: uppercase;
 }

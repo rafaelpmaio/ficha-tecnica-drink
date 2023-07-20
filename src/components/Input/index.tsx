@@ -1,12 +1,13 @@
 import styles from './Input.module.css';
 import './Input.module.css';
 import React from 'react';
+import setLabelDecorationWhenInputHasValue from './setLabelDecorationWhenInputHasValue';
 
 
 interface InputProps {
     aoDigitado: (value: string) => void
     id: string,
-    value: string | number,
+    value: string,
     labelText: string,
     className?: string,
     type?: string,
@@ -17,13 +18,7 @@ export default function Input({ id, labelText, className, value, aoDigitado, typ
     const aoAlterado = (evento: React.ChangeEvent<HTMLInputElement>) => {
         aoDigitado(evento.target.value);
     }
-
-    // const setLabelDecorationWhenInputHasValue = (value: string) => {
-        let labelClass = '';
-        value 
-            ? labelClass = styles.input_has_value
-            : labelClass = '';
-    // }
+    let labelClass = setLabelDecorationWhenInputHasValue(value);
 
     return (
         <b className={`${styles.label_relative} ${className}`}>
