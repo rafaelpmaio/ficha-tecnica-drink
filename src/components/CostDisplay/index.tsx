@@ -9,19 +9,19 @@ import calculateCostPercentage from './calculateCostPercentage';
 
 interface CostDisplayProps {
     listaItens?: IIngredient[],
-    precoVenda: number,
-    setPrecoVenda: (preco: number) => void
+    precoVenda: string,
+    setPrecoVenda: (preco: string) => void
 }
 
 export default function CostDisplay({ listaItens = [], precoVenda, setPrecoVenda }: CostDisplayProps) {
-    const [precoVendaInput, setPrecoVendaInput] = useState(0);
+    const [precoVendaInput, setPrecoVendaInput] = useState('');
 
     const custoProducao = calculateCostPrice(listaItens);
-    const porcentagemCusto = calculateCostPercentage(precoVenda, custoProducao);
+    const porcentagemCusto = calculateCostPercentage(Number.parseFloat(precoVenda), custoProducao);
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault()
         setPrecoVenda(precoVendaInput);
-        setPrecoVendaInput(0)
+        setPrecoVendaInput('')
     }
 
     return (
@@ -35,7 +35,7 @@ export default function CostDisplay({ listaItens = [], precoVenda, setPrecoVenda
                     id='preco-venda'
                     labelText='Preço de venda'
                     value={precoVendaInput}
-                    aoDigitado={valor => setPrecoVendaInput(Number.parseFloat(valor))}
+                    aoDigitado={valor => setPrecoVendaInput(valor)}
                 />
                 <Button value='+' aoClickado={functionsExecutedOnClick} />
             </span>

@@ -1,6 +1,6 @@
 @import url('../../styles/_variaveis.css');
 
-input{
+input {
     width: 100%;
     border-radius: 4px;
     height: 2em;
@@ -16,10 +16,24 @@ label {
     position: absolute;
     font-size: 0.8em;
     color: var(--azul-escuro);
-    left: 0.5em;
+    left: 1em;
     bottom: 0.5em;
 }
 
-input:focus + label {
-    display: none;
+input:focus+label {
+    transition: 0.2s;
+    color: var(--rosa);
+    font-size: 0.9em;
+    font-weight: 500;
+    bottom: 2em;
+    left: -0.2em;
 }
+
+.input_has_value {
+    color: var(--rosa);
+    font-size: 0.9em;
+    font-weight: 500;
+    bottom: 2em;
+    left: -0.2em;
+}
+

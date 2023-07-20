@@ -1,11 +1,11 @@
 export default function resetInputs(
-    setQuantidade: React.Dispatch<React.SetStateAction<number>>,
+    setQuantidade: React.Dispatch<React.SetStateAction<string>>,
     setMedida: React.Dispatch<React.SetStateAction<string>>,
     setIngrediente: React.Dispatch<React.SetStateAction<string>>,
-    setCusto: React.Dispatch<React.SetStateAction<number>>
+    setCusto: React.Dispatch<React.SetStateAction<string>>
 ) {
-    setQuantidade(0);
+    setQuantidade('');
     setMedida('');
     setIngrediente('');
-    setCusto(0);
+    setCusto('');
 }

@@ -11,8 +11,8 @@ interface HeaderProps {
     listaIngredientes?: IIngredient[],
     drinkName: string,
     setDrinkName: (name: string) => void
-    precoVenda: number,
-    setPrecoVenda: (preco: number) => void
+    precoVenda: string,
+    setPrecoVenda: (preco: string) => void
 }
 
 export default function Header({listaIngredientes, drinkName, setDrinkName, precoVenda, setPrecoVenda}: HeaderProps) {

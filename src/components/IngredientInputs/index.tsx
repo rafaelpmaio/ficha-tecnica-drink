@@ -15,12 +15,17 @@ interface IngredientInputsProps {
 export default function IngredientInputs({ ingredientsList, setListaIngredientes }: IngredientInputsProps) {
 
     const [id, setId] = useState(0);
-    const [quantidade, setQuantidade] = useState(0);
+    const [quantidade, setQuantidade] = useState('');
     const [medida, setMedida] = useState('');
     const [ingrediente, setIngrediente] = useState('');
-    const [custo, setCusto] = useState(0);
+    const [custo, setCusto] = useState('');
 
-    let newIngredient = createIngredient(id, quantidade, medida, ingrediente, custo);
+    let newIngredient = createIngredient(
+        id, 
+        Number.parseFloat(quantidade), 
+        medida, ingrediente, 
+        Number.parseFloat(custo)
+    );
     const addIngredientToList = (ingrediente: IIngredient) => {
         setListaIngredientes([...ingredientsList, ingrediente]);
         setId(id + 1);
@@ -41,7 +46,7 @@ export default function IngredientInputs({ ingredientsList, setListaIngredientes
                     labelText='Quantidade'
                     type='number'
                     value={quantidade}
-                    aoDigitado={valor => setQuantidade(Number.parseFloat(valor))}
+                    aoDigitado={valor => setQuantidade(valor)}
                 />
                 <Input
                     id='medida'
@@ -63,7 +68,7 @@ export default function IngredientInputs({ ingredientsList, setListaIngredientes
                     labelText='Custo'
                     type='number'
                     value={custo}
-                    aoDigitado={valor => setCusto(Number.parseFloat(valor))}
+                    aoDigitado={valor => setCusto(valor)}
                 />
             </div>
             <Button value='+' aoClickado={functionsExecutedOnClick} />

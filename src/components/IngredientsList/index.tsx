@@ -19,9 +19,13 @@ export default function IngredientsList({ setIngredientsList, ingredientsList = 
                 <b className={styles.coluna_custo}>Custo (R$)</b>
             </h3>
             <ul>
-                { ingredientsList && ingredientsList.map((ingrediente) => 
-                    <IngredientsListItem ingredient={ingrediente} ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />)
-                }
+                {ingredientsList && ingredientsList.map((ingrediente) =>
+                    <IngredientsListItem
+                        key={ingrediente.id}
+                        ingredient={ingrediente}
+                        ingredientsList={ingredientsList}
+                        setIngredientsList={setIngredientsList}
+                    />)}
             </ul>
         </>
     )

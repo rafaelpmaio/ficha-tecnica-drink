@@ -19,18 +19,18 @@ export default function PaginaInicial() {
     const [stepsList, setStepsList] = useState<IStep[]>([]);
     const [garnish, setGarnish] = useState<string>('')
     const [glassware, setGlassware] = useState<string>('')
-    const [precoVenda, setPrecoVenda] = useState<number>(0)
+    const [precoVenda, setPrecoVenda] = useState<string>('')
     const custoProducao = calculateCostPrice(ingredientsList);
-    const porcentagemCusto = calculateCostPercentage(precoVenda, custoProducao);
+    const porcentagemCusto = calculateCostPercentage(Number.parseFloat(precoVenda), custoProducao);
 
     const newDrink: IDrink = {
-        name: drinkName[0],
+        name: drinkName,
         ingredients: ingredientsList,
         steps: stepsList,
         garnish: garnish,
         glassware: glassware,
         confectionCost: custoProducao,
-        sellPrice: precoVenda,
+        sellPrice: Number.parseFloat(precoVenda),
         costPercentage: porcentagemCusto
     }
     const functionExecutedOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {

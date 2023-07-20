@@ -1,5 +1,5 @@
 import styles from './Input.module.css';
-
+import './Input.module.css';
 import React from 'react';
 
 
@@ -12,16 +12,23 @@ interface InputProps {
     type?: string,
 }
 
-export default function Input({ id, labelText, className, value, aoDigitado, type = 'text' } : InputProps) {
+export default function Input({ id, labelText, className, value, aoDigitado, type = 'text' }: InputProps) {
 
     const aoAlterado = (evento: React.ChangeEvent<HTMLInputElement>) => {
-       aoDigitado(evento.target.value);
+        aoDigitado(evento.target.value);
     }
 
+    // const setLabelDecorationWhenInputHasValue = (value: string) => {
+        let labelClass = '';
+        value 
+            ? labelClass = styles.input_has_value
+            : labelClass = '';
+    // }
+
     return (
-        <b className= {`${styles.label_relative} ${className}`}>
-            <input key={1} type={type} id={id} value={value} onChange={aoAlterado}/>
-            <label htmlFor={id}> {labelText} </label> 
+        <b className={`${styles.label_relative} ${className}`}>
+            <input type={type} id={id} value={value} onChange={aoAlterado} />
+            <label className={labelClass} htmlFor={id}> {labelText} </label>
         </b>
     )
 };
