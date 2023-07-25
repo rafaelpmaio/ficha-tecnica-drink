@@ -4,7 +4,7 @@ import IngredientsCard from "../components/IngredientsCard";
 import styles from './DrinkSetupPage.module.css';
 import PreparationCard from "../components/PreparationCard";
 import drinksList from '../shared/records/Drinks.json';
-import FormButton from "../components/FormButton";
+import ButtonSubmit from "../components/ButtonSubmit";
 import { IDrink } from "../shared/interfaces/IDrink";
 import { IIngredient } from "../shared/interfaces/IIngredient";
 import DrinkPhoto from "../components/DrinkPhoto";
@@ -64,7 +64,7 @@ export default function PaginaInicial() {
                         <DrinkPhoto />
                     </div>
                 </main>
-                <FormButton />
+                <ButtonSubmit buttonValue="Salvar Drink"/>
             </form>
         </>
     )

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "collectionName": "Evento verão",
+        "collectionName": "Evento Verão",
         "collectionImage": "react props not working in src image",
         "IDrinksList": [
             {
@@ -85,7 +85,7 @@
     },
     {
         "id": 1,
-        "collectionName": "Evento inverno",
+        "collectionName": "Summit",
         "collectionImage": "../../assets/images/drink-logo.png",
         "IDrinksList": [
             {

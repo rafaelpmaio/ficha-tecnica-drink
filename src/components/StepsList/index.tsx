@@ -5,7 +5,7 @@ import Input from '../Input';
 import Button from '../Button';
 import { IStep } from '../../shared/interfaces/IStep';
 import createStep from './createStep';
-import DeleteButton from '../DeleteButton';
+import DeleteButton from '../ButtonDelete';
 
 interface StepsListProps {
     stepsList: IStep[],

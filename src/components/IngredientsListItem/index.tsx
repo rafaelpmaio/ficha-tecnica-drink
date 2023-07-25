@@ -1,6 +1,6 @@
 import React from "react";
 import { IIngredient } from "../../shared/interfaces/IIngredient";
-import DeleteButton from "../DeleteButton";
+import DeleteButton from "../ButtonDelete";
 import styles from '../IngredientsCard/IngredientsCard.module.css';
 
 interface IngredientListItemProps {

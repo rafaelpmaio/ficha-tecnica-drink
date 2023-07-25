@@ -1,4 +1,4 @@
-import styles from './DeleteButton.module.css';
+import styles from './ButtonDelete.module.css';
 import React from 'react';
 import handleDeleteItem from './handleDeleteItem';
 
