@@ -1,5 +1,5 @@
 import styles from './DrinkPhoto.module.css'
-import pageStyles from '../../pages/PaginaInicial.module.css'
+import pageStyles from '../../pages/DrinkSetupPage.module.css'
 
 import React from 'react';
 import logo from './drink-logo.png';

@@ -1,5 +1,5 @@
-import styles from './Header.module.css';
-import pageStyle from '../../pages/PaginaInicial.module.css'
+import styles from './DrinkHeader.module.css';
+import pageStyle from '../../pages/DrinkSetupPage.module.css'
 
 import React from "react";
 import CostDisplay from "../CostDisplay";

@@ -18,23 +18,3 @@
 .input_button_align :first-child{
     flex-grow: 1 ;
 }
-
-h1 {
-    font-family: var(--fonte-bold);
-    font-size: 4em;
-    color: var(--rosa);
-    margin-right: 1em;
-}
-
-h2 {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 2em;
-    margin-bottom: 2em;
-}
-
-h3 {
-    color: var(--roxo);
-    text-transform: uppercase;
-    margin-bottom: 1.5em;
-}

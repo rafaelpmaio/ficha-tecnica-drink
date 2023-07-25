@@ -1,0 +1,13 @@
+@import url('../../styles/_variaveis.css');
+
+.collection_display {
+    display: block;
+    text-align: center;
+    box-shadow: 0px 0px 20px var(--rosa);
+    width: 80%;
+    margin: 1.5em;
+}
+
+.collection_img {
+    width: 100%;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
+import Header from "../components/DrinkHeader";
 import IngredientsCard from "../components/IngredientsCard";
-import styles from './PaginaInicial.module.css';
+import styles from './DrinkSetupPage.module.css';
 import PreparationCard from "../components/PreparationCard";
 import drinksList from '../shared/records/Drinks.json';
 import FormButton from "../components/FormButton";

@@ -1,5 +1,5 @@
 import styles from './StepsList.module.css';
-import pageStyles from '../../pages/PaginaInicial.module.css'
+import pageStyles from '../../pages/DrinkSetupPage.module.css'
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
