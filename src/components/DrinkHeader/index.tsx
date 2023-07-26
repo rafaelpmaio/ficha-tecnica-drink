@@ -1,9 +1,8 @@
 import styles from './DrinkHeader.module.css';
-import pageStyle from '../../pages/DrinkSetupPage.module.css'
-
+import pageStyle from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React from "react";
 import CostDisplay from "../CostDisplay";
-import { IIngredient } from "../../shared/interfaces/IIngredient";
+import { IIngredient } from "shared/interfaces/IIngredient";
 import DrinkName from "../DrinkName";
 import HeaderImage from "../HeaderImage";
 
@@ -15,7 +14,7 @@ interface HeaderProps {
     setPrecoVenda: (preco: string) => void
 }
 
-export default function Header({listaIngredientes, drinkName, setDrinkName, precoVenda, setPrecoVenda}: HeaderProps) {
+export default function DrinkHeader({listaIngredientes, drinkName, setDrinkName, precoVenda, setPrecoVenda}: HeaderProps) {
 
     return (
         <header className={`${pageStyle.card} ${styles.cabecalho}`}>

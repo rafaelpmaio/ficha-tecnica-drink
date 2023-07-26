@@ -1,10 +1,9 @@
-import pageStyles from '../../pages/DrinkSetupPage.module.css'
+import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 
 import React, { useState } from "react";
 import IngredientsList from "../IngredientsList";
 import { IIngredient } from "../../shared/interfaces/IIngredient";
 import IngredientInputs from "../IngredientInputs";
-
 
 interface IngredientsCardProps {
     ingredientsList: IIngredient[],

@@ -1,4 +1,4 @@
-import pageStyles from '../../pages/DrinkSetupPage.module.css';
+import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 
 import React, { useState } from 'react';
 import Input from '../Input';

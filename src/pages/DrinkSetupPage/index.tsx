@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import Header from "../components/DrinkHeader";
-import IngredientsCard from "../components/IngredientsCard";
+import Header from "components/DrinkHeader";
+import IngredientsCard from "components/IngredientsCard";
 import styles from './DrinkSetupPage.module.css';
-import PreparationCard from "../components/PreparationCard";
-import drinksList from '../shared/records/Drinks.json';
-import ButtonSubmit from "../components/ButtonSubmit";
-import { IDrink } from "../shared/interfaces/IDrink";
-import { IIngredient } from "../shared/interfaces/IIngredient";
-import DrinkPhoto from "../components/DrinkPhoto";
-import calculateCostPrice from "../components/CostDisplay/calculateCostPrice";
-import calculateCostPercentage from "../components/CostDisplay/calculateCostPercentage";
-import { IStep } from "../shared/interfaces/IStep";
+import PreparationCard from "components/PreparationCard";
+import drinksList from 'shared/records/Drinks.json';
+import ButtonSubmit from "components/ButtonSubmit";
+import { IDrink } from "shared/interfaces/IDrink";
+import { IIngredient } from "shared/interfaces/IIngredient";
+import DrinkPhoto from "components/DrinkPhoto";
+import calculateCostPrice from "components/CostDisplay/calculateCostPrice";
+import calculateCostPercentage from "components/CostDisplay/calculateCostPercentage";
+import { IStep } from "shared/interfaces/IStep";
 
 export default function PaginaInicial() {
 

@@ -3,7 +3,7 @@ import CollectionDisplay from "../CollectionDisplay";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { IDrinksCollection } from "../../shared/interfaces/IDrinksCollection";
+import { IDrinksCollection } from "shared/interfaces/IDrinksCollection";
 
 interface SwiperDrinksCollectionProps {
     DrinksCollection: IDrinksCollection[]

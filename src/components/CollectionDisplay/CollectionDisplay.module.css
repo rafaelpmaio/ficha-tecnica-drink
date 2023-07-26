@@ -7,7 +7,11 @@
     width: 80%;
     height: 18em;
     margin: 1.5em;
-    box-shadow: 0px 0px 20px var(--rosa);
+    box-shadow: 0px 0px 20px var(--roxo);
+}
+
+.collection_display:hover {
+    box-shadow: 0px 0px 30px var(--rosa);
 }
 
 .collection_img {

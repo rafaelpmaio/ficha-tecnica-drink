@@ -1,10 +1,10 @@
 import styles from './Preparation.module.css';
-import pageStyles from '../../pages/DrinkSetupPage.module.css'
+import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import Garnish from '../Garnish';
 import Glassware from '../Glassware';
 import StepsList from '../StepsList';
 import React from 'react';
-import { IStep } from '../../shared/interfaces/IStep';
+import { IStep } from 'shared/interfaces/IStep';
 
 interface PreparationCardProps {
     stepsList: IStep[],

@@ -3,7 +3,6 @@ import './Input.module.css';
 import React from 'react';
 import setLabelDecorationWhenInputHasValue from './setLabelDecorationWhenInputHasValue';
 
-
 interface InputProps {
     aoDigitado: (value: string) => void
     id: string,

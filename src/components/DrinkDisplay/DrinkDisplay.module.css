@@ -1,0 +1,10 @@
+@import url('styles/_variaveis.css');
+
+.drinkDisplay {
+    max-width: 20%;
+    text-align: center;
+}
+
+.drinkDisplay:hover {
+    box-shadow: 0 0 40px var(--rosa);
+}

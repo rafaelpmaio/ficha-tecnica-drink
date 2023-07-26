@@ -8,7 +8,7 @@ interface removeItemProps<T> {
     setList: (array: T[]) => void
 }
 
-export default function DeleteButton <T extends { id: number }>({ itemId, list, setList }: removeItemProps<T>) {
+export default function ButtonDelete <T extends { id: number }>({ itemId, list, setList }: removeItemProps<T>) {
     return (
         <input 
             className={styles.delete_btn} 

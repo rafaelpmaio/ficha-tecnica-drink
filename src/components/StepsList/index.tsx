@@ -1,9 +1,9 @@
 import styles from './StepsList.module.css';
-import pageStyles from '../../pages/DrinkSetupPage.module.css'
+import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
-import { IStep } from '../../shared/interfaces/IStep';
+import { IStep } from 'shared/interfaces/IStep';
 import createStep from './createStep';
 import DeleteButton from '../ButtonDelete';
 

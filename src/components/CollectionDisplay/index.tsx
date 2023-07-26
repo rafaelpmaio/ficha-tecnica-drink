@@ -1,6 +1,7 @@
-import React from "react";
-import pageStyles from '../../pages/Home.module.css';
 import styles from './CollectionDisplay.module.css';
+import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
+import React from "react";
+import { Link } from "react-router-dom";
 
 
 interface CollectionDisplayProps {
@@ -8,15 +9,19 @@ interface CollectionDisplayProps {
     collectionImg: string
 }
 
-export default function CollectionDisplay( { collectionName, collectionImg } : CollectionDisplayProps) {
+export default function CollectionDisplay({ collectionName, collectionImg }: CollectionDisplayProps) {
+    let collectionNameWithoutSpecialChars = collectionName.replace(/[^\w]/g, '');
+
     return (
-        <div className={`${pageStyles.card} ${styles.collection_display}`}>
-            <img 
-                className={styles.collection_img} 
-                src={require('../../assets/images/drink-logo.png')} 
-                alt={`image from collection ${collectionImg}`} 
-            />
-            <h2>{collectionName}</h2>
-        </div>
+        <Link to={`/collection/${collectionNameWithoutSpecialChars}`}>
+            <div className={`${pageStyles.card} ${styles.collection_display}`}>
+                <img
+                    className={styles.collection_img}
+                    src={require(`assets/images/drink-logo.png`)}
+                    alt={`image from collection ${collectionImg}`}
+                />
+                <h2>{collectionName}</h2>
+            </div>
+        </Link>
     )
 };

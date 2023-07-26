@@ -1,9 +1,8 @@
-import pageStyles from '../../pages/DrinkSetupPage.module.css';
-
+import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
-import { IIngredient } from '../../shared/interfaces/IIngredient';
+import { IIngredient } from 'shared/interfaces/IIngredient';
 import calculateCostPrice from './calculateCostPrice';
 import calculateCostPercentage from './calculateCostPercentage';
 

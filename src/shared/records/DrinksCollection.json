@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "collectionName": "Evento Verão",
-        "collectionImage": "react props not working in src image",
+        "collectionName": "Summer Collection",
+        "collectionImage": "",
         "IDrinksList": [
             {
                 "id": 1,
@@ -13,494 +13,440 @@
                         "quantidade": 50,
                         "medida": "ml",
                         "ingrediente": "Tequila Prata",
-                        "custo": 12
+                        "custo": 8
                     },
                     {
                         "id": 2,
-                        "quantidade": 20,
+                        "quantidade": 30,
+                        "medida": "ml",
+                        "ingrediente": "Sumo de Limão",
+                        "custo": 0
+                    },
+                    {
+                        "id": 3,
+                        "quantidade": 30,
                         "medida": "ml",
                         "ingrediente": "Cointreau",
-                        "custo": 8
+                        "custo": 2.75
+                    },
+                    {
+                        "id": 4,
+                        "quantidade": 20,
+                        "medida": "ml",
+                        "ingrediente": "Xarope simples",
+                        "custo": 1.20
                     }
                 ],
                 "steps": [
                     {
                         "id": 1,
-                        "stepDescription": "Primeiro Passo"
+                        "stepDescription": "Crustar o copo On the Rocks com o sal vermelho e adicionar gelo"
                     },
                     {
                         "id": 2,
-                        "stepDescription": "Segundo Passo"
+                        "stepDescription": "Adicionar os ingredientes na parte pequena da coqueteleira"
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Colocar uma pá de gelo na parte grande da coqueteleira e bater"
+                    },
+                    {
+                        "id": 4,
+                        "stepDescription": "Efetuar coagem simples para o copo On the Rocks"
                     }
                 ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
+                "garnish": "N/A",
+                "glassware": "On The Rocks",
+                "confectionCost": 11.95,
+                "sellPrice": 45,
+                "costPercentage": 26.5
             },
             {
-                "id": 1,
-                "name": "Margarita",
+                "id": 2,
+                "name": "Caipirinha",
                 "ingredients": [
                     {
                         "id": 1,
                         "quantidade": 50,
                         "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
+                        "ingrediente": "Cachaça",
+                        "custo": 1.60
                     },
                     {
                         "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
+                        "quantidade": 1,
+                        "medida": "un",
+                        "ingrediente": "Limão Tahiti",
+                        "custo": 0
                     },
                     {
                         "id": 3,
-                        "quantidade": 20,
+                        "quantidade": 15,
                         "medida": "ml",
-                        "ingrediente": "Suco de limão-taiti",
-                        "custo": 2
+                        "ingrediente": "Xarope Simples",
+                        "custo": 1.50
                     }
                 ],
                 "steps": [
                     {
                         "id": 1,
-                        "stepDescription": "Primeiro Passo"
+                        "stepDescription": "Colocar o limão e o açúcar na parte pequena da coqueteleira e macerar"
                     },
                     {
                         "id": 2,
-                        "stepDescription": "Segundo Passo"
+                        "stepDescription": "Adicionar a cachaça e gelo na coqueteleira e bater bem"
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Passar para o copo Y e finalizar com uma rodela de limão"
                     }
                 ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
+                "garnish": "Rodela de limão",
+                "glassware": "Copo Y",
+                "confectionCost": 3.10,
+                "sellPrice": 39,
+                "costPercentage": 7.94
+            },
+            {
+                "id": 3,
+                "name": "Gin Tonic",
+                "ingredients": [
+                    {
+                        "id": 1,
+                        "quantidade": 50,
+                        "medida": "ml",
+                        "ingrediente": "Gin",
+                        "custo": 6.3
+                    },
+                    {
+                        "id": 2,
+                        "quantidade": 200,
+                        "medida": "ml",
+                        "ingrediente": "Tônica",
+                        "custo": 2.80
+                    },
+                    {
+                        "id": 3,
+                        "quantidade": 1,
+                        "medida": "un",
+                        "ingrediente": "Rodela Limão Siciliano",
+                        "custo": 0
+                    },
+                    {
+                        "id": 4,
+                        "quantidade": 1,
+                        "medida": "un",
+                        "ingrediente": "Ramo Alecrim",
+                        "custo": 0
+                    }
+                    
+                ],
+                "steps": [
+                    {
+                        "id": 1,
+                        "stepDescription": "Adicionar gelo até encher a taça"
+                    },
+                    {
+                        "id": 2,
+                        "stepDescription": "Adicionar o gin e completar com tônica "
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Colocar rodela de limão siciliano e Ramo de Alecrim mexer levemente com a bailarina"
+                    }
+                ],
+                "garnish": "Flor de Hibiscus",
+                "glassware": "Taça de Gin",
+                "confectionCost": 9.10,
+                "sellPrice": 45,
+                "costPercentage": 20.22
+            },
+            {
+                "id": 4,
+                "name": "Aperol Spritz",
+                "ingredients": [
+                    {
+                        "id": 1,
+                        "quantidade": 70,
+                        "medida": "ml",
+                        "ingrediente": "Aperol",
+                        "custo": 3.75
+                    },
+                    {
+                        "id": 2,
+                        "quantidade": 30,
+                        "medida": "ml",
+                        "ingrediente": "Água com Gás",
+                        "custo": 0.20
+                    },
+                    {
+                        "id": 3,
+                        "quantidade": 100,
+                        "medida": "ml",
+                        "ingrediente": "Espumante Brut",
+                        "custo": 12.75
+                    }
+                ],
+                "steps": [
+                    {
+                        "id": 1,
+                        "stepDescription": "Adicionar gelo até encher a taça"
+                    },
+                    {
+                        "id": 2,
+                        "stepDescription": "Adicionar o Aperol, água e completar com espumante "
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Mexer o drink com a bailarina e finalizar com a rodela de laranja "
+                    }
+                ],
+                "garnish": "Rodela de Limão",
+                "glassware": "Taça de Gin",
+                "confectionCost": 16.70,
+                "sellPrice": 44,
+                "costPercentage": 37.95
+            },
+            {
+                "id": 5,
+                "name": "Mojito",
+                "ingredients": [
+                    {
+                        "id": 1,
+                        "quantidade": 50,
+                        "medida": "ml",
+                        "ingrediente": "Rum Prata",
+                        "custo": 4.56
+                    },
+                    {
+                        "id": 2,
+                        "quantidade": 20,
+                        "medida": "ml",
+                        "ingrediente": "Xarope Simples",
+                        "custo": 0.20
+                    },
+                    {
+                        "id": 3,
+                        "quantidade": 30,
+                        "medida": "ml",
+                        "ingrediente": "Sumo de Limão",
+                        "custo": 0
+                    },
+                    {
+                        "id": 4,
+                        "quantidade": 120,
+                        "medida": "ml",
+                        "ingrediente": "Água com Gás",
+                        "custo": 2.50
+                    },
+                    {
+                        "id": 5,
+                        "quantidade": 12,
+                        "medida": "un",
+                        "ingrediente": "Folha de Hortelã",
+                        "custo": 0
+                    }
+                ],
+                "steps": [
+                    {
+                        "id": 1,
+                        "stepDescription": "Pegar as folhas de hortelã e bater para soltar o aroma"
+                    },
+                    {
+                        "id": 2,
+                        "stepDescription": "Colocar as folhas de hortelã no copo e adicionar o xarope e o suco de limão"
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Adicionar gelo até encher o copo"
+                    },
+                    {
+                        "id": 4,
+                        "stepDescription": "Adicionar rum e completar com água com gás"
+                    },
+                    {
+                        "id": 5,
+                        "stepDescription": "Mexer levemente com a bailarina para subir as folhas do fundo do copo"
+                    },
+                    {
+                        "id": 6,
+                        "stepDescription": "Finalizar com ramo de hortelã"
+                    }
+                ],
+                "garnish": "Ramo de Hortelã",
+                "glassware": "Long drink",
+                "confectionCost": 7.26,
+                "sellPrice": 35,
+                "costPercentage": 20.74
             }
         ]
     },
     {
-        "id": 1,
-        "collectionName": "Summit",
-        "collectionImage": "../../assets/images/drink-logo.png",
+        "id": 2,
+        "collectionName": "Business Hour",
+        "collectionImage": "",
         "IDrinksList": [
             {
                 "id": 1,
-                "name": "Margarita",
+                "name": "Negroni",
                 "ingredients": [
                     {
                         "id": 1,
-                        "quantidade": 50,
+                        "quantidade": 30,
                         "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
+                        "ingrediente": "Gin",
+                        "custo": 3.80
                     },
                     {
                         "id": 2,
-                        "quantidade": 20,
+                        "quantidade": 30,
                         "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
+                        "ingrediente": "Campari",
+                        "custo": 1.20
+                    },
+                    {
+                        "id": 3,
+                        "quantidade": 30,
+                        "medida": "ml",
+                        "ingrediente": "Vermouth Rosso",
+                        "custo": 0.78
                     }
                 ],
                 "steps": [
                     {
                         "id": 1,
-                        "stepDescription": "Primeiro Passo"
+                        "stepDescription": "Adicionar ingredientes e gelo no mixing glass "
                     },
                     {
                         "id": 2,
-                        "stepDescription": "Segundo Passo"
+                        "stepDescription": "Mexer por 20 segundos "
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Coar com strainer para o copo On the Rocks com gelo"
+                    },
+                    {
+                        "id": 2,
+                        "stepDescription": " Finalizar com zest da casca da laranja"
                     }
                 ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
+                "garnish": "Zest da Casca de Laranja",
+                "glassware": "On The Rocks",
+                "confectionCost": 5.78,
+                "sellPrice": 45,
+                "costPercentage": 12.84
             },
             {
-                "id": 1,
-                "name": "Margarita",
+                "id": 2,
+                "name": "Old Fashioned",
                 "ingredients": [
                     {
                         "id": 1,
                         "quantidade": 50,
                         "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
+                        "ingrediente": "Bourbon",
+                        "custo": 5.68
                     },
                     {
                         "id": 2,
-                        "quantidade": 20,
+                        "quantidade": 3,
+                        "medida": "dashes",
+                        "ingrediente": "Angostura",
+                        "custo": 0.60
+                    },
+                    {
+                        "id": 3,
+                        "quantidade": 10,
                         "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
+                        "ingrediente": "Xarope Simples",
+                        "custo": 1.20
+                    }
+                ],
+                "steps": [
+                    {
+                        "id": 1,
+                        "stepDescription": "Adicionar açúcar e angostura e bourbon ao mixing glass"
+                    },
+                    {
+                        "id": 2,
+                        "stepDescription": "Adicionar gelo e mexer por 30 segundos"
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Coagem simples para um copo On the Rocks com gelo"
+                    }
+                ],
+                "garnish": "Zest de Casca de Laranja",
+                "glassware": "On The Rocks",
+                "confectionCost": 7.48,
+                "sellPrice": 45,
+                "costPercentage": 16.62
+            },
+            {
+                "id": 3,
+                "name": "Moscow Mule",
+                "ingredients": [
+                    {
+                        "id": 1,
+                        "quantidade": 50,
+                        "medida": "ml",
+                        "ingrediente": "Vodka",
+                        "custo": 2.30
+                    },
+                    {
+                        "id": 2,
+                        "quantidade": 10,
+                        "medida": "ml",
+                        "ingrediente": "Espuma de Gengibre",
+                        "custo": 0.60
                     },
                     {
                         "id": 3,
                         "quantidade": 20,
                         "medida": "ml",
-                        "ingrediente": "Suco de limão-taiti",
-                        "custo": 2
+                        "ingrediente": "Xarope Simples",
+                        "custo": 1.20
+                    },
+                    {
+                        "id": 4,
+                        "quantidade": 20,
+                        "medida": "ml",
+                        "ingrediente": "Sumo de Limão",
+                        "custo": 0
                     }
                 ],
                 "steps": [
                     {
                         "id": 1,
-                        "stepDescription": "Primeiro Passo"
+                        "stepDescription": "Adicionar açúcar e angostura e bourbon ao mixing glass"
                     },
                     {
                         "id": 2,
-                        "stepDescription": "Segundo Passo"
+                        "stepDescription": "Adicionar gelo e mexer por 30 segundos"
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Coagem simples para um copo On the Rocks com gelo"
                     }
                 ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
+                "garnish": "Rodela de limão desidratado",
+                "glassware": "Caneca de Cobre",
+                "confectionCost": 4.10,
+                "sellPrice": 45,
+                "costPercentage": 9.11
             }
         ]
     },
     {
-        "id": 1,
-        "collectionName": "Mês das Mães",
-        "collectionImage": "../../assets/images/drink-logo.png",
-        "IDrinksList": [
-            {
-                "id": 1,
-                "name": "Margarita",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Primeiro Passo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Segundo Passo"
-                    }
-                ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
-            },
-            {
-                "id": 1,
-                "name": "Margarita",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
-                    },
-                    {
-                        "id": 3,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Suco de limão-taiti",
-                        "custo": 2
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Primeiro Passo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Segundo Passo"
-                    }
-                ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
-            }
-        ]
+        "id": 3,
+        "collectionName": "Festival Agave",
+        "collectionImage": "",
+        "IDrinksList": []
     },
     {
-        "id": 1,
-        "collectionName": "Teste1",
-        "collectionImage": "../../assets/images/drink-logo.png",
-        "IDrinksList": [
-            {
-                "id": 1,
-                "name": "Margarita",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Primeiro Passo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Segundo Passo"
-                    }
-                ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
-            },
-            {
-                "id": 1,
-                "name": "Margarita",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
-                    },
-                    {
-                        "id": 3,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Suco de limão-taiti",
-                        "custo": 2
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Primeiro Passo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Segundo Passo"
-                    }
-                ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
-            }
-        ]
-    },
-    {
-        "id": 1,
-        "collectionName": "Teste1",
-        "collectionImage": "../../assets/images/drink-logo.png",
-        "IDrinksList": [
-            {
-                "id": 1,
-                "name": "Margarita",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Primeiro Passo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Segundo Passo"
-                    }
-                ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
-            },
-            {
-                "id": 1,
-                "name": "Margarita",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
-                    },
-                    {
-                        "id": 3,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Suco de limão-taiti",
-                        "custo": 2
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Primeiro Passo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Segundo Passo"
-                    }
-                ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
-            }
-        ]
-    },
-    {
-        "id": 1,
-        "collectionName": "Teste1",
-        "collectionImage": "../../assets/images/drink-logo.png",
-        "IDrinksList": [
-            {
-                "id": 1,
-                "name": "Margarita",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Primeiro Passo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Segundo Passo"
-                    }
-                ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
-            },
-            {
-                "id": 1,
-                "name": "Margarita",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 12
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 8
-                    },
-                    {
-                        "id": 3,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Suco de limão-taiti",
-                        "custo": 2
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Primeiro Passo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Segundo Passo"
-                    }
-                ],
-                "garnish": "crosta de sal",
-                "glassware": "taça de vidro",
-                "confectionCost": 22,
-                "sellPrice": 55,
-                "costPercentage": 40
-            }
-        ]
+        "id": 3,
+        "collectionName": "Festival Agave",
+        "collectionImage": "",
+        "IDrinksList": []
     }
 ]

@@ -1,0 +1,11 @@
+@import url('styles/_variaveis.css');
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    padding: 1em;
+    font-size: 1em;
+    margin: 0.5em 2em;
+    border-radius: 20px;
+    background-color: var(--cor-do-texto);
+}

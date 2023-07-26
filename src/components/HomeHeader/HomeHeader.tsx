@@ -1,6 +1,5 @@
-import React from "react";
-import pageStyles from '../../pages/Home.module.css'
 import styles from './HomeHeader.module.css'
+import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 import collectionPhoto from './drink-logo.png'
 
 export default function HomeHeader() {
