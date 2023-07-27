@@ -6,14 +6,15 @@ import { Link } from "react-router-dom";
 
 interface CollectionDisplayProps {
     collectionName: string,
-    collectionImg: string
+    collectionImg: string,
+    collectionId: number
 }
 
-export default function CollectionDisplay({ collectionName, collectionImg }: CollectionDisplayProps) {
+export default function CollectionDisplay({ collectionName, collectionImg, collectionId }: CollectionDisplayProps) {
     let collectionNameWithoutSpecialChars = collectionName.replace(/[^\w]/g, '');
 
     return (
-        <Link to={`/collection/${collectionNameWithoutSpecialChars}`}>
+        <Link to={`/collection/${collectionId}#${collectionNameWithoutSpecialChars}`}>
             <div className={`${pageStyles.card} ${styles.collection_display}`}>
                 <img
                     className={styles.collection_img}

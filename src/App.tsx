@@ -13,10 +13,10 @@ function App() {
       <Menu />
       <Routes>
         <Route path='/' element={<CollectionHeader />}>
-          <Route path="/" element={<Home />} />
-          <Route path='/collection/:id' element={<CollectionPage drinksCollection={drinksCollectionJson[1]}/>} />
+          <Route index element={<Home />} />
+          <Route path='collection/:id' element={<CollectionPage drinksCollections={drinksCollectionJson}/>} />
         </Route>
-        <Route path="/drink" element={<DrinkSetupPage />} /> /*futuro erro 404*/
+        <Route path="drink" element={<DrinkSetupPage />} /> /*futuro erro 404*/
         {/* <Route path="*" element={ } /> futuro erro 404  */}
       </Routes>
     </BrowserRouter>

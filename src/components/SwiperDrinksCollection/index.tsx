@@ -25,6 +25,7 @@ export default function SwiperDrinksCollection({ DrinksCollection }: SwiperDrink
                     <CollectionDisplay
                         collectionName={drinkCollection.collectionName}
                         collectionImg={drinkCollection.collectionImage}
+                        collectionId={drinkCollection.id}
                     />
                 </SwiperSlide>)
             }
