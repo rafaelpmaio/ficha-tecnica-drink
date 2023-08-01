@@ -17,8 +17,18 @@ export default function SwiperDrinksCollection({ DrinksCollection }: SwiperDrink
             navigation
             className="mySwiper"
             pagination={{ clickable: true }}
-            slidesPerView={4}
             spaceBetween={30}
+            breakpoints={{
+                1150: {
+                    slidesPerView: 4
+                },
+                890: {
+                    slidesPerView: 3
+                },
+                700: {
+                    slidesPerView: 2
+                }
+            }}
         >
             {DrinksCollection.map(drinkCollection =>
                 <SwiperSlide>
