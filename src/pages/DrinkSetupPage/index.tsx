@@ -26,6 +26,7 @@ export default function PaginaInicial() {
     const newDrink: IDrink = {
         id:1,
         name: drinkName,
+        image:'',
         ingredients: ingredientsList,
         steps: stepsList,
         garnish: garnish,

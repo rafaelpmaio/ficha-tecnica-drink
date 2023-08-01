@@ -9,7 +9,7 @@ interface DrinkDisplayProps{
 export default function DrinkDisplay( {drinkImage, drinkName }: DrinkDisplayProps){
     return (
         <div className={`${pageStyles.card} ${styles.drinkDisplay}`}>
-            <img src={require('assets/images/drink-logo.png')} alt="" />
+            <img src={require(`assets/images/drinks/${drinkImage}`)} alt="" />
             <h2>{drinkName}</h2>
         </div>
     )

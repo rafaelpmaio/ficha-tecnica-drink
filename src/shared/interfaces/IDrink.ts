@@ -4,6 +4,7 @@ import { IStep } from "./IStep";
 export interface IDrink {
     id: number,
     name: string,
+    image: string,
     ingredients: IIngredient[],
     steps: IStep[],
     garnish: string,

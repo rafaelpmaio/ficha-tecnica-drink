@@ -20,7 +20,7 @@ export default function CollectionPage({ drinksCollections }: CollectionPageProp
         <>
             <section className={`${styles.collectionPage} ${pageStyles.card}`}>
                 {collection?.map(drink =>
-                    <DrinkDisplay drinkImage='assets/images/drink-logo.png' drinkName={drink.name} />)
+                    <DrinkDisplay drinkImage={drink.image} drinkName={drink.name} />)
                 }
             </section>
         </>

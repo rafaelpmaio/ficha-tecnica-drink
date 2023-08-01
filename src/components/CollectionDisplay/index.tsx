@@ -18,8 +18,8 @@ export default function CollectionDisplay({ collectionName, collectionImg, colle
             <div className={`${pageStyles.card} ${styles.collection_display}`}>
                 <img
                     className={styles.collection_img}
-                    src={require(`assets/images/drink-logo.png`)}
-                    alt={`image from collection ${collectionImg}`}
+                    src={require(`assets/images/collections/${collectionImg}`)}
+                    alt={`image from collection ${collectionName}`}
                 />
                 <h2>{collectionName}</h2>
             </div>

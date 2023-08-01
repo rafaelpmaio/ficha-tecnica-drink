@@ -1,12 +1,13 @@
 [
     {
         "id": 1,
-        "collectionName": "Summer Collection",
-        "collectionImage": "",
+        "collectionName": "Summer Season",
+        "collectionImage": "summer-collection.jpg",
         "IDrinksList": [
             {
                 "id": 1,
                 "name": "Margarita",
+                "image": "margarita.jpg",
                 "ingredients": [
                     {
                         "id": 1,
@@ -64,6 +65,7 @@
             {
                 "id": 2,
                 "name": "Caipirinha",
+                "image": "caipirinha.jpg",
                 "ingredients": [
                     {
                         "id": 1,
@@ -110,6 +112,7 @@
             {
                 "id": 3,
                 "name": "Gin Tonic",
+                "image": "gin-tonic.jpg",
                 "ingredients": [
                     {
                         "id": 1,
@@ -164,6 +167,7 @@
             {
                 "id": 4,
                 "name": "Aperol Spritz",
+                "image": "aperol-spritz.jpg",
                 "ingredients": [
                     {
                         "id": 1,
@@ -210,6 +214,7 @@
             {
                 "id": 5,
                 "name": "Mojito",
+                "image": "mojito.jpg",
                 "ingredients": [
                     {
                         "id": 1,
@@ -283,12 +288,13 @@
     },
     {
         "id": 2,
-        "collectionName": "Business Hour",
-        "collectionImage": "",
+        "collectionName": "Happy Hour",
+        "collectionImage": "happy-hour.jpg",
         "IDrinksList": [
             {
                 "id": 1,
                 "name": "Negroni",
+                "image": "negroni.jpg",
                 "ingredients": [
                     {
                         "id": 1,
@@ -339,6 +345,7 @@
             {
                 "id": 2,
                 "name": "Old Fashioned",
+                "image": "old-fashioned.jpg",
                 "ingredients": [
                     {
                         "id": 1,
@@ -385,6 +392,7 @@
             {
                 "id": 3,
                 "name": "Moscow Mule",
+                "image": "moscow-mule.jpg",
                 "ingredients": [
                     {
                         "id": 1,
@@ -439,14 +447,26 @@
     },
     {
         "id": 3,
-        "collectionName": "Festival Agave",
-        "collectionImage": "",
+        "collectionName": "Agave Festival",
+        "collectionImage": "agave-festival.jpg",
         "IDrinksList": []
     },
     {
         "id": 4,
-        "collectionName": "Festival Agave",
-        "collectionImage": "",
+        "collectionName": "Tropical",
+        "collectionImage": "tropical-collection.jpg",
+        "IDrinksList": []
+    },
+    {
+        "id": 5,
+        "collectionName": "Holidays",
+        "collectionImage": "holidays.jpg",
+        "IDrinksList": []
+    },
+    {
+        "id": 6,
+        "collectionName": "Women's Month",
+        "collectionImage": "womens-month.jpg",
         "IDrinksList": []
     }
 ]

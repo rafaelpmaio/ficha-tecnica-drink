@@ -1,8 +1,30 @@
 @import url('styles/_variaveis.css');
 
 .drinkDisplay {
-    max-width: 20%;
+    display: block;
     text-align: center;
+    width: 15em;
+    padding: 0;
+}
+
+.drinkDisplay img {
+    width: 100%;
+    height: 15em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+}
+
+.drinkDisplay h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: var(--azul-claro);
+    padding: 20px;
+    margin: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .drinkDisplay:hover {
