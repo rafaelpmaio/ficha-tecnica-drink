@@ -4,4 +4,9 @@
 
 .header_img {
     width: 20%;
+    border-radius: 20px;
+    height: 10em;
+    width: 16em;
+    object-fit: cover;
+    
 }
