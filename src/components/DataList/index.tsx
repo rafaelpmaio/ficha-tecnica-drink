@@ -1,4 +1,5 @@
 import Input from "components/Input"
+import { text } from "stream/consumers";
 
 interface DataListProps<T extends { id: number, name: string }> {
     arr: T[],
@@ -10,6 +11,12 @@ interface DataListProps<T extends { id: number, name: string }> {
 export default function DataList<T extends { id: number, name: string }>(
     { arr, value, copyId, setValue }: DataListProps<T>) {
 
+    const handleOnChange = (value: string) => {
+        setValue(value);
+        let itemId = value.substring(0, value.indexOf('.'));
+        copyId(Number.parseInt(itemId));
+    }
+
     return (
         <>
             <Input
@@ -17,13 +24,12 @@ export default function DataList<T extends { id: number, name: string }>(
                 id="collections"
                 labelText="Collections"
                 value={value}
-                onChange={valor => setValue(valor)}
+                onChange={handleOnChange}
             />
-            <datalist id="collections-list">
+            <datalist id="collections-list" onClick={() => copyId(3)}>
                 {arr.map(item => <option
                     key={item.id}
-                    value={item.name}
-                    onClick={() => copyId(1)}
+                    value={`${item.id}. ${item.name}`}
                 />)}
             </datalist>
         </>

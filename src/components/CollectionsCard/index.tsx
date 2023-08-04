@@ -12,7 +12,6 @@ export default function CollectionsCard({ DrinksCollection }: CollectionCardProp
     return (
 
         <section className={`${pageStyles.card} ${styles.collections_card}`}>
-
             {DrinksCollection
                 ? <SwiperDrinksCollection DrinksCollection={DrinksCollection}/>
                 : <Link to='/drink'>

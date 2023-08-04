@@ -3,68 +3,10 @@
         "id": 1,
         "name": "Summer Season",
         "image": "summer-collection.webp",
-        "description": "Valid from December to March of 2023" ,
+        "description": "Valid from December to March of 2023",
         "IDrinksList": [
             {
                 "id": 1,
-                "name": "Margarita",
-                "image": "margarita.webp",
-                "ingredients": [
-                    {
-                        "id": 1,
-                        "quantidade": 50,
-                        "medida": "ml",
-                        "ingrediente": "Tequila Prata",
-                        "custo": 8
-                    },
-                    {
-                        "id": 2,
-                        "quantidade": 30,
-                        "medida": "ml",
-                        "ingrediente": "Sumo de Limão",
-                        "custo": 0
-                    },
-                    {
-                        "id": 3,
-                        "quantidade": 30,
-                        "medida": "ml",
-                        "ingrediente": "Cointreau",
-                        "custo": 2.75
-                    },
-                    {
-                        "id": 4,
-                        "quantidade": 20,
-                        "medida": "ml",
-                        "ingrediente": "Xarope simples",
-                        "custo": 1.20
-                    }
-                ],
-                "steps": [
-                    {
-                        "id": 1,
-                        "stepDescription": "Crustar o copo On the Rocks com o sal vermelho e adicionar gelo"
-                    },
-                    {
-                        "id": 2,
-                        "stepDescription": "Adicionar os ingredientes na parte pequena da coqueteleira"
-                    },
-                    {
-                        "id": 3,
-                        "stepDescription": "Colocar uma pá de gelo na parte grande da coqueteleira e bater"
-                    },
-                    {
-                        "id": 4,
-                        "stepDescription": "Efetuar coagem simples para o copo On the Rocks"
-                    }
-                ],
-                "garnish": "N/A",
-                "glassware": "On The Rocks",
-                "confectionCost": 11.95,
-                "sellPrice": 45,
-                "costPercentage": 26.5
-            },
-            {
-                "id": 2,
                 "name": "Caipirinha",
                 "image": "caipirinha.webp",
                 "ingredients": [
@@ -111,7 +53,7 @@
                 "costPercentage": 7.94
             },
             {
-                "id": 3,
+                "id": 2,
                 "name": "Gin Tonic",
                 "image": "gin-tonic.webp",
                 "ingredients": [
@@ -143,7 +85,6 @@
                         "ingrediente": "Ramo Alecrim",
                         "custo": 0
                     }
-                    
                 ],
                 "steps": [
                     {
@@ -166,7 +107,7 @@
                 "costPercentage": 20.22
             },
             {
-                "id": 4,
+                "id": 3,
                 "name": "Aperol Spritz",
                 "image": "aperol-spritz.webp",
                 "ingredients": [
@@ -213,7 +154,7 @@
                 "costPercentage": 37.95
             },
             {
-                "id": 5,
+                "id": 4,
                 "name": "Mojito",
                 "image": "mojito.webp",
                 "ingredients": [
@@ -284,6 +225,64 @@
                 "confectionCost": 7.26,
                 "sellPrice": 35,
                 "costPercentage": 20.74
+            },
+            {
+                "id": 5,
+                "name": "Margarita",
+                "image": "margarita.webp",
+                "ingredients": [
+                    {
+                        "id": 1,
+                        "quantidade": 50,
+                        "medida": "ml",
+                        "ingrediente": "Tequila Prata",
+                        "custo": 8
+                    },
+                    {
+                        "id": 2,
+                        "quantidade": 30,
+                        "medida": "ml",
+                        "ingrediente": "Sumo de Limão",
+                        "custo": 0
+                    },
+                    {
+                        "id": 3,
+                        "quantidade": 30,
+                        "medida": "ml",
+                        "ingrediente": "Cointreau",
+                        "custo": 2.75
+                    },
+                    {
+                        "id": 4,
+                        "quantidade": 20,
+                        "medida": "ml",
+                        "ingrediente": "Xarope simples",
+                        "custo": 1.20
+                    }
+                ],
+                "steps": [
+                    {
+                        "id": 1,
+                        "stepDescription": "Crustar o copo On the Rocks com o sal vermelho e adicionar gelo"
+                    },
+                    {
+                        "id": 2,
+                        "stepDescription": "Adicionar os ingredientes na parte pequena da coqueteleira"
+                    },
+                    {
+                        "id": 3,
+                        "stepDescription": "Colocar uma pá de gelo na parte grande da coqueteleira e bater"
+                    },
+                    {
+                        "id": 4,
+                        "stepDescription": "Efetuar coagem simples para o copo On the Rocks"
+                    }
+                ],
+                "garnish": "N/A",
+                "glassware": "On The Rocks",
+                "confectionCost": 11.95,
+                "sellPrice": 45,
+                "costPercentage": 26.5
             }
         ]
     },
@@ -450,7 +449,7 @@
         "id": 3,
         "name": "Agave Festival",
         "image": "agave-festival.webp",
-        "description": "Celebration of 'Dia de los Muertos'" ,
+        "description": "Celebration of 'Dia de los Muertos'",
         "IDrinksList": []
     },
     {

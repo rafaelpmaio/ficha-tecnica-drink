@@ -3,7 +3,7 @@ import pageStyle from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import CostDisplay from "../CostDisplay";
 import { IIngredient } from "shared/interfaces/IIngredient";
 import DrinkName from "../DrinkName";
-import HeaderCollection from "../HeaderCollection";
+import CollectionDatalist from "../CollectionDatalist";
 
 interface HeaderProps {
     listaIngredientes?: IIngredient[],
@@ -17,7 +17,7 @@ export default function DrinkHeader({ listaIngredientes, drinkName, setDrinkName
 
     return (
         <header className={`${pageStyle.card} ${styles.cabecalho}`}>
-            <HeaderCollection />
+            <CollectionDatalist />
             <DrinkName drinkName={drinkName} setDrinkName={setDrinkName} />
             <CostDisplay listaItens={listaIngredientes} precoVenda={precoVenda} setPrecoVenda={setPrecoVenda} />
         </header>

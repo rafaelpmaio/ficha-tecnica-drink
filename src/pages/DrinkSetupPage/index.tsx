@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "components/DrinkHeader";
+import DrinkHeader from "components/DrinkHeader";
 import IngredientsCard from "components/IngredientsCard";
 import styles from './DrinkSetupPage.module.css';
 import PreparationCard from "components/PreparationCard";
@@ -44,7 +44,7 @@ export default function DrinkSetupPage() {
     return (
         <>
             <form onSubmit={functionExecutedOnSubmit}>
-                <Header 
+                <DrinkHeader 
                     listaIngredientes={ingredientsList} 
                     drinkName={drinkName} 
                     setDrinkName={setDrinkName}

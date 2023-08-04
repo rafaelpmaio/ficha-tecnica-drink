@@ -9,6 +9,7 @@ import drinksCollectionJson from 'shared/records/DrinksCollection.json'
 import React, { useState } from 'react';
 import { IHeader } from 'shared/interfaces/IHeader';
 import drinkLogo from 'assets/images/drink-logo.png';
+import Footer from 'components/Footer';
 
 export const HeaderContext =
   React.createContext<[IHeader, React.Dispatch<React.SetStateAction<IHeader>>] | []>([]);
@@ -29,10 +30,11 @@ function App() {
             <Route index element={<Home />} />
             <Route path='collection/:id' element={<CollectionPage drinksCollections={drinksCollectionJson} />} />
           </Route>
-          <Route path="drink" element={<DrinkSetupPage/>} />
+          <Route path="drink" element={<DrinkSetupPage />} />
           {/* <Route path="*" element={ } /> futuro erro 404  */}
         </Routes>
       </HeaderContext.Provider>
+      <Footer />
     </BrowserRouter>
   );
 }

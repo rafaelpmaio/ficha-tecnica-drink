@@ -1,9 +1,9 @@
-import React from "react";
 import CollectionDisplay from "../CollectionDisplay";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import 'swiper/swiper-bundle.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IDrinksCollection } from "shared/interfaces/IDrinksCollection";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 
 interface SwiperDrinksCollectionProps {
     DrinksCollection: IDrinksCollection[]
@@ -12,10 +12,9 @@ interface SwiperDrinksCollectionProps {
 export default function SwiperDrinksCollection({ DrinksCollection }: SwiperDrinksCollectionProps) {
     return (
         <Swiper
-            freeMode
+            modules={[Navigation, Scrollbar, Pagination]}
             grabCursor
-            navigation
-            className="mySwiper"
+            scrollbar={{ draggable: true }}
             pagination={{ clickable: true }}
             spaceBetween={30}
             breakpoints={{
@@ -31,7 +30,7 @@ export default function SwiperDrinksCollection({ DrinksCollection }: SwiperDrink
             }}
         >
             {DrinksCollection.map(drinkCollection =>
-                <SwiperSlide>
+                <SwiperSlide key={drinkCollection.id}>
                     <CollectionDisplay
                         collectionName={drinkCollection.name}
                         collectionImg={drinkCollection.image}

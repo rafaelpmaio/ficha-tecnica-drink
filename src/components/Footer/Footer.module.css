@@ -1,0 +1,17 @@
+@import url('styles/_variaveis.css');
+
+footer {
+    background-color: var(--azul-escuro);
+    padding: 0.6em;
+    text-align: center;
+}
+
+.footer_adress {
+    margin: 0;
+    color: black;
+}
+
+.footer_logo {
+    height: 3em;
+    margin-right: 3em;
+}
