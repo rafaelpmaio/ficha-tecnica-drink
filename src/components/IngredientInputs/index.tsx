@@ -45,21 +45,21 @@ export default function IngredientInputs({ ingredientsList, setListaIngredientes
                     labelText='Quantidade'
                     type='number'
                     value={quantidade}
-                    aoDigitado={valor => setQuantidade(valor)}
+                    onChange={valor => setQuantidade(valor)}
                 />
                 <Input
                     id='medida'
                     className={styles.coluna_medida}
                     labelText='Medida'
                     value={medida}
-                    aoDigitado={valor => setMedida(valor)}
+                    onChange={valor => setMedida(valor)}
                 />
                 <Input
                     id='ingredientes'
                     className={styles.coluna_ingrediente}
                     labelText='Ingrediente'
                     value={ingrediente}
-                    aoDigitado={valor => setIngrediente(valor)}
+                    onChange={valor => setIngrediente(valor)}
                 />
                 <Input
                     id='custo'
@@ -67,7 +67,7 @@ export default function IngredientInputs({ ingredientsList, setListaIngredientes
                     labelText='Custo'
                     type='number'
                     value={custo}
-                    aoDigitado={valor => setCusto(valor)}
+                    onChange={valor => setCusto(valor)}
                 />
             </div>
             <Button value='+' aoClickado={functionsExecutedOnClick} />

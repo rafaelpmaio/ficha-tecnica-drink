@@ -34,7 +34,7 @@ export default function CostDisplay({ listaItens = [], precoVenda, setPrecoVenda
                     id='preco-venda'
                     labelText='Preço de venda'
                     value={precoVendaInput}
-                    aoDigitado={valor => setPrecoVendaInput(valor)}
+                    onChange={valor => setPrecoVendaInput(valor)}
                 />
                 <Button value='+' aoClickado={functionsExecutedOnClick} />
             </span>

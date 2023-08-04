@@ -26,7 +26,7 @@ export default function DrinkName({ drinkName, setDrinkName }: DrinkNameProps) {
                     id='drink-name'
                     labelText='Digite o nome do drink'
                     value={nameInput}
-                    aoDigitado={valor => setNameInput(valor)}
+                    onChange={valor => setNameInput(valor)}
                 />
                 <Button value='+' aoClickado={functionsExecutedOnClick}/>
             </span>

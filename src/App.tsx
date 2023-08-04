@@ -8,30 +8,31 @@ import CollectionHeader from 'components/CollectionHeader';
 import drinksCollectionJson from 'shared/records/DrinksCollection.json'
 import React, { useState } from 'react';
 import { IHeader } from 'shared/interfaces/IHeader';
+import drinkLogo from 'assets/images/drink-logo.png';
 
-export const Context =
+export const HeaderContext =
   React.createContext<[IHeader, React.Dispatch<React.SetStateAction<IHeader>>] | []>([]);
 
 function App() {
   const defaultHeader: IHeader = {
     title: 'COLLECTIONS',
-    image: 'assets/images/drink-logo.png'
+    image: drinkLogo
   }
   const [headerInfos, setHeaderInfos] = useState<IHeader>(defaultHeader);
 
   return (
     <BrowserRouter>
       <Menu />
-      <Context.Provider value={[headerInfos, setHeaderInfos]}>
+      <HeaderContext.Provider value={[headerInfos, setHeaderInfos]}>
         <Routes>
           <Route path='/' element={<CollectionHeader />}>
             <Route index element={<Home />} />
             <Route path='collection/:id' element={<CollectionPage drinksCollections={drinksCollectionJson} />} />
           </Route>
-          <Route path="drink" element={<DrinkSetupPage />} /> /*futuro erro 404*/
+          <Route path="drink" element={<DrinkSetupPage/>} />
           {/* <Route path="*" element={ } /> futuro erro 404  */}
         </Routes>
-      </Context.Provider>
+      </HeaderContext.Provider>
     </BrowserRouter>
   );
 }

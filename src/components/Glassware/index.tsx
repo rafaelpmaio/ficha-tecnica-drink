@@ -27,7 +27,7 @@ export default function Glassware({ glassware, setGlassware }: GlasswareProps) {
                     id='glassware' 
                     labelText='Digite o recipiente utilizado' 
                     value={glasswareInput} 
-                    aoDigitado={valor => setGlasswareInput(valor)} 
+                    onChange={valor => setGlasswareInput(valor)} 
                 />
                 <Button value='+' aoClickado={functionsExecutedOnClick} />
             </span>

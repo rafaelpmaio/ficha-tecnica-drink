@@ -3,18 +3,19 @@ import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import headerInfosGetter from '../HomeHeader/headerInfosGetter';
-import { Context } from 'App';
+import { HeaderContext } from 'App';
 
 interface CollectionDisplayProps {
     collectionName: string,
     collectionImg: string,
-    collectionId: number
+    collectionId: number,
+    collectionDescription?: string
 }
 
-export default function CollectionDisplay({ collectionName, collectionImg, collectionId }: CollectionDisplayProps) {
+export default function CollectionDisplay({ collectionName, collectionImg, collectionId, collectionDescription }: CollectionDisplayProps) {
     let collectionNameWithoutSpecialChars = collectionName.replace(/[^\w]/g, '');
 
-    const [headerInfos, setHeaderInfos] = useContext(Context);
+    const [headerInfos, setHeaderInfos] = useContext(HeaderContext);
 
     const cardDisplayRef = React.useRef<HTMLDivElement>(null);
     const handleMouseHover = () => {
@@ -31,13 +32,16 @@ export default function CollectionDisplay({ collectionName, collectionImg, colle
                 ref={cardDisplayRef}
                 onMouseEnter={handleMouseHover}
             >
-                <img
-                    className={styles.collection_img}
-                    src={require(`assets/images/collections/${collectionImg}`)}
-                    alt={`image from collection ${collectionName}`}
-                // collections/${collectionImg}
-                />
+                <picture>
+                    <source type='image/webp' srcSet={require(`assets/images/collections/${collectionImg}`)}/>
+                    <img
+                        className={styles.collection_img}
+                        src={require(`assets/images/collections/${collectionImg}`)}
+                        alt={`image from collection ${collectionName}`}
+                    />
+                </picture>
                 <h2>{collectionName}</h2>
+                <p>{collectionDescription}</p>
             </div>
         </Link>
     )

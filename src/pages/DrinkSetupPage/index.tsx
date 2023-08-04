@@ -3,7 +3,6 @@ import Header from "components/DrinkHeader";
 import IngredientsCard from "components/IngredientsCard";
 import styles from './DrinkSetupPage.module.css';
 import PreparationCard from "components/PreparationCard";
-import drinksList from 'shared/records/Drinks.json';
 import ButtonSubmit from "components/ButtonSubmit";
 import { IDrink } from "shared/interfaces/IDrink";
 import { IIngredient } from "shared/interfaces/IIngredient";
@@ -11,8 +10,9 @@ import DrinkPhoto from "components/DrinkPhoto";
 import calculateCostPrice from "components/CostDisplay/calculateCostPrice";
 import calculateCostPercentage from "components/CostDisplay/calculateCostPercentage";
 import { IStep } from "shared/interfaces/IStep";
+import { IDrinksCollection } from "shared/interfaces/IDrinksCollection";
 
-export default function PaginaInicial() {
+export default function DrinkSetupPage() {
 
     const [ingredientsList, setIngredientsList] = useState<IIngredient[]>([]);
     const [drinkName, setDrinkName] = useState<string>('');

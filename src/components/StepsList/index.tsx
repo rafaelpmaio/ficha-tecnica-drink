@@ -43,7 +43,7 @@ export default function StepsList({ stepsList, setStepsList }: StepsListProps) {
                     id='step'
                     labelText='Digite o próximo passo'
                     value={passoInput}
-                    aoDigitado={valor => setPassoInput(valor)}
+                    onChange={valor => setPassoInput(valor)}
                 />
                 <Button value='+' aoClickado={functionsExecutedOnClick} />
             </span>

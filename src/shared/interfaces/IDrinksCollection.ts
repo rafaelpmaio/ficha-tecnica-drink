@@ -2,7 +2,8 @@ import { IDrink } from "./IDrink";
 
 export interface IDrinksCollection {
     id: number,
-    collectionName: string,
-    collectionImage: string,
+    name: string,
+    image: string,
+    description?: string,
     IDrinksList: IDrink[]
 }

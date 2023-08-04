@@ -33,9 +33,10 @@ export default function SwiperDrinksCollection({ DrinksCollection }: SwiperDrink
             {DrinksCollection.map(drinkCollection =>
                 <SwiperSlide>
                     <CollectionDisplay
-                        collectionName={drinkCollection.collectionName}
-                        collectionImg={drinkCollection.collectionImage}
+                        collectionName={drinkCollection.name}
+                        collectionImg={drinkCollection.image}
                         collectionId={drinkCollection.id}
+                        collectionDescription={drinkCollection.description}
                     />
                 </SwiperSlide>)
             }

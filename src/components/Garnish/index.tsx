@@ -27,7 +27,7 @@ export default function Garnish({ garnish, setGarnish }: GarnishProps) {
                     id='garnish' 
                     labelText='Digite a decoração' 
                     value={garnishInput} 
-                    aoDigitado={valor => setGarnishInput(valor)} 
+                    onChange={valor => setGarnishInput(valor)} 
                 />
                 <Button value='+' aoClickado={functionsExecutedOnClick} />
             </span>
