@@ -30,7 +30,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='collection/:id' element={<CollectionPage drinksCollections={drinksCollectionJson} />} />
           </Route>
-          <Route path="drink" element={<DrinkSetupPage />} />
+          <Route path="drink" element={<DrinkSetupPage/>} />
           {/* <Route path="*" element={ } /> futuro erro 404  */}
         </Routes>
       </HeaderContext.Provider>

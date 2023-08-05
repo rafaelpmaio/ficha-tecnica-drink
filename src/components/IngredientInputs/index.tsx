@@ -12,7 +12,6 @@ interface IngredientInputsProps {
 }
 
 export default function IngredientInputs({ ingredientsList, setListaIngredientes }: IngredientInputsProps) {
-
     const [id, setId] = useState(0);
     const [quantidade, setQuantidade] = useState('');
     const [medida, setMedida] = useState('');
@@ -33,7 +32,6 @@ export default function IngredientInputs({ ingredientsList, setListaIngredientes
         event.preventDefault();
         addIngredientToList(newIngredient);
         resetInputs(setQuantidade, setMedida, setIngrediente, setCusto);
-        console.log(newIngredient)
     };
 
     return (

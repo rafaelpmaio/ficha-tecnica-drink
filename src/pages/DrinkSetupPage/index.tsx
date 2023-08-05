@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import DrinkHeader from "components/DrinkHeader";
 import IngredientsCard from "components/IngredientsCard";
 import styles from './DrinkSetupPage.module.css';
@@ -10,10 +10,13 @@ import DrinkPhoto from "components/DrinkPhoto";
 import calculateCostPrice from "components/CostDisplay/calculateCostPrice";
 import calculateCostPercentage from "components/CostDisplay/calculateCostPercentage";
 import { IStep } from "shared/interfaces/IStep";
-import { IDrinksCollection } from "shared/interfaces/IDrinksCollection";
+import collectionsJson from 'shared/records/DrinksCollection.json';
+import path from "path";
+import { useNavigate } from "react-router-dom";
+
+export const DatalistCollectionIdContext = React.createContext<[number, (id: number)=> void] | []>([]);
 
 export default function DrinkSetupPage() {
-
     const [ingredientsList, setIngredientsList] = useState<IIngredient[]>([]);
     const [drinkName, setDrinkName] = useState<string>('');
     const [stepsList, setStepsList] = useState<IStep[]>([]);
@@ -22,11 +25,14 @@ export default function DrinkSetupPage() {
     const [precoVenda, setPrecoVenda] = useState<string>('')
     const custoProducao = calculateCostPrice(ingredientsList);
     const porcentagemCusto = calculateCostPercentage(Number.parseFloat(precoVenda), custoProducao);
+    const [datalistSelectedId, copyDatalistSelectedId] = useState<number>(0)
+
+    const navigate = useNavigate();
 
     const newDrink: IDrink = {
-        id:1,
+        id: 1,
         name: drinkName,
-        image:'',
+        image: 'drink-logo.png',
         ingredients: ingredientsList,
         steps: stepsList,
         garnish: garnish,
@@ -37,35 +43,40 @@ export default function DrinkSetupPage() {
     }
     const functionExecutedOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        alert('form submited')
-        console.log(newDrink);
+        const selectedCollection = collectionsJson.find(collection => collection.id === datalistSelectedId);
+        const drinkList = selectedCollection?.IDrinksList;
+        drinkList?.push(newDrink);
+
+        navigate('/collection/1#SummerSeason')
     }
 
     return (
         <>
             <form onSubmit={functionExecutedOnSubmit}>
-                <DrinkHeader 
-                    listaIngredientes={ingredientsList} 
-                    drinkName={drinkName} 
-                    setDrinkName={setDrinkName}
-                    precoVenda={precoVenda}
-                    setPrecoVenda={setPrecoVenda} 
-                />
+                <DatalistCollectionIdContext.Provider value={[datalistSelectedId, copyDatalistSelectedId]} >
+                    <DrinkHeader
+                        listaIngredientes={ingredientsList}
+                        drinkName={drinkName}
+                        setDrinkName={setDrinkName}
+                        precoVenda={precoVenda}
+                        setPrecoVenda={setPrecoVenda}
+                    />
+                </DatalistCollectionIdContext.Provider>
                 <main>
                     <IngredientsCard ingredientsList={ingredientsList} setIngredientsList={setIngredientsList} />
                     <div className={styles.preparation_and_drink_photo_block}>
-                        <PreparationCard 
-                            stepsList={stepsList} 
+                        <PreparationCard
+                            stepsList={stepsList}
                             setStepsList={setStepsList}
-                            garnish= {garnish}
-                            setGarnish = {setGarnish}
+                            garnish={garnish}
+                            setGarnish={setGarnish}
                             glassware={glassware}
                             setGlassware={setGlassware}
                         />
                         <DrinkPhoto />
                     </div>
                 </main>
-                <ButtonSubmit buttonValue="Salvar Drink"/>
+                <ButtonSubmit buttonValue="Salvar Drink" />
             </form>
         </>
     )
