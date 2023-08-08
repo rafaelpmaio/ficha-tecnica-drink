@@ -1,20 +1,15 @@
 import DrinkDisplay from 'components/DrinkDisplay';
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 import styles from './CollectionPage.module.css'
-import { IDrinksCollection } from 'shared/interfaces/IDrinksCollection';
 import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { CollectionsContext } from 'context/CollectionContext';
 
-interface CollectionPageProps {
-    drinksCollections?: IDrinksCollection[]
-}
-
-export default function CollectionPage({ drinksCollections }: CollectionPageProps) {
+export default function CollectionPage() {
+    const { collectionsList } = useContext(CollectionsContext);
     const params = useParams();
 
-    let collection =
-        drinksCollections
-            ? drinksCollections.find(collection => collection.id.toString() === params.id)?.IDrinksList
-            : []
+    let collection = collectionsList.find(collection => collection.id.toString() === params.id)?.IDrinksList;
 
     return (
         <>

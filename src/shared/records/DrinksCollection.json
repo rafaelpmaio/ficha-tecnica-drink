@@ -1,5 +1,12 @@
 [
     {
+        "id": 0,
+        "name": "Default Collection",
+        "image": "drink-logo.png",
+        "description": "Something went wrong! The selected collection wasn't found, we send your drink here to prevent he was lost",
+        "IDrinksList": []
+    },
+    {
         "id": 1,
         "name": "Summer Season",
         "image": "summer-collection.webp",

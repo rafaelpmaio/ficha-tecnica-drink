@@ -1,23 +1,21 @@
 import { useContext, useState } from 'react';
 import styles from './CollectionDatalist.module.css'
-import logo from './drink-logo.png';
+import logo from 'assets/images/drink-logo.png';
 import DataList from 'components/DataList';
-import drinksCollections from 'shared/records/DrinksCollection.json'
-import { DatalistCollectionIdContext } from 'pages/DrinkSetupPage';
-import { generateDrinkId } from 'pages/DrinkSetupPage/generateDrinkId';
+import { CollectionsContext } from 'context/CollectionContext';
 
 export default function CollectionDatalist() {
-    const [collectionName, setCollectionName] = useState('');
-    const [datalistSelectedId, copyDatalistSelectedId] = useContext(DatalistCollectionIdContext);
+    const { collectionsList, datalistSelectedId, copyDatalistSelectedId } = useContext(CollectionsContext)
+    const [inputCollectionName, setInputCollectionName] = useState('');
 
-    let selectedCollection = drinksCollections.find(collection => collection.id === datalistSelectedId);
+    let selectedCollection = collectionsList.find(collection => collection.id === datalistSelectedId);
+
     const handleChange = (value: string) => {
-        setCollectionName(value);
-        let itemId = value.substring(0, value.indexOf('.'));
-        return copyDatalistSelectedId ? copyDatalistSelectedId(Number.parseInt(itemId)) : '';
+        setInputCollectionName(value);
+        let selectedItemId = value.substring(0, value.indexOf('.'));
+        copyDatalistSelectedId(Number.parseInt(selectedItemId));
+        //( setDrinkId(drinkList[drinkList?.length].id + 1) )
     }
-    // const newId = generateDrinkId(selectedCollection)
-
     return (
         <div>
             <img
@@ -26,8 +24,8 @@ export default function CollectionDatalist() {
                 alt={`Image of ${selectedCollection?.name} collection`}
             />
             <DataList
-                arr={drinksCollections}
-                value={collectionName}
+                arr={collectionsList}
+                value={inputCollectionName}
                 onChange={handleChange}
             />
         </div>

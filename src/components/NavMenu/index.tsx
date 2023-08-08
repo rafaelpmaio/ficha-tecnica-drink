@@ -1,8 +1,7 @@
-import styles from "./Menu.module.css";
-import React from "react";
+import styles from "./NavMenu.module.css";
 import MenuLink from "../MenuLink";
 
-export default function Menu() {
+export default function NavMenu() {
 
     return (
         <header>

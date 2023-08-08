@@ -3,7 +3,7 @@ import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import headerInfosGetter from '../HomeHeader/headerInfosGetter';
-import { HeaderContext } from 'App';
+import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
 
 interface CollectionDisplayProps {
     collectionName: string,
@@ -14,9 +14,8 @@ interface CollectionDisplayProps {
 
 export default function CollectionDisplay({ collectionName, collectionImg, collectionId, collectionDescription }: CollectionDisplayProps) {
     let collectionNameWithoutSpecialChars = collectionName.replace(/[^\w]/g, '');
-
-    const [headerInfos, setHeaderInfos] = useContext(HeaderContext);
-
+    
+    const { setHeaderInfos } = useContext(DisplayedHeaderContext);
     const cardDisplayRef = React.useRef<HTMLDivElement>(null);
     const handleMouseHover = () => {
         const newHeader = headerInfosGetter(cardDisplayRef);
@@ -33,7 +32,7 @@ export default function CollectionDisplay({ collectionName, collectionImg, colle
                 onMouseEnter={handleMouseHover}
             >
                 <picture>
-                    <source type='image/webp' srcSet={require(`assets/images/collections/${collectionImg}`)}/>
+                    <source type='image/webp' srcSet={require(`assets/images/collections/${collectionImg}`)} />
                     <img
                         className={styles.collection_img}
                         src={require(`assets/images/collections/${collectionImg}`)}

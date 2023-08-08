@@ -1,11 +1,11 @@
-import { HeaderContext } from 'App';
+import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
 import styles from './HomeHeader.module.css'
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 import { useContext } from 'react';
 
-export default function HomeHeader() {
+export default function DynamicMainHeader() {
 
-    const [headerInfos, setHeaderInfos] = useContext(HeaderContext);
+    const {headerInfos} = useContext(DisplayedHeaderContext);
 
     return (
         <section className={`${pageStyles.card} ${styles.header}`} >

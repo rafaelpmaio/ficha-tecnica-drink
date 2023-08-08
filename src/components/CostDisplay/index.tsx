@@ -1,21 +1,16 @@
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
-import { IIngredient } from 'shared/interfaces/IIngredient';
 import calculateCostPrice from './calculateCostPrice';
 import calculateCostPercentage from './calculateCostPercentage';
+import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
-interface CostDisplayProps {
-    listaItens?: IIngredient[],
-    precoVenda: string,
-    setPrecoVenda: (preco: string) => void
-}
 
-export default function CostDisplay({ listaItens = [], precoVenda, setPrecoVenda }: CostDisplayProps) {
+export default function CostDisplay() {
+    const { ingredientsList, precoVenda, setPrecoVenda } = useContext(DrinkCreationContext);
     const [precoVendaInput, setPrecoVendaInput] = useState('');
-
-    const custoProducao = calculateCostPrice(listaItens);
+    const custoProducao = calculateCostPrice(ingredientsList);
     const porcentagemCusto = calculateCostPercentage(Number.parseFloat(precoVenda), custoProducao);
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault()

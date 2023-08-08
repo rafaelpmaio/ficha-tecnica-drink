@@ -1,5 +1,4 @@
 import styles from './ButtonSubmit.module.css'
-import React from 'react';
 
 interface FormButtonProps {
     buttonValue: string

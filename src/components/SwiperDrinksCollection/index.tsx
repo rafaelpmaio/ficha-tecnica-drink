@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IDrinksCollection } from "shared/interfaces/IDrinksCollection";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
+import { Navigation, Pagination, Scrollbar } from "swiper";
 
 interface SwiperDrinksCollectionProps {
-    DrinksCollection: IDrinksCollection[]
+    collectionsList: IDrinksCollection[]
 }
 
-export default function SwiperDrinksCollection({ DrinksCollection }: SwiperDrinksCollectionProps) {
+export default function SwiperDrinksCollection({ collectionsList }: SwiperDrinksCollectionProps) {
     return (
         <Swiper
             modules={[Navigation, Scrollbar, Pagination]}
@@ -29,7 +29,7 @@ export default function SwiperDrinksCollection({ DrinksCollection }: SwiperDrink
                 }
             }}
         >
-            {DrinksCollection.map(drinkCollection =>
+            {collectionsList.map(drinkCollection =>
                 <SwiperSlide key={drinkCollection.id}>
                     <CollectionDisplay
                         collectionName={drinkCollection.name}

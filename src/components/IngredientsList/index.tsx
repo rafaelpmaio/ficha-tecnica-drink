@@ -1,17 +1,14 @@
 import styles from '../IngredientsCard/IngredientsCard.module.css';
-
-import { IIngredient } from "../../shared/interfaces/IIngredient";
 import IngredientsListItem from '../IngredientsListItem';
+import { useContext } from 'react';
+import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
-interface IngredientesListProps {
-    ingredientsList: IIngredient[],
-    setIngredientsList: (array: IIngredient[]) => void
-}
-
-export default function IngredientsList({ setIngredientsList, ingredientsList = [] }: IngredientesListProps) {
+export default function IngredientsList() {
+    const { ingredientsList } = useContext(DrinkCreationContext);
 
     return (
         <>
+            <h2>Ingredientes</h2>
             <h3 id='titulo-colunas' className={styles.ingredients_list}>
                 <b className={styles.coluna_quantidade}>quantidade</b>
                 <b className={styles.coluna_medida}>Medida</b>
@@ -19,12 +16,10 @@ export default function IngredientsList({ setIngredientsList, ingredientsList = 
                 <b className={styles.coluna_custo}>Custo (R$)</b>
             </h3>
             <ul>
-                {ingredientsList && ingredientsList.map((ingrediente) =>
+                {ingredientsList.map((ingrediente) =>
                     <IngredientsListItem
                         key={ingrediente.id}
                         ingredient={ingrediente}
-                        ingredientsList={ingredientsList}
-                        setIngredientsList={setIngredientsList}
                     />)}
             </ul>
         </>

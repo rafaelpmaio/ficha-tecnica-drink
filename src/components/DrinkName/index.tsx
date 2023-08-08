@@ -1,20 +1,16 @@
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
-
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
+import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
-interface DrinkNameProps {
-    drinkName: string,
-    setDrinkName: (name: string) => void
-}
-
-export default function DrinkName({ drinkName, setDrinkName }: DrinkNameProps) {
+export default function DrinkName() {
+    const { drinkName, setDrinkName } = useContext(DrinkCreationContext);
     const [nameInput, setNameInput] = useState('');
 
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        event.preventDefault()
-        setDrinkName(nameInput);
+        event.preventDefault();
+        setDrinkName(nameInput)
         setNameInput('')
     }
 
@@ -28,7 +24,7 @@ export default function DrinkName({ drinkName, setDrinkName }: DrinkNameProps) {
                     value={nameInput}
                     onChange={valor => setNameInput(valor)}
                 />
-                <Button value='+' aoClickado={functionsExecutedOnClick}/>
+                <Button value='+' aoClickado={functionsExecutedOnClick} />
             </span>
         </div>
     )

@@ -1,19 +1,15 @@
+import React, { useContext, useState } from 'react';
 import styles from './StepsList.module.css';
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
-import React, { useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
-import { IStep } from 'shared/interfaces/IStep';
 import createStep from './createStep';
 import DeleteButton from '../ButtonDelete';
+import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
-interface StepsListProps {
-    stepsList: IStep[],
-    setStepsList: (array: IStep[]) => void
-}
-
-export default function StepsList({ stepsList, setStepsList }: StepsListProps) {
-    const [stepId, setStepId] = useState(0)
+export default function StepsList() {
+    const { stepsList, setStepsList } = useContext(DrinkCreationContext);
+    const [stepId, setStepId] = useState(0);
     const [passoInput, setPassoInput] = useState('');
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault()

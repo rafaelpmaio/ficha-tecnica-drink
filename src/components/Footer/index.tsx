@@ -1,7 +1,7 @@
 import styles from './Footer.module.css'
 import githubLogo from 'assets/images/github.png'
 import linkedinLogo from 'assets/images/linkedin.png'
-import { Link, useHref } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
 

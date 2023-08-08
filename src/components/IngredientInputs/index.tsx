@@ -1,17 +1,14 @@
 import styles from '../IngredientsCard/IngredientsCard.module.css'
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 import { IIngredient } from '../../shared/interfaces/IIngredient';
 import createIngredient from './createIngredient';
 import resetInputs from './resetInputs';
+import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
-interface IngredientInputsProps {
-    ingredientsList: IIngredient[],
-    setListaIngredientes: (array: IIngredient[]) => void
-}
-
-export default function IngredientInputs({ ingredientsList, setListaIngredientes }: IngredientInputsProps) {
+export default function IngredientInputs() {
+    const { ingredientsList, setIngredientsList } = useContext(DrinkCreationContext);
     const [id, setId] = useState(0);
     const [quantidade, setQuantidade] = useState('');
     const [medida, setMedida] = useState('');
@@ -19,13 +16,13 @@ export default function IngredientInputs({ ingredientsList, setListaIngredientes
     const [custo, setCusto] = useState('');
 
     let newIngredient = createIngredient(
-        id, 
-        Number.parseFloat(quantidade), 
-        medida, ingrediente, 
+        id,
+        Number.parseFloat(quantidade),
+        medida, ingrediente,
         Number.parseFloat(custo)
     );
     const addIngredientToList = (ingrediente: IIngredient) => {
-        setListaIngredientes([...ingredientsList, ingrediente]);
+        setIngredientsList([...ingredientsList, ingrediente]);
         setId(id + 1);
     }
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
