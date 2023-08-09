@@ -2,27 +2,22 @@ import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 import React, { useContext, useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
-import calculateCostPrice from './calculateCostPrice';
-import calculateCostPercentage from './calculateCostPercentage';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
-
 export default function CostDisplay() {
-    const { ingredientsList, precoVenda, setPrecoVenda } = useContext(DrinkCreationContext);
+    const { totalCostValue, costPercentage, sellPrice, setSellPrice } = useContext(DrinkCreationContext);
     const [precoVendaInput, setPrecoVendaInput] = useState('');
-    const custoProducao = calculateCostPrice(ingredientsList);
-    const porcentagemCusto = calculateCostPercentage(Number.parseFloat(precoVenda), custoProducao);
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault()
-        setPrecoVenda(precoVendaInput);
+        setSellPrice(precoVendaInput);
         setPrecoVendaInput('')
     }
 
     return (
         <div>
-            <p>Custo de Produção: {custoProducao}</p>
-            <p>Preço de Venda: R${precoVenda} </p>
-            <p>% de custo: {porcentagemCusto ? porcentagemCusto : ''}</p>
+            <p>Custo de Produção: {totalCostValue}</p>
+            <p>Preço de Venda: R${sellPrice} </p>
+            <p>% de custo: {costPercentage}</p>
             <span className={pageStyles.input_button_align}>
                 <Input
                     type='number'

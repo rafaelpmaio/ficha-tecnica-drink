@@ -15,8 +15,12 @@ interface DrinkCreationContextProps {
     setGarnish: (garnish: string) => void,
     glassware: string,
     setGlassware: (glassware: string) => void,
-    precoVenda: string,
-    setPrecoVenda: (precoVenda: string) => void,
+    sellPrice: string,
+    setSellPrice: (precoVenda: string) => void,
+    totalCostValue: number,
+    setTotalCostValue: (totalCost: number) => void
+    costPercentage: number,
+    setCostPercentage: (totalCost: number) => void
 }
 
 export const DrinkCreationContext = React.createContext({} as DrinkCreationContextProps)
@@ -28,7 +32,10 @@ export const DrinkCreationContextProvider = ({ children }: { children: React.Rea
     const [stepsList, setStepsList] = useState<IStep[]>([]);
     const [garnish, setGarnish] = useState<string>('');
     const [glassware, setGlassware] = useState<string>('');
-    const [precoVenda, setPrecoVenda] = useState<string>('');
+    const [sellPrice, setSellPrice] = useState<string>('0');
+    const [totalCostValue, setTotalCostValue] = useState<number>(0);
+    const [costPercentage, setCostPercentage] = useState<number>(0);
+
 
     return (
         <DrinkCreationContext.Provider value={{
@@ -38,7 +45,9 @@ export const DrinkCreationContextProvider = ({ children }: { children: React.Rea
             stepsList, setStepsList,
             garnish, setGarnish,
             glassware, setGlassware,
-            precoVenda, setPrecoVenda
+            sellPrice, setSellPrice,
+            totalCostValue, setTotalCostValue,
+            costPercentage, setCostPercentage
         }}>
             {children}
         </DrinkCreationContext.Provider>

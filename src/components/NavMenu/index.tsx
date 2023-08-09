@@ -7,7 +7,7 @@ export default function NavMenu() {
         <header>
             <nav className={styles.nav}>
                 <MenuLink hrefPage="/" > Collections </MenuLink>
-                <MenuLink hrefPage="/drink"> New Drink </MenuLink>
+                <MenuLink hrefPage="/new_drink" onClick={() => window.location.href='/new_drink'}> New Drink </MenuLink>
             </nav>
         </header>
     )

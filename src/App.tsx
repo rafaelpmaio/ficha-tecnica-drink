@@ -23,7 +23,7 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path='collection/:id' element={<CollectionPage/>} />
               </Route>
-              <Route path="drink" element={<DrinkSetupPage />} />
+              <Route path="new_drink" element={<DrinkSetupPage />} />
               {/* <Route path="*" element={ } /> futuro erro 404  */}
             </Routes>
           </DislpayedHeaderContextProvider>
