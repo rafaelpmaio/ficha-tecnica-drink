@@ -6,7 +6,6 @@ export default function Home() {
     return (
         <>
             <CollectionsCard />
-            <Button aoClickado={() => { }} value="Criar nova Coleção" />
         </>
     )
 };

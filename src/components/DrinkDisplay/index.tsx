@@ -3,14 +3,19 @@ import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React, { useContext } from 'react';
 import headerInfosGetter from 'components/HomeHeader/headerInfosGetter';
 import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
+import { Link } from 'react-router-dom';
 
 interface DrinkDisplayProps {
-    drinkImage: string,
+    collectionId: number,
+    collectionName: string,
+    drinkId: number,
     drinkName: string,
+    drinkImage: string,
 }
 
-export default function DrinkDisplay({ drinkImage, drinkName }: DrinkDisplayProps) {
-    const {setHeaderInfos} = useContext(DisplayedHeaderContext);
+export default function DrinkDisplay({ collectionId, collectionName, drinkId, drinkName, drinkImage }: DrinkDisplayProps) {
+    let drinkNameWithoutSpecialChars = drinkName.replace(/[^\w]/g, '');
+    const { setHeaderInfos } = useContext(DisplayedHeaderContext);
     const cardDisplayRef = React.useRef(null);
     const handleMouseHover = () => {
         const newHeader = headerInfosGetter(cardDisplayRef);
@@ -20,16 +25,18 @@ export default function DrinkDisplay({ drinkImage, drinkName }: DrinkDisplayProp
     }
 
     return (
-        <div
-            className={`${pageStyles.card} ${styles.drinkDisplay}`}
-            ref={cardDisplayRef}
-            onMouseEnter={handleMouseHover}
-        >
-            <picture>
-                <source type='image/webp' srcSet={ require(`assets/images/drinks/${drinkImage}`)} />
-                <img src={ require(`assets/images/drinks/${drinkImage}`)} alt={`image of drink ${drinkName}`} />
-            </picture>
-            <h2>{drinkName}</h2>
-        </div>
+        <Link to={`/drink/${collectionId}/${drinkId}#${drinkNameWithoutSpecialChars}`}>
+            <div
+                className={`${pageStyles.card} ${styles.drinkDisplay}`}
+                ref={cardDisplayRef}
+                onMouseEnter={handleMouseHover}
+            >
+                <picture>
+                    <source type='image/webp' srcSet={require(`assets/images/drinks/${drinkImage}`)} />
+                    <img src={require(`assets/images/drinks/${drinkImage}`)} alt={`image of drink ${drinkName}`} />
+                </picture>
+                <h2>{drinkName}</h2>
+            </div>
+        </Link>
     )
 };

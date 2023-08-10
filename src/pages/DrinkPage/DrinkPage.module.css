@@ -1,0 +1,77 @@
+@import url('../../styles/_variaveis.css');
+
+.drink_page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.drink_name {
+    width: 60%;
+    margin-bottom: 1em;
+}
+
+.cost_div {
+    width: 30%;
+    margin-bottom: 1em;
+}
+
+.drink_datasheet {
+    width: 60%;
+    margin-right: 4em;
+}
+
+.list {
+list-style: none; 
+}
+
+.list li {
+    margin-bottom: 1em;
+}
+
+.ingredients_row {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.amount_column {
+    width: 8%;
+}
+
+.measure_unit_column {
+    width: 8%;
+}
+
+.ingredient_column {
+    width: 40%;
+}
+
+.cost_column {
+    width: 9%;
+}
+
+.drink_image {
+    width: 25em;
+    height: 40em;
+    align-self: center;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 2em 0;
+}
+
+.decoration_row {
+    display: flex;
+    align-items: baseline;
+    gap: 3em;
+}
+
+.decoration_title {
+    width: 20%;
+}
+
+.highlight {
+    font-size: 1.2em;
+    color: var(--rosa);
+    margin: 0 1em 1.5em 1em;
+}

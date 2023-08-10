@@ -19,10 +19,10 @@ export default function DataList<T extends { id: number, name: string }>(
                 onChange={onChange}
             />
             <datalist id="collections-list">
-                {arr.map(item => <option
-                    key={item.id}
-                    value={`${item.id}. ${item.name}`}
-                />)}
+                    {arr.map(item => <option
+                        key={item.id}
+                        value={`${item.id}. ${item.name}`}
+                    />)}
             </datalist>
         </>
     )

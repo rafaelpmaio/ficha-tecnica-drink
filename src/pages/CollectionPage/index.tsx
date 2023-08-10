@@ -9,13 +9,24 @@ export default function CollectionPage() {
     const { collectionsList } = useContext(CollectionsContext);
     const params = useParams();
 
-    let collection = collectionsList.find(collection => collection.id.toString() === params.id)?.IDrinksList;
+    let collection = collectionsList.find(collection => collection.id.toString() === params.id);
+    if(!collection) {collection = collectionsList[0]}
+    let drinkList = collection?.IDrinksList
+    let collectionId = collection.id;
+    let collectionName = collection.name;
 
     return (
         <>
             <section className={`${styles.collectionPage} ${pageStyles.card}`}>
-                {collection?.map(drink =>
-                    <DrinkDisplay key={drink.id} drinkImage={drink.image} drinkName={drink.name} />)
+                {drinkList.map(drink =>
+                    <DrinkDisplay
+                        key={drink.id}
+                        collectionId={collectionId}
+                        collectionName={collectionName}
+                        drinkId={drink.id}
+                        drinkName={drink.name}
+                        drinkImage={drink.image}
+                    />)
                 }
             </section>
         </>

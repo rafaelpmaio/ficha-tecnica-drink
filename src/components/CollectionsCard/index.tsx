@@ -19,7 +19,7 @@ export default function CollectionsCard() {
         <section className={`${pageStyles.card} ${styles.collections_card}`}>
             {collectionsList
                 ? <SwiperDrinksCollection collectionsList={hideDefaultCollection} />
-                : <Link to='/drink'>
+                : <Link to='/new_drink'>
                     <h2>Clique aqui e crie seu primeiro Drink!</h2>
                 </Link>
             }

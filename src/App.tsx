@@ -9,6 +9,7 @@ import Footer from 'components/Footer';
 import { DislpayedHeaderContextProvider } from 'context/DisplayedHeaderContext';
 import { DrinkCreationContextProvider } from 'context/DrinkCreationContext';
 import { CollectionsContextProvider } from 'context/CollectionContext';
+import DrinkPage from 'pages/DrinkPage';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path='collection/:id' element={<CollectionPage/>} />
               </Route>
-              <Route path="new_drink" element={<DrinkSetupPage />} />
+              <Route path='new_drink' element={<DrinkSetupPage />} />
+              <Route path='drink/:collectionId/:drinkId' element={<DrinkPage />}/>
               {/* <Route path="*" element={ } /> futuro erro 404  */}
             </Routes>
           </DislpayedHeaderContextProvider>
