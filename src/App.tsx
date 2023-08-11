@@ -10,6 +10,7 @@ import { DislpayedHeaderContextProvider } from 'context/DisplayedHeaderContext';
 import { DrinkCreationContextProvider } from 'context/DrinkCreationContext';
 import { CollectionsContextProvider } from 'context/CollectionContext';
 import DrinkPage from 'pages/DrinkPage';
+import Page404 from 'pages/Page404';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
               </Route>
               <Route path='new_drink' element={<DrinkSetupPage />} />
               <Route path='drink/:collectionId/:drinkId' element={<DrinkPage />}/>
-              {/* <Route path="*" element={ } /> futuro erro 404  */}
+              <Route path="*" element={<Page404/>}></Route>
             </Routes>
           </DislpayedHeaderContextProvider>
         </DrinkCreationContextProvider>
