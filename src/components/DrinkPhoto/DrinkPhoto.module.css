@@ -1,4 +1,15 @@
-.drink_photo {
+.drink_photo_div {
     width: 40%;
-    object-fit: contain;
+
+}
+
+.drink_photo {
+    object-fit: fill;
+    width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+    .drink_photo_div {
+        width: auto;
+    }
 }

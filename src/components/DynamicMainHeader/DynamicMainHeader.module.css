@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+}
+
+.header_img {
+    border-radius: 20px;
+    height: 10em;
+    width: 16em;
+    object-fit: cover;
+    margin-right: 3em;
+
+}
+
+@media only screen and (max-width: 700px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header_img {
+        height: 12em;
+        width: 30em;
+    }
+}

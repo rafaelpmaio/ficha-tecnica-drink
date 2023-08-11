@@ -10,10 +10,10 @@ export default function IngredientsList() {
         <>
             <h2>Ingredientes</h2>
             <h3 id='titulo-colunas' className={styles.ingredients_list}>
-                <b className={styles.coluna_quantidade}>quantidade</b>
-                <b className={styles.coluna_medida}>Medida</b>
-                <b className={styles.coluna_ingrediente}>Ingredientes</b>
-                <b className={styles.coluna_custo}>Custo (R$)</b>
+                <b className={styles.coluna_quantidade}>qtd</b>
+                <b className={styles.coluna_medida}>un</b>
+                <b className={styles.coluna_ingrediente}>Ingrediente</b>
+                <b className={styles.coluna_custo}>custo (R$)</b>
             </h3>
             <ul>
                 {ingredientsList.map((ingrediente) =>

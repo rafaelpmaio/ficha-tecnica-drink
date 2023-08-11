@@ -6,6 +6,8 @@ import drinkLogo from 'assets/images/drink-logo.png';
 
 export default function DrinkPhoto() {
     return (
-        <img src={drinkLogo} alt="" className={`${pageStyles.card} ${styles.drink_photo}`} />
+        <div className={`${pageStyles.card} ${styles.drink_photo_div}`}>
+            <img src={drinkLogo} alt="" className={styles.drink_photo} />
+        </div>
     )
 };

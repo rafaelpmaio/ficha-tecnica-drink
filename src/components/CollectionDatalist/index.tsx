@@ -1,5 +1,5 @@
+import styles from './CollectionDatalist.module.css';
 import { useContext, useEffect, useState } from 'react';
-import styles from './CollectionDatalist.module.css'
 import DataList from 'components/DataList';
 import { CollectionsContext } from 'context/CollectionContext';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
@@ -27,9 +27,9 @@ export default function CollectionDatalist() {
     }, [selectedCollection, id])
 
     return (
-        <div>
+        <div className={styles.collection_datalist_div}>
             <img
-                className={styles.drinkHeaderImage}
+                className={styles.drink_header_image}
                 src={require(`assets/images/collections/${selectedCollection.image}`)}
                 alt={`Image of ${selectedCollection.name} collection`}
             />

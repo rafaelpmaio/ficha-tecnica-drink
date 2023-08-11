@@ -12,12 +12,14 @@ export default function DrinkPage() {
 
     return (
         <main className={`${pageStyles.card} ${styles.drink_page} `}>
-            <h1 className={styles.drink_name}>{drink?.name}</h1>
-            <div className={styles.cost_div}>
-                <p>Sell Price: <b className={styles.highlight}> R${drink?.sellPrice}</b> </p>
-                <p>Production Cost: <b className={styles.highlight}> R${drink?.confectionCost} </b> </p>
-                <p>Cost Percentage: <b className={styles.highlight}>{drink?.costPercentage}%</b> </p>
-            </div>
+            <section className={styles.drink_header}>
+                <h1 className={styles.drink_name}>{drink?.name}</h1>
+                <div className={styles.cost_div}>
+                    <p>Sell Price: <b className={styles.highlight}> R${drink?.sellPrice}</b> </p>
+                    <p>Production Cost: <b className={styles.highlight}> R${drink?.confectionCost} </b> </p>
+                    <p>Cost Percentage: <b className={styles.highlight}>{drink?.costPercentage}%</b> </p>
+                </div>
+            </section>
             <section className={styles.drink_datasheet}>
                 <div className={styles.drink_ingredients_div}>
                     <h3>INGREDIENTS</h3>
@@ -41,7 +43,7 @@ export default function DrinkPage() {
                 <div className={styles.drink_preparation_div}>
                     <h3>STEPS</h3>
                     <ul className={styles.list}>
-                        {drink?.steps.map((step, index) => <li><b className={styles.highlight}>{`${index + 1}º Passo: `}</b>{step.stepDescription}</li>)}
+                        {drink?.steps.map((step, index) => <li className={styles.step_li_item}><b className={styles.highlight}>{`${index + 1}º Passo: `}</b>{step.stepDescription}</li>)}
                     </ul>
                 </div>
                 <span className={styles.decoration_row}>

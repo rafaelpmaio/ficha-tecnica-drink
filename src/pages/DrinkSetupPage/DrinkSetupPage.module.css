@@ -15,6 +15,12 @@
     gap: 0.3em;
 }
 
-.input_button_align :first-child{
-    flex-grow: 1 ;
+.input_button_align :first-child {
+    flex-grow: 1;
+}
+
+@media only screen and (max-width: 900px) {
+    .preparation_and_drink_photo_block {
+        display: block;
+    }
 }

@@ -7,7 +7,7 @@ import CollectionDatalist from "../CollectionDatalist";
 export default function DrinkSetupHeader() {
 
     return (
-        <header className={`${pageStyle.card} ${styles.cabecalho}`}>
+        <header className={`${pageStyle.card} ${styles.drink_setup_header}`}>
                 <CollectionDatalist />
                 <DrinkName />
                 <CostDisplay />

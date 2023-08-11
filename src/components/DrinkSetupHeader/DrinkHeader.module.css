@@ -1,5 +1,19 @@
-.cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.drink_setup_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+@media only screen and (max-width: 1050px) {
+  .drink_setup_header {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 800) {
+  .drink_setup_header {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }

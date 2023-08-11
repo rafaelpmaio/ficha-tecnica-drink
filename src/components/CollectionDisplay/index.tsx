@@ -2,7 +2,7 @@ import styles from './CollectionDisplay.module.css';
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import headerInfosGetter from '../HomeHeader/headerInfosGetter';
+import headerInfosGetter from '../DynamicMainHeader/headerInfosGetter';
 import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
 
 interface CollectionDisplayProps {

@@ -20,3 +20,28 @@
 .coluna_custo {
     width: 10%;
 }
+
+@media only screen and (max-width: 690px) {
+    .coluna_quantidade {
+        width: 5%;
+    }
+
+    .coluna_medida {
+        width: 5%;
+    }
+
+    .coluna_ingrediente {
+        width: 60%;
+    }
+
+    .ingredient_inputs_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .ingredient_input {
+        margin-bottom: 1.4em;
+        width: 40%;
+    }
+}

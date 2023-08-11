@@ -1,7 +1,7 @@
 import styles from './DrinkDisplay.module.css';
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React, { useContext } from 'react';
-import headerInfosGetter from 'components/HomeHeader/headerInfosGetter';
+import headerInfosGetter from 'components/DynamicMainHeader/headerInfosGetter';
 import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
 import { Link } from 'react-router-dom';
 

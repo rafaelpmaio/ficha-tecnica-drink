@@ -10,3 +10,9 @@
     text-align: center;
     font-weight: 700;
 }
+
+@media only screen and (max-width: 690px) {
+    .delete_btn {
+        right: -1em;
+    }
+}
