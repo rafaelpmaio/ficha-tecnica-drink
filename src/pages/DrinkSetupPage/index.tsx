@@ -9,11 +9,15 @@ import styles from './DrinkSetupPage.module.css';
 import { IDrink } from 'shared/interfaces/IDrink';
 import { DrinkCreationContext } from "context/DrinkCreationContext";
 import { CollectionsContext } from 'context/CollectionContext';
+import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
+import { IHeader } from 'shared/interfaces/IHeader';
 
 export default function DrinkSetupPage() {
     const { id, drinkName, ingredientsList, stepsList, garnish, glassware,
         sellPrice, totalCostValue, costPercentage } = useContext(DrinkCreationContext);
     const { selectedCollection, datalistSelectedId } = useContext(CollectionsContext);
+    const { setHeaderInfos } = useContext(DisplayedHeaderContext);
+
     const navigate = useNavigate();
     let collectionNameWithoutSpecialChars = selectedCollection.name.replace(/[^\w]/g, '');
 
@@ -29,11 +33,16 @@ export default function DrinkSetupPage() {
         sellPrice: Number.parseFloat(sellPrice),
         costPercentage: costPercentage
     }
+    let newHeader: IHeader = {
+        image: require(`assets/images/collections/${selectedCollection.image}`),
+        title: selectedCollection.name,
+        description: selectedCollection.description
+    }
 
     const functionExecutedOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(newDrink);
-        selectedCollection.IDrinksList.push(newDrink)
+        selectedCollection.IDrinksList.push(newDrink);
+        setHeaderInfos(newHeader);
         navigate(`/collection/${datalistSelectedId}#${collectionNameWithoutSpecialChars}`);
     }
 

@@ -9,8 +9,9 @@ export default function CollectionDatalist() {
     const { setId, id } = useContext(DrinkCreationContext);
     const [inputCollectionName, setInputCollectionName] = useState('');
     let hideDefaultList = collectionsList;
-    if (collectionsList[0].IDrinksList.length === 0) { hideDefaultList = collectionsList.filter(collection => collection.id !== 0) }
-
+    if (collectionsList[0].IDrinksList.length === 0) {
+        hideDefaultList = collectionsList.filter(collection => collection.id !== 0)
+    }
     let searchCollection = collectionsList.find(collection => collection.id === datalistSelectedId);
     if (searchCollection) { setSelectedCollection(searchCollection) }
     let drinkList = selectedCollection.IDrinksList;

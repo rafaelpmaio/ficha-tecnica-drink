@@ -15,6 +15,5 @@
     .drink_header_image{
         width: 50%;
         height: 10em;
-        object-fit: cover;
     }
 }

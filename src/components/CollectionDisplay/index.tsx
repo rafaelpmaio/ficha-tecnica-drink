@@ -14,14 +14,12 @@ interface CollectionDisplayProps {
 
 export default function CollectionDisplay({ collectionName, collectionImg, collectionId, collectionDescription }: CollectionDisplayProps) {
     let collectionNameWithoutSpecialChars = collectionName.replace(/[^\w]/g, '');
-    
+
     const { setHeaderInfos } = useContext(DisplayedHeaderContext);
     const cardDisplayRef = React.useRef<HTMLDivElement>(null);
     const handleMouseHover = () => {
         const newHeader = headerInfosGetter(cardDisplayRef);
-        return setHeaderInfos !== undefined
-            ? setHeaderInfos(newHeader)
-            : null
+        setHeaderInfos(newHeader)
     }
 
     return (

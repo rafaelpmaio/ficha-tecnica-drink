@@ -1,5 +1,4 @@
 import styles from './ButtonDelete.module.css';
-import React from 'react';
 import handleDeleteItem from './handleDeleteItem';
 
 interface removeItemProps<T> {
