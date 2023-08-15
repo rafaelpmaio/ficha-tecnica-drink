@@ -15,15 +15,14 @@ import { IHeader } from 'shared/interfaces/IHeader';
 export default function DrinkSetupPage() {
     const navigate = useNavigate();
     const { id, drinkName, ingredientsList, stepsList, garnish, glassware,
-        sellPrice, totalCostValue, costPercentage } = useContext(DrinkCreationContext);
-    const { selectedCollection, datalistSelectedId } = useContext(CollectionsContext);
-    const { setHeaderInfos } = useContext(DisplayedHeaderContext);
+        sellPrice, totalCostValue, costPercentage, drinkImage } = useContext(DrinkCreationContext);
+    const { setHeaderInfos, selectedCollection, datalistSelectedId } = useContext(DisplayedHeaderContext);
     let collectionNameWithoutSpecialChars = selectedCollection.name.replace(/[^\w]/g, '');
 
     let newDrink: IDrink = {
         id: id,
         name: drinkName,
-        image: 'drink-logo.png',
+        image: drinkImage,
         ingredients: ingredientsList,
         steps: stepsList,
         garnish: garnish,
@@ -33,7 +32,7 @@ export default function DrinkSetupPage() {
         costPercentage: costPercentage
     }
     let newHeader: IHeader = {
-        image: require(`assets/images/collections/${selectedCollection.image}`),
+        image: selectedCollection.image,
         title: selectedCollection.name,
         description: selectedCollection.description
     }

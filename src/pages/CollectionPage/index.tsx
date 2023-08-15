@@ -5,9 +5,11 @@ import { Link, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { CollectionsContext } from 'context/CollectionContext';
 import Button from 'components/Button';
+import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
 
 export default function CollectionPage() {
-    const { collectionsList, setInputCollectionName } = useContext(CollectionsContext);
+    const { collectionsList } = useContext(CollectionsContext);
+    const { setInputCollectionName } = useContext(DisplayedHeaderContext);
     const params = useParams();
 
     let collection = collectionsList.find(collection => collection.id.toString() === params.id);

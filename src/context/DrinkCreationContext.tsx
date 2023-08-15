@@ -20,7 +20,9 @@ interface DrinkCreationContextProps {
     totalCostValue: number,
     setTotalCostValue: (totalCost: number) => void
     costPercentage: number,
-    setCostPercentage: (totalCost: number) => void
+    setCostPercentage: (totalCost: number) => void,
+    drinkImage: string,
+    setDrinkImage: (image:string) => void
 }
 
 export const DrinkCreationContext = React.createContext({} as DrinkCreationContextProps)
@@ -35,6 +37,7 @@ export const DrinkCreationContextProvider = ({ children }: { children: React.Rea
     const [sellPrice, setSellPrice] = useState<string>('0');
     const [totalCostValue, setTotalCostValue] = useState<number>(0);
     const [costPercentage, setCostPercentage] = useState<number>(0);
+    const [drinkImage, setDrinkImage] = useState<string>('')
 
 
     return (
@@ -47,7 +50,8 @@ export const DrinkCreationContextProvider = ({ children }: { children: React.Rea
             glassware, setGlassware,
             sellPrice, setSellPrice,
             totalCostValue, setTotalCostValue,
-            costPercentage, setCostPercentage
+            costPercentage, setCostPercentage,
+            drinkImage, setDrinkImage
         }}>
             {children}
         </DrinkCreationContext.Provider>

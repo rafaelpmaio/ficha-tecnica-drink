@@ -14,6 +14,12 @@ interface DrinkDisplayProps {
 export default function DrinkDisplay({ collectionId, collectionName, drinkId, drinkName, drinkImage }: DrinkDisplayProps) {
     let drinkNameWithoutSpecialChars = drinkName.replace(/[^\w]/g, '');
     const cardDisplayRef = React.useRef(null);
+    const handleFormat = (drinkImage: string) => {
+        return String(drinkImage).includes('data:image')
+            ? drinkImage
+            : require(`assets/images/drinks/${drinkImage}`)
+    }
+
 
     return (
         <Link to={`/drink/${collectionId}/${drinkId}#${drinkNameWithoutSpecialChars}`}>
@@ -22,8 +28,12 @@ export default function DrinkDisplay({ collectionId, collectionName, drinkId, dr
                 ref={cardDisplayRef}
             >
                 <picture>
-                    <source type='image/webp' srcSet={require(`assets/images/drinks/${drinkImage}`)} />
-                    <img src={require(`assets/images/drinks/${drinkImage}`)} alt={`image of drink ${drinkName}`} />
+                    <source
+                        type='image/webp'
+                        srcSet={handleFormat(drinkImage)}
+                    />
+                    <img src={handleFormat(drinkImage)} alt={`image of drink ${drinkName}`}
+                    />
                 </picture>
                 <h2>{drinkName}</h2>
             </div>

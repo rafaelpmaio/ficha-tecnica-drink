@@ -1,21 +1,21 @@
 import styles from './DrinkPhoto.module.css'
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
-import drinkLogo from 'assets/images/drink-logo.png';
-import Input from 'components/Input';
+import InputFile from 'components/InputFile';
+import { useContext, useEffect } from 'react';
+import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 
 export default function DrinkPhoto() {
+
+    const { setDrinkImage } = useContext(DrinkCreationContext);
+
     return (
-        <div className={`${pageStyles.card} ${styles.drink_photo_div}`}>
-            {/* <img src={drinkLogo} alt="" className={styles.drink_photo} /> */}
-            {/* <Input 
-                className={styles.drink_photo_input} 
-                type='file' 
-                id='drink-image' 
-                labelText='' 
-                value='' 
-                onChange={() => {}}
-            /> */}
-        </div>
+        <InputFile
+            classNameSelectionLabel={`${pageStyles.card} ${styles.drink_photo_div}`}
+            classNameImage={styles.image}
+            classNameInput={styles.input}
+            setImage={setDrinkImage}
+            pictureImageTxt='choose an image'
+        />
     )
 };

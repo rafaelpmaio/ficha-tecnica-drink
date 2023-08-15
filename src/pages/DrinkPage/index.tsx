@@ -9,6 +9,11 @@ export default function DrinkPage() {
     const params = useParams();
     let collection = collectionsList.find(collection => collection.id.toString() === params.collectionId);
     let drink = collection?.IDrinksList.find(drink => drink.id.toString() === params.drinkId)
+    const handleFormat = (drinkImage: string | undefined) => {
+        return String(drinkImage).includes('data:image')
+            ? drinkImage
+            : require(`assets/images/drinks/${drinkImage}`)
+    }
 
     return (
         <main className={`${pageStyles.card} ${styles.drink_page} `}>
@@ -55,7 +60,7 @@ export default function DrinkPage() {
                     <span> {drink?.glassware} </span>
                 </span>
             </section>
-            <img src={require(`assets/images/drinks/${drink?.image}`)} alt="" className={styles.drink_image} />
+            <img src={handleFormat(drink?.image)} alt="" className={styles.drink_image} />
         </main>
     )
 };

@@ -1,17 +1,19 @@
 import styles from './CollectionDatalist.module.css';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import DataList from 'components/DataList';
 import { CollectionsContext } from 'context/CollectionContext';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
+import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
 
 export default function CollectionDatalist() {
-    const { collectionsList,
+    const { collectionsList } = useContext(CollectionsContext);
+    const {
         selectedCollection, setSelectedCollection,
         datalistSelectedId, copyDatalistSelectedId,
         inputCollectionName, setInputCollectionName
-    } = useContext(CollectionsContext);
-
+    } = useContext(DisplayedHeaderContext);
     const { setId, id } = useContext(DrinkCreationContext);
+
     let hideDefaultList = collectionsList;
     if (collectionsList[0].IDrinksList.length === 0) {
         hideDefaultList = collectionsList.filter(collection => collection.id !== 0)
@@ -26,6 +28,12 @@ export default function CollectionDatalist() {
         copyDatalistSelectedId(Number.parseInt(selectedItemId));
     }
 
+    const handleImageFormat = (collectionImage: string) => {
+        return String(collectionImage).includes('data:image')
+            ? collectionImage
+            : require(`assets/images/collections/${collectionImage}`)
+    }
+
     useEffect(() => {
         let lastDrink = drinkList[drinkList.length - 1];
         lastDrink ? setId(lastDrink.id + 1) : setId(1);
@@ -36,8 +44,8 @@ export default function CollectionDatalist() {
         <div className={styles.collection_datalist_div}>
             <img
                 className={styles.drink_header_image}
-                src={require(`assets/images/collections/${selectedCollection.image}`)}
-                alt={`Image of ${selectedCollection.name} collection`}
+                src={handleImageFormat(selectedCollection.image)}
+                alt={`image from collection ${selectedCollection.name}`}
             />
             <DataList
                 arr={hideDefaultList}

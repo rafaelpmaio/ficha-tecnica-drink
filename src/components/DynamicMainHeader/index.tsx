@@ -4,7 +4,6 @@ import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 import { useContext } from 'react';
 
 export default function DynamicMainHeader() {
-
     const {headerInfos} = useContext(DisplayedHeaderContext);
 
     return (
