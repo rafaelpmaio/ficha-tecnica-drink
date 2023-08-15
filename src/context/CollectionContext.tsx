@@ -9,6 +9,8 @@ interface CollectionContextProps {
     setSelectedCollection: (collection: IDrinksCollection) => void,
     datalistSelectedId: number,
     copyDatalistSelectedId: (id: number) => void,
+    inputCollectionName: string,
+    setInputCollectionName: (input: string) => void
 }
 
 export const CollectionsContext = React.createContext({} as CollectionContextProps);
@@ -17,12 +19,14 @@ export const CollectionsContextProvider = ({ children }: { children: React.React
     const [collectionsList] = useState<IDrinksCollection[]>(collectionsJson)
     const [selectedCollection, setSelectedCollection] = useState<IDrinksCollection>(collectionsJson[0])
     const [datalistSelectedId, copyDatalistSelectedId] = useState<number>(0);
+    const [inputCollectionName, setInputCollectionName] = useState('');
 
     return (
         <CollectionsContext.Provider value={{
             collectionsList,
             datalistSelectedId, copyDatalistSelectedId,
-            selectedCollection, setSelectedCollection 
+            selectedCollection, setSelectedCollection,
+            inputCollectionName, setInputCollectionName
         }}>
             {children}
         </CollectionsContext.Provider>

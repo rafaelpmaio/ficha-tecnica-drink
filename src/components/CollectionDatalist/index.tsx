@@ -5,9 +5,13 @@ import { CollectionsContext } from 'context/CollectionContext';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function CollectionDatalist() {
-    const { collectionsList, selectedCollection, setSelectedCollection, datalistSelectedId, copyDatalistSelectedId } = useContext(CollectionsContext);
+    const { collectionsList,
+        selectedCollection, setSelectedCollection,
+        datalistSelectedId, copyDatalistSelectedId,
+        inputCollectionName, setInputCollectionName
+    } = useContext(CollectionsContext);
+
     const { setId, id } = useContext(DrinkCreationContext);
-    const [inputCollectionName, setInputCollectionName] = useState('');
     let hideDefaultList = collectionsList;
     if (collectionsList[0].IDrinksList.length === 0) {
         hideDefaultList = collectionsList.filter(collection => collection.id !== 0)
@@ -25,6 +29,7 @@ export default function CollectionDatalist() {
     useEffect(() => {
         let lastDrink = drinkList[drinkList.length - 1];
         lastDrink ? setId(lastDrink.id + 1) : setId(1);
+        handleChange(inputCollectionName);
     }, [selectedCollection, id])
 
     return (

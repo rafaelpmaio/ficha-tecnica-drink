@@ -13,12 +13,11 @@ import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
 import { IHeader } from 'shared/interfaces/IHeader';
 
 export default function DrinkSetupPage() {
+    const navigate = useNavigate();
     const { id, drinkName, ingredientsList, stepsList, garnish, glassware,
         sellPrice, totalCostValue, costPercentage } = useContext(DrinkCreationContext);
     const { selectedCollection, datalistSelectedId } = useContext(CollectionsContext);
     const { setHeaderInfos } = useContext(DisplayedHeaderContext);
-
-    const navigate = useNavigate();
     let collectionNameWithoutSpecialChars = selectedCollection.name.replace(/[^\w]/g, '');
 
     let newDrink: IDrink = {
@@ -38,7 +37,6 @@ export default function DrinkSetupPage() {
         title: selectedCollection.name,
         description: selectedCollection.description
     }
-
     const functionExecutedOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         selectedCollection.IDrinksList.push(newDrink);

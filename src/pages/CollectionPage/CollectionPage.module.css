@@ -3,3 +3,15 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.link_first_drink {
+    text-align: center;
+    padding: 2em;
+}
+.link_first_drink p{
+    margin-bottom: 2em;
+    font-size: 1.5em;
+}
+.link_first_drink button{
+    padding: 1em;
+}
