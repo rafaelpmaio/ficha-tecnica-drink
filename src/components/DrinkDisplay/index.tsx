@@ -22,15 +22,12 @@ export default function DrinkDisplay({ collectionId, collectionName, drinkId, dr
                 className={`${pageStyles.card} ${styles.drinkDisplay}`}
                 ref={cardDisplayRef}
             >
-                <picture>
-                    <source
-                        type='image/webp'
-                        srcSet={handleImageFormat(drinkImage, 'drinks')}
-                    />
-                    <img src={handleImageFormat(drinkImage, 'drinks')} alt={`image of drink ${drinkName}`}
-                    />
-                </picture>
-                <h2>{drinkName}</h2>
+                <img
+                    className={styles.drink_image}
+                    src={handleImageFormat(drinkImage, 'drinks')}
+                    alt={`image of drink ${drinkName}`}
+                />
+                <h2 className={styles.drink_name}>{drinkName}</h2>
             </div>
         </Link>
     )

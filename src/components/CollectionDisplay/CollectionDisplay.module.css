@@ -22,7 +22,7 @@
     object-fit: cover;
 }
 
-.collection_display h2 {
+.collection_name {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,11 +41,21 @@
     }
 
     .collection_img {
-        height: 14em;
+        height: 12em;
     }
-    
-    .collection_display h2 {
-        height: 25%;
-    
+
+    .collection_name {
+        font-size: 1.5em;
+        height: 34%;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .collection_display {
+        width: 80%;
+    }
+
+    .collection_name {
+        font-size: 1.5em;
     }
 }

@@ -38,7 +38,7 @@ export default function CollectionDisplay({ collectionName, collectionImg, colle
                         alt={`image from collection ${collectionName}`}
                     />
                 </picture>
-                <h2>{collectionName}</h2>
+                <h2 className={styles.collection_name}>{collectionName}</h2>
                 <p>{collectionDescription}</p>
             </div>
         </Link>

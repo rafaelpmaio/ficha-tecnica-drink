@@ -15,8 +15,8 @@ export default function DynamicMainHeader() {
                 alt={`Photo of collection ${headerInfos?.title}`}
             />
             <span className={styles.header_infos}>
-                <h1>{headerInfos?.title}</h1>
-                <p>{headerInfos?.description}</p>
+                <h1 className={styles.collection_name}>{headerInfos.title}</h1>
+                <p className={styles.collection_description}>{headerInfos.description}</p>
             </span>
         </section>
     )

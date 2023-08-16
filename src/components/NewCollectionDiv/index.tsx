@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import styles from './NewCollectionDiv.module.css';
 import pageStyles from '../../pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import Input from "components/Input";

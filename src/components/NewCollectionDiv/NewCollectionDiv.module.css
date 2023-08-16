@@ -17,10 +17,45 @@
     height: 4em;
 }
 
-.fileSelectionArea{
+.fileSelectionArea {
     position: relative;
 }
 
 .image {
     display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .new_collection {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .new_collection {
+        height: 85%;
+        width: 90%;
+        margin: 20px 10px 0 10px;
+    }
+
+    .input {
+        margin-bottom: 2.5em;
+    }
+
+    .button {
+        margin-top: 2em;
+    }
+
+}
+
+@media only screen and (max-width: 340px) {
+
+    .input {
+        font-size: 0.8em;
+    }
+
+    .button {
+        margin-top: 3em;
+    }
+
 }
