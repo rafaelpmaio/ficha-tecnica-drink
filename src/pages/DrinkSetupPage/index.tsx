@@ -38,6 +38,8 @@ export default function DrinkSetupPage() {
     }
     const functionExecutedOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if(ingredientsList.length === 0) { alert('You forgot to set the ingredients!'); return}
+        if(stepsList.length === 0 ) { alert('You forgot to set the steps!'); return}
         selectedCollection.IDrinksList.push(newDrink);
         setHeaderInfos(newHeader);
         navigate(`/collection/${datalistSelectedId}#${collectionNameWithoutSpecialChars}`);

@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import headerInfosGetter from '../DynamicMainHeader/headerInfosGetter';
 import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
+import { handleImageFormat } from 'shared/functions/handleImageFormat';
 
 interface CollectionDisplayProps {
     collectionName: string,
@@ -22,12 +23,6 @@ export default function CollectionDisplay({ collectionName, collectionImg, colle
         setHeaderInfos(newHeader)
     }
 
-    const handleImageFormat = (collectionImage: string) => {
-        return String(collectionImage).includes('data:image')
-            ? collectionImage
-            : require(`assets/images/collections/${collectionImage}`)
-    }
-
     return (
         <Link to={`/collection/${collectionId}#${collectionNameWithoutSpecialChars}`}>
             <div
@@ -36,10 +31,10 @@ export default function CollectionDisplay({ collectionName, collectionImg, colle
                 onMouseEnter={handleMouseHover}
             >
                 <picture>
-                    <source type='image/webp' srcSet={handleImageFormat(collectionImg)} />
+                    <source type='image/webp' srcSet={handleImageFormat(collectionImg, 'collections')} />
                     <img
                         className={styles.collection_img}
-                        src={handleImageFormat(collectionImg)}
+                        src={handleImageFormat(collectionImg, 'collections')}
                         alt={`image from collection ${collectionName}`}
                     />
                 </picture>

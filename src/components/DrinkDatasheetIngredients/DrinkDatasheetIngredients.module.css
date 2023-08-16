@@ -1,0 +1,23 @@
+.amount_column {
+    width: 8%;
+}
+
+.measure_unit_column {
+    width: 8%;
+}
+
+.ingredient_column {
+    width: 40%;
+}
+
+.cost_column {
+    width: 9%;
+}
+
+.ingredients_row {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 1em;
+}
+

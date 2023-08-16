@@ -17,6 +17,7 @@ export default function DataList<T extends { id: number, name: string }>(
                 labelText="Collections"
                 value={value}
                 onChange={onChange}
+                required
             />
             <datalist id="collections-list">
                     {arr.map(item => <option

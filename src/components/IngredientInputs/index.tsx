@@ -29,6 +29,7 @@ export default function IngredientInputs() {
     }
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
+        if(!quantidade || !medida || !ingrediente || !custo) {alert("Something is missing in the ingredient!"); return}
         addIngredientToList(newIngredient);
         resetInputs(setQuantidade, setMedida, setIngrediente, setCusto);
     };

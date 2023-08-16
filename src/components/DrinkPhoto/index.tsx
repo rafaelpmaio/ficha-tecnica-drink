@@ -1,7 +1,7 @@
 import styles from './DrinkPhoto.module.css'
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import InputFile from 'components/InputFile';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 

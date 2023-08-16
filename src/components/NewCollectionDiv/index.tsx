@@ -52,6 +52,7 @@ export default function NewCollectionDiv() {
                 value={collectionName}
                 onChange={valor => setCollectionName(valor)}
                 className={styles.input}
+                required
             />
             <Input
                 id="collection_description"
@@ -59,6 +60,7 @@ export default function NewCollectionDiv() {
                 value={collectionDescription}
                 onChange={valor => setCollectionDescription(valor)}
                 className={styles.input}
+                required
             />
             <InputFile
                 setImage={setCollectionImage}

@@ -1,32 +1,24 @@
-import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
-import React, { useContext, useState } from 'react';
+import styles from '../PreparationCard/Preparation.module.css';
+import { useContext, useEffect, useState } from 'react';
 import Input from '../Input';
-import Button from '../Button';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function Glassware() {
     const { glassware, setGlassware } = useContext(DrinkCreationContext);
     const [glasswareInput, setGlasswareInput] = useState('');
-    
-    const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        event.preventDefault()
-        setGlassware(glasswareInput);
-        setGlasswareInput('')
-    }
+
+    useEffect(() => setGlassware(glasswareInput))
 
     return (
         <>
-            <h3>Glassware</h3>
-            {glassware ? <p>{glassware}</p> : ''}
-            <span className={pageStyles.input_button_align}>
-                <Input
-                    id='glassware'
-                    labelText='Digite o recipiente utilizado'
-                    value={glasswareInput}
-                    onChange={valor => setGlasswareInput(valor)}
-                />
-                <Button value='+' aoClickado={functionsExecutedOnClick} />
-            </span>
+            <h3>Glassware <b className={styles.garnish_glassware_typed}>{glassware}</b></h3> 
+            <Input
+                id='glassware'
+                labelText='Digite o recipiente utilizado'
+                value={glasswareInput}
+                onChange={valor => setGlasswareInput(valor)}
+                required
+            />
         </>
     )
 };

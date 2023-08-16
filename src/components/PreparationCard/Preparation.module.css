@@ -1,5 +1,14 @@
+@import url('../../styles/_variaveis.css');
+
 .preparation {
     width: 60%;
+}
+.garnish_glassware_typed{
+    font-size: 0.8em;
+    font-weight: 300;
+    margin-left: 0.7em;
+    text-transform: capitalize;
+    color: var(--cor-do-texto);
 }
 
 @media only screen and (max-width: 900px) {

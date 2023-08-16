@@ -1,0 +1,18 @@
+.list {
+    list-style: none;
+}
+
+.step_list_item {
+    display: flex;
+}
+
+.decoration_row {
+    display: flex;
+    align-items: baseline;
+    gap: 3em;
+}
+
+.decoration_title {
+    width: 20%;
+    margin-right: 2em;
+}

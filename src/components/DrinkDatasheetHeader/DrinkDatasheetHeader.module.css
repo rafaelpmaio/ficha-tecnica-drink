@@ -1,0 +1,31 @@
+.drink_header {
+    display: flex;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.drink_name {
+    width: 60%;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.cost_div {
+    width: 40%;
+    margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 730px) {
+
+    .drink_header {
+        display: block;
+    }
+
+    .cost_div {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+    }
+
+}

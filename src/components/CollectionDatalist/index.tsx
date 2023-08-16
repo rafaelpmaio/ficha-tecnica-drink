@@ -4,6 +4,7 @@ import DataList from 'components/DataList';
 import { CollectionsContext } from 'context/CollectionContext';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
+import { handleImageFormat } from 'shared/functions/handleImageFormat';
 
 export default function CollectionDatalist() {
     const { collectionsList } = useContext(CollectionsContext);
@@ -28,12 +29,6 @@ export default function CollectionDatalist() {
         copyDatalistSelectedId(Number.parseInt(selectedItemId));
     }
 
-    const handleImageFormat = (collectionImage: string) => {
-        return String(collectionImage).includes('data:image')
-            ? collectionImage
-            : require(`assets/images/collections/${collectionImage}`)
-    }
-
     useEffect(() => {
         let lastDrink = drinkList[drinkList.length - 1];
         lastDrink ? setId(lastDrink.id + 1) : setId(1);
@@ -44,7 +39,7 @@ export default function CollectionDatalist() {
         <div className={styles.collection_datalist_div}>
             <img
                 className={styles.drink_header_image}
-                src={handleImageFormat(selectedCollection.image)}
+                src={handleImageFormat(selectedCollection.image, 'collections')}
                 alt={`image from collection ${selectedCollection.name}`}
             />
             <DataList
