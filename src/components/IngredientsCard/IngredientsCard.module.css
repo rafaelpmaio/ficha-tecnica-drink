@@ -21,27 +21,28 @@
     width: 10%;
 }
 
-@media only screen and (max-width: 690px) {
+
+@media only screen and (max-width: 700px) {
     .coluna_quantidade {
-        width: 5%;
+        width: 15%;
     }
 
     .coluna_medida {
-        width: 5%;
+        width: 10%;
     }
 
     .coluna_ingrediente {
-        width: 60%;
+        width: 45%;
+    }
+    .coluna_custo {
+        width: 10%;
     }
 
     .ingredient_inputs_list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
     }
 
     .ingredient_input {
-        margin-bottom: 1.4em;
-        width: 40%;
+        font-size: 0.7em;
     }
 }
+

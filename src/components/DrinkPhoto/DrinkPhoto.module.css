@@ -4,6 +4,7 @@
     position: static;
     display: flex;
     background: url('assets/images/drink-logo.png') no-repeat 50%;
+    background-size: 300px 300px;
     width: 40%;
     border: 2px dashed;
     color: var(--cor-de-texto);
@@ -21,7 +22,7 @@
 }
 
 .drink_photo_div span {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 700;
     background-color: var(--azul-claro);
     padding: 0.1em 0.5em;
@@ -40,5 +41,13 @@
 @media only screen and (max-width: 900px) {
     .drink_photo_div {
         width: auto;
+        height: 40em;
+        background-size: 200px 200px;
+    }
+
+    .image {
+        object-fit: cover;
+        width: auto;
+        max-width: 100%;
     }
 }
