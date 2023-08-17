@@ -46,6 +46,7 @@ export default function CollectionDatalist() {
                 arr={hideDefaultList}
                 value={inputCollectionName}
                 onChange={handleChange}
+                className={styles.input}
             />
         </div>
 

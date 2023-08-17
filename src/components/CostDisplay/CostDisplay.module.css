@@ -1,9 +1,4 @@
 @import url('../../styles/_variaveis.css');
-.cost_results span {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
 
 .highlight {
     color: var(--rosa);
@@ -15,42 +10,78 @@
 @media only screen and (max-width: 1050px) {
     .cost_div {
         display: flex;
-        width: 100%;
-        margin-top: 2em;
-        justify-content: space-between;
+        margin-top: 3em;
         align-items: center;
-    }
-
-    .cost_results {
-        display: flex;
         width: 100%;
-        margin-right: 2em;
         justify-content: space-between;
     }
 
-    .sell_cost_input {
-        width: 6em;
+    .cost_results_table {
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
     }
+
+    .cost_result_line {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .input {
+        width: auto;
+    }
+
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 900px) {
+    .cost_div {
+        margin-top: 0;
+    }
+
+    .cost_results_table {
+        width: 60%;
+        justify-content: space-between;
+    }
+
+    .input {
+        width: 30%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
     .cost_div {
         display: block;
-        width: 100%;
-        margin-top: 2em;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: left;
     }
 
-    .cost_results {
+    .cost_results_table{
+        flex-wrap: wrap;
         width: 100%;
-        margin-right: 1em;
-        justify-content: space-between;
+        margin: 2em 0 1em 0;
+    }
+
+    .cost_result_line {
+        text-align: left;
+        margin-right: 0.5em;
+    }
+    .input {
+        width: 50%;
     }
 }
 
-@media only screen and (max-width: 590px) {
-    .cost_results {
-        display: block;
+@media only screen and (max-width: 400px) {
+    
+    .cost_results_table {
     }
+    .cost_result_line {
+        font-size: 0.8em;
+    }
+
+    
+    .input{
+        font-size: 0.7em;
+    }
+
+
 }

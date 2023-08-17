@@ -33,9 +33,9 @@
 
 @media only screen and (max-width: 440px) {
     .new_collection {
-        height: 85%;
-        width: 90%;
-        margin: 20px 10px 0 10px;
+        height: 80%;
+        width: 85%;
+        margin: 20px 10px 0 20px;
     }
 
     .input {
