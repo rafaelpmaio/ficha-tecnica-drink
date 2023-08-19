@@ -18,6 +18,7 @@ export default function Glassware() {
                 value={glasswareInput}
                 onChange={valor => setGlasswareInput(valor)}
                 required
+                className={styles.input}
             />
         </>
     )

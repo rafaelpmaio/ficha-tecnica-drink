@@ -27,6 +27,7 @@
         flex-direction: column;
         text-align: center;
     }
+
     .input {
         width: auto;
     }
@@ -49,13 +50,19 @@
 
 }
 
+@media only screen and (max-width: 700px) {
+    .input {
+        font-size: 0.7em;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .cost_div {
         display: block;
         justify-content: left;
     }
 
-    .cost_results_table{
+    .cost_results_table {
         flex-wrap: wrap;
         width: 100%;
         margin: 2em 0 1em 0;
@@ -65,23 +72,22 @@
         text-align: left;
         margin-right: 0.5em;
     }
+
     .input {
         width: 50%;
     }
 }
 
-@media only screen and (max-width: 400px) {
-    
+@media only screen and (max-width: 500px) {
     .cost_results_table {
+        font-size: 0.8em;
     }
+}
+
+@media only screen and (max-width: 400px) {
+
     .cost_result_line {
         font-size: 0.8em;
     }
-
-    
-    .input{
-        font-size: 0.7em;
-    }
-
 
 }

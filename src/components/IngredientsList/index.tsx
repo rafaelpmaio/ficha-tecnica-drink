@@ -13,7 +13,7 @@ export default function IngredientsList() {
                 <b className={styles.coluna_quantidade}>qtd</b>
                 <b className={styles.coluna_medida}>un</b>
                 <b className={styles.coluna_ingrediente}>Ingrediente</b>
-                <b className={styles.coluna_custo}>custo (R$)</b>
+                <b className={styles.coluna_custo}>custo</b>
             </h3>
             <ul>
                 {ingredientsList.map((ingrediente) =>

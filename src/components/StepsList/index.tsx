@@ -40,6 +40,7 @@ export default function StepsList() {
                     labelText='Digite o próximo passo'
                     value={passoInput}
                     onChange={valor => setPassoInput(valor)}
+                    className={styles.input}
                 />
                 <Button value='+' aoClickado={functionsExecutedOnClick} />
             </span>

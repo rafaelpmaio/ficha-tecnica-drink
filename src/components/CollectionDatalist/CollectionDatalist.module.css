@@ -2,7 +2,7 @@
     width: 12em;
     height: 8em;
     margin: 0 3em 2em 0;
-    object-fit: cover ;
+    object-fit: cover;
     border-radius: 20px;
 }
 
@@ -36,6 +36,12 @@
     }
 }
 
+@media only screen and (max-width: 700px) {
+    .input {
+        font-size: 0.7em;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .collection_datalist_div {
         display: block;
@@ -51,8 +57,3 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
-    .input {
-        font-size: 0.7em;
-    }
-}

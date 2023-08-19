@@ -18,6 +18,7 @@ export default function Garnish() {
                 value={garnishInput}
                 onChange={valor => setGarnishInput(valor)}
                 required
+                className={styles.input}
             />
         </>
     )
