@@ -28,13 +28,18 @@
     }
 
     .drink_name {
-        text-align: left;
+        width: 100%;
     }
 
     .cost_div {
         display: flex;
         width: 100%;
         justify-content: space-between;
+    }
+
+    .cost_line {
+        width: 25%;
+        text-align: center;
     }
 
 }

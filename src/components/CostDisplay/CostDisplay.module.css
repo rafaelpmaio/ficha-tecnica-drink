@@ -44,6 +44,10 @@
         justify-content: space-between;
     }
 
+    .cost_result_line {
+        width: 25%;
+    }
+
     .input {
         width: 30%;
     }
@@ -54,6 +58,7 @@
     .input {
         font-size: 0.7em;
     }
+
 }
 
 @media only screen and (max-width: 600px) {
