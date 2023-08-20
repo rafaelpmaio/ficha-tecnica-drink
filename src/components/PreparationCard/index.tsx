@@ -9,7 +9,7 @@ export default function PreparationCard() {
 
     return (
         <section className={`${styles.preparation} ${pageStyles.card}`} >
-            <h2>Modo de Preparo</h2>
+            <h2>Preparation Methods</h2>
             <StepsList />
             <Garnish />
             <Glassware />

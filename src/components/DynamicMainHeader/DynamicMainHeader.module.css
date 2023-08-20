@@ -11,9 +11,16 @@
     border-radius: 20px;
     height: 10em;
     width: 16em;
-    object-fit: cover;
     margin-right: 4em;
 
+}
+
+.collection_img {
+    object-fit: cover;
+}
+
+.default_img {
+    object-fit: contain;
 }
 
 @media only screen and (max-width: 700px) {

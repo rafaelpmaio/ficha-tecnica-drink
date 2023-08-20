@@ -19,6 +19,7 @@ interface DisplayedHeaderContextProps {
 export const DisplayedHeaderContext = React.createContext({} as DisplayedHeaderContextProps);
 
 const defaultHeader: IHeader = {
+  id: 0,
   title: 'Collections',
   image: drinkLogo
 }

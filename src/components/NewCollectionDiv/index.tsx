@@ -48,7 +48,7 @@ export default function NewCollectionDiv() {
         <form className={`${pageStyles.card} ${styles.new_collection}`} onSubmit={handleSubmit}>
             <Input
                 id="collection_name"
-                labelText="Digite o nome da coleção"
+                labelText="Collection Name"
                 value={collectionName}
                 onChange={valor => setCollectionName(valor)}
                 className={styles.input}
@@ -56,7 +56,7 @@ export default function NewCollectionDiv() {
             />
             <Input
                 id="collection_description"
-                labelText="Digite a descrição da coleção"
+                labelText="Collection Description"
                 value={collectionDescription}
                 onChange={valor => setCollectionDescription(valor)}
                 className={styles.input}
@@ -68,7 +68,7 @@ export default function NewCollectionDiv() {
                 classNameImage={styles.image}
                 classNameInput={styles.fileInput}
             />
-            <ButtonSubmit buttonValue='create collection' className={styles.button} />
+            <ButtonSubmit buttonValue='Create Collection' className={styles.button} />
         </form>
     )
 };

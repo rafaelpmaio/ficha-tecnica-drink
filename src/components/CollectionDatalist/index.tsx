@@ -38,7 +38,7 @@ export default function CollectionDatalist() {
     return (
         <div className={styles.collection_datalist_div}>
             <img
-                className={styles.drink_header_image}
+                className={`${styles.drink_header_image} ${selectedCollection.id === 0 ? styles.default_img : styles.collection_img}`}
                 src={handleImageFormat(selectedCollection.image, 'collections')}
                 alt={`image from collection ${selectedCollection.name}`}
             />

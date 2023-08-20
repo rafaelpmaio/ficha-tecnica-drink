@@ -10,9 +10,9 @@ export default function DynamicMainHeader() {
     return (
         <section className={`${pageStyles.card} ${styles.header}`} >
             <img
-                className={styles.header_img}
+                className={`${styles.header_img} ${headerInfos.id === 0 ? styles.default_img : styles.collection_img}`}
                 src={handleImageFormat(headerInfos.image, 'collections')}
-                alt={`Photo of collection ${headerInfos?.title}`}
+                alt={`Photo of collection ${headerInfos.title}`}
             />
             <span className={styles.header_infos}>
                 <h1 className={styles.collection_name}>{headerInfos.title}</h1>

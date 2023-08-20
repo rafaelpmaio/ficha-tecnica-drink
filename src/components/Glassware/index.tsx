@@ -14,7 +14,7 @@ export default function Glassware() {
             <h3>Glassware <b className={styles.garnish_glassware_typed}>{glassware}</b></h3> 
             <Input
                 id='glassware'
-                labelText='Digite o recipiente utilizado'
+                labelText='Wich glassware will be used?'
                 value={glasswareInput}
                 onChange={valor => setGlasswareInput(valor)}
                 required

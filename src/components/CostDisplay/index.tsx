@@ -12,14 +12,14 @@ export default function CostDisplay() {
     return (
         <div className={styles.cost_div}>
             <div className={styles.cost_results_table}>
-                <p className={styles.cost_result_line}>Custo de Produção:<b className={styles.highlight}> R${totalCostValue}</b></p>
-                <p className={styles.cost_result_line}>Preço de Venda: <b className={styles.highlight}>R${sellPrice} </b></p>
-                <p className={styles.cost_result_line}>% de custo: <b className={styles.highlight}>{costPercentage}%</b></p>
+                <p className={styles.cost_result_line}>Sell Price:  <b className={styles.highlight}>R${sellPrice} </b></p>
+                <p className={styles.cost_result_line}>Production Cost:<b className={styles.highlight}> R${totalCostValue}</b></p>
+                <p className={styles.cost_result_line}>Cost Percentage: <b className={styles.highlight}>{costPercentage}%</b></p>
             </div>
             <Input
                 type='number'
                 id='preco-venda'
-                labelText='Preço de venda'
+                labelText='Sell Price'
                 value={precoVendaInput}
                 onChange={valor => setPrecoVendaInput(valor)}
                 className={styles.input}

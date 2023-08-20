@@ -21,11 +21,11 @@ export default function StepsList() {
 
     return (
         <>
-            <h3>Descreva o Passo a Passo</h3>
+            <h3>Describe the steps</h3>
             <ul>
                 {stepsList.map((step, index) =>
                     <li key={step.id} className={styles.steps_list}>
-                        <b className={styles.step_prefix}>{`${index + 1}º Passo: `}</b>{step.stepDescription}
+                        <b className={styles.step_prefix}>{`Step ${index + 1}:  `}</b>{step.stepDescription}
                         <DeleteButton
                             itemId={step.id}
                             list={stepsList}
@@ -37,7 +37,7 @@ export default function StepsList() {
             <span className={pageStyles.input_button_align}>
                 <Input
                     id='step'
-                    labelText='Digite o próximo passo'
+                    labelText='Next Step'
                     value={passoInput}
                     onChange={valor => setPassoInput(valor)}
                     className={styles.input}

@@ -33,7 +33,7 @@ export default function CollectionDisplay({ collectionName, collectionImg, colle
                 <picture>
                     <source type='image/webp' srcSet={handleImageFormat(collectionImg, 'collections')} />
                     <img
-                        className={styles.collection_img}
+                        className={`${styles.collection_img} ${collectionId === 0 ? styles.default_img : styles.selected_collection_img}`}
                         src={handleImageFormat(collectionImg, 'collections')}
                         alt={`image from collection ${collectionName}`}
                     />

@@ -8,12 +8,12 @@ export default function IngredientsList() {
 
     return (
         <>
-            <h2>Ingredientes</h2>
+            <h2>Ingredients</h2>
             <h3 id='titulo-colunas' className={styles.ingredients_list}>
-                <b className={styles.coluna_quantidade}>qtd</b>
-                <b className={styles.coluna_medida}>un</b>
+                <b className={styles.coluna_quantidade}>Amt</b>
+                <b className={styles.coluna_medida}>Un</b>
                 <b className={styles.coluna_ingrediente}>Ingrediente</b>
-                <b className={styles.coluna_custo}>custo</b>
+                <b className={styles.coluna_custo}>Cost</b>
             </h3>
             <ul>
                 {ingredientsList.map((ingrediente) =>

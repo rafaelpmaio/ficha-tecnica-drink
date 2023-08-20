@@ -6,6 +6,10 @@
     border-radius: 20px;
 }
 
+.fileInput {
+    color: var(--cor-do-texto);
+}
+
 .input {
     margin: 1.5em 0;
 }

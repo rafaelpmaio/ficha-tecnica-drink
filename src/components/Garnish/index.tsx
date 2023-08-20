@@ -14,7 +14,7 @@ export default function Garnish() {
             <h3>Garnish: <b className={styles.garnish_glassware_typed}>{garnish}</b></h3>
             <Input
                 id='garnish'
-                labelText='Digite a decoração'
+                labelText='Wich garnish will be used?'
                 value={garnishInput}
                 onChange={valor => setGarnishInput(valor)}
                 required

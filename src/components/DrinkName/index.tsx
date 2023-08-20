@@ -14,7 +14,7 @@ export default function DrinkName() {
             <h1 className={styles.drink_name_title}>{drinkName}</h1>
             <Input
                 id='drink-name'
-                labelText='Digite o nome do drink'
+                labelText='Drink Name'
                 value={nameInput}
                 onChange={valor => setNameInput(valor)}
                 className={styles.drink_name_input}

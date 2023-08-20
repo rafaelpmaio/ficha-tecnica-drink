@@ -2,8 +2,14 @@
     width: 12em;
     height: 8em;
     margin: 0 3em 2em 0;
-    object-fit: cover;
     border-radius: 20px;
+}
+
+.collection_img {
+    object-fit: cover;
+}
+.default_img {
+    object-fit: contain;
 }
 
 @media only screen and (max-width: 1050px) {

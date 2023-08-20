@@ -21,3 +21,45 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+--TO DO LIST
+
+TO DO
+ - ERRO setState fora de função ou useEffect em CollectionDatalist -> if (searchCollection) { setSelectedCollection(searchCollection) }
+- picture / source não funcionando para trocar webp -> jpg
+- Não permitir escrever datalist 
+DRINKPAGE -> qual drink default?
+
+
+DONE:
+- resolver label aparecendo no input digitados -> fazer label transaction ;
+- retirar erros console => falta key etc;
+- criar butao remove element;
+- ajustar para aparecer '1o passo' no stepsList => utilizar index?
+- adicionar ROTAS no Menu e no BOTAO CRIAR PRIMEIRO DRINK
+- ajustar JSON para melhorar apresentação e funcionalidades do APP
+- função que pega o nome das coleções, retira chars especiais e checa com id da rota para entregar a coleção correta OU achar forma de utilizar ID;
+- react props not working in src image
+- Header da COLECTION aparecendo NOME E DESCRIÇÃO da coleção e DRINK em HOVER;
+- Header da HOMEPAGE aparecendo NOME E DESCRIÇÃO da coleção em HOVER e MENSAGEM PADRÃO sem hover;
+- drinks da colleçao como 'cards' com transição se deslocando para cima;
+- criar lista suspensa para separar os drinks por 'coleções',
+- rodapé com meu linkedin
+- colocar sinalização swiper <- ->
+Unificar funções CONTEXT da coleção
+refazer função calculaCustoProducao
+- criar função ResetInputs em DRINKSETUPPAGE
+-drink newId
+- DATALIST SELECTED LIST COM FALHA -> ex: id 99 executa e não envia para a default
+DefaultCollection só apareça quando estiver com item
+- fazer LINK no component DrinkDisplay -> DrinkSetupPage/drink com as infos
+- deixar responsivo;
+page not found
+- ajustar tamanho botões HOME
+- Lógica no colection card, atual com operador ternário para exibir swiper apenas caso exista lista;
+- ADICIONAR IMAGEM;
+- deixar inputs obrigatorios;
+- todas as páginas utilizando a classe .card de DrinkSetup.css;
+Responsividade

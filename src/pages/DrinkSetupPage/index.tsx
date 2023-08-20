@@ -8,7 +8,6 @@ import DrinkPhoto from "components/DrinkPhoto";
 import styles from './DrinkSetupPage.module.css';
 import { IDrink } from 'shared/interfaces/IDrink';
 import { DrinkCreationContext } from "context/DrinkCreationContext";
-import { CollectionsContext } from 'context/CollectionContext';
 import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
 import { IHeader } from 'shared/interfaces/IHeader';
 
@@ -55,7 +54,7 @@ export default function DrinkSetupPage() {
                     <DrinkPhoto />
                 </div>
             </main>
-            <ButtonSubmit buttonValue="Salvar Drink" />
+            <ButtonSubmit buttonValue="Salvar Drink" className={styles.submit_button} />
         </form>
     )
 };

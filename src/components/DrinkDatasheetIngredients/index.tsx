@@ -11,10 +11,10 @@ export default function DrinkDatasheetIngredients({ drink }: DrinkDatasheetIngre
         <div>
             <h3>INGREDIENTS</h3>
             <span className={`${pageStyles.highlight} ${styles.ingredients_row}`}>
-                <b className={styles.amount_column}>QTD</b>
-                <b className={styles.measure_unit_column}>UN</b>
-                <b className={styles.ingredient_column}>Ingrediente</b>
-                <b className={styles.cost_column}>COST</b>
+                <b className={styles.amount_column}>Amt</b>
+                <b className={styles.measure_unit_column}>Un</b>
+                <b className={styles.ingredient_column}>Ingredient</b>
+                <b className={styles.cost_column}>Cost</b>
             </span>
             <ul className={styles.list}>
                 {drink?.ingredients.map(ingredient =>
