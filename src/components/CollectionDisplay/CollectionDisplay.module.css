@@ -6,9 +6,10 @@
     text-align: center;
     padding: 0;
     width: 15em;
-    height: 18em;
-    margin-bottom: 5em;
+    height: 16em;
     box-shadow: 0px 0px 20px var(--roxo);
+    margin-top: 1.5em;
+    margin-bottom: 2.3em;
 }
 
 .collection_display:hover {
@@ -35,6 +36,7 @@
     align-items: center;
     background-color: white;
     color: var(--azul-claro);
+    font-size: 1.5em;
     margin: 0;
     padding: 0 10px;
     border-bottom-left-radius: 20px;

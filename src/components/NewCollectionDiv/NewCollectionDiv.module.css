@@ -2,8 +2,11 @@
 
 .new_collection {
     width: 15em;
-    height: 18em;
+    height: 16em;
     border-radius: 20px;
+    padding: 0.2em 1em 1em 1em;
+    margin-top: 1.5em;
+    margin-bottom: 0em;
 }
 
 .fileInput {
@@ -11,7 +14,7 @@
 }
 
 .input {
-    margin: 1.5em 0;
+    margin: 1.2em 0;
 }
 
 .button {
