@@ -48,7 +48,8 @@ export default function IngredientInputs() {
                     labelText='Amount'
                     type='number'
                     value={quantidade}
-                    onChange={valor => setQuantidade(valor)}
+                    onChange={valor => setQuantidade(valor)
+                    }
                 />
                 <Input
                     id='medida'

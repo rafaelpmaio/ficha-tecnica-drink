@@ -7,12 +7,12 @@ export default function CostDisplay() {
     const { totalCostValue, costPercentage, sellPrice, setSellPrice } = useContext(DrinkCreationContext);
     const [precoVendaInput, setPrecoVendaInput] = useState('');
 
-    useEffect(() => setSellPrice(precoVendaInput))
+    useEffect(() => setSellPrice(Number.parseFloat(precoVendaInput).toFixed(2)), [precoVendaInput])
 
     return (
         <div className={styles.cost_div}>
             <div className={styles.cost_results_table}>
-                <p className={styles.cost_result_line}>Sell Price:  <b className={styles.highlight}>R${sellPrice} </b></p>
+                <p className={styles.cost_result_line}>Sell Price:  <b className={styles.highlight}>R${precoVendaInput ? sellPrice : 0} </b></p>
                 <p className={styles.cost_result_line}>Production Cost:<b className={styles.highlight}> R${totalCostValue}</b></p>
                 <p className={styles.cost_result_line}>Cost Percentage: <b className={styles.highlight}>{costPercentage}%</b></p>
             </div>

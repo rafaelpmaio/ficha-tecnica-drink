@@ -12,10 +12,11 @@ interface InputProps {
     type?: string,
     list?: string,
     required?: boolean,
-    step?: string
+    step?: string,
+    maxLenght?: number
 }
 
-export default function Input({ id, labelText, className, value, onChange: aoDigitado, list, required, step, type = 'text' }: InputProps) {
+export default function Input({ id, labelText, className, value, onChange: aoDigitado, list, required, step, maxLenght, type = 'text' }: InputProps) {
 
     const aoAlterado = (evento: React.ChangeEvent<HTMLInputElement>) => {
         aoDigitado(evento.target.value);
@@ -24,7 +25,15 @@ export default function Input({ id, labelText, className, value, onChange: aoDig
 
     return (
         <b className={`${styles.label_relative} ${className}`}>
-            <input type={type} id={id} value={value} onChange={aoAlterado} list={list} required={required} step={step}/>
+            <input 
+                type={type} 
+                id={id} value={value} 
+                onChange={aoAlterado} 
+                list={list} 
+                required={required} 
+                step={step}
+                maxLength={3}
+            />
             <label className={labelClass} htmlFor={id}> {labelText} </label>
         </b>
     )

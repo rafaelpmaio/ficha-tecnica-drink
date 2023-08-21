@@ -13,10 +13,10 @@ export default function IngredientListItem({ ingredient }: IngredientListItemPro
     return (
         <>
             <li key={ingredient.id} className={styles.ingredients_list}>
-                <b className={styles.coluna_quantidade}>{ingredient.quantidade}</b>
+                <b className={styles.coluna_quantidade}>{ingredient.quantidade.toFixed(2)}</b>
                 <b className={styles.coluna_medida}>{ingredient.medida}</b>
                 <b className={styles.coluna_ingrediente}>{ingredient.ingrediente}</b>
-                <b className={styles.coluna_custo}>{ingredient.custo}</b>
+                <b className={styles.coluna_custo}>{ingredient.custo.toFixed(2)}</b>
                 <DeleteButton
                     itemId={ingredient.id}
                     list={ingredientsList}
