@@ -1,4 +1,4 @@
-import DrinkDisplay from 'components/DrinkDisplay';
+import DrinkDisplay from 'pages/CollectionPage/DrinkDisplay';
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 import styles from './CollectionPage.module.css'
 import { Link, useParams } from 'react-router-dom';

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
-import DrinkSetupHeader from "components/DrinkSetupHeader";
-import IngredientsCard from "components/IngredientsCard";
-import PreparationCard from "components/PreparationCard";
+import DrinkSetupHeader from "pages/DrinkSetupPage/DrinkSetupHeader";
+import IngredientsCard from "pages/DrinkSetupPage/IngredientsCard";
+import PreparationCard from "./PreparationCard";
 import ButtonSubmit from "components/ButtonSubmit";
-import DrinkPhoto from "components/DrinkPhoto";
+import DrinkPhoto from "pages/DrinkSetupPage/DrinkPhoto";
 import styles from './DrinkSetupPage.module.css';
 import { IDrink } from 'shared/interfaces/IDrink';
 import { DrinkCreationContext } from "context/DrinkCreationContext";

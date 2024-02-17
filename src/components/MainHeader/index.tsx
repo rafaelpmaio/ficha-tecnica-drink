@@ -1,4 +1,4 @@
-import DynamicMainHeader from "components/DynamicMainHeader";
+import DynamicMainHeader from "components/MainHeader/DynamicMainHeader";
 import { Outlet } from "react-router-dom";
 
 export default function MainHeader() {

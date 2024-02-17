@@ -38,7 +38,7 @@ h3 {
   @font-face {
     font-family: "GandhiSansRegular";
     src: local("GandhiSansRegular"), 
-    url("../assets/fontes/GandhiSans-Regular.otf")
+    url("../assets/fonts/GandhiSans-Regular.otf")
     format("truetype");
     font-weight: 500;
     font-display: swap;
@@ -47,7 +47,7 @@ h3 {
   @font-face {
     font-family: "GandhiSansBold";
     src: local("GandhiSansBold"), 
-    url("../assets/fontes/GandhiSans-Bold.otf")
+    url("../assets/fonts/GandhiSans-Bold.otf")
     format("truetype");
     font-weight: 700;
     font-display: swap;

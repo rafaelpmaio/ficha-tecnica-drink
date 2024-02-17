@@ -1,5 +1,5 @@
 import styles from "./NavMenu.module.css";
-import MenuLink from "../MenuLink";
+import MenuLink from "./MenuLink";
 
 export default function NavMenu() {
 

@@ -3,10 +3,10 @@ import pageStyles from '../DrinkSetupPage/DrinkSetupPage.module.css'
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { CollectionsContext } from 'context/CollectionContext';
-import { handleImageFormat } from 'shared/functions/handleImageFormat';
-import DrinkDatasheetHeader from 'components/DrinkDatasheetHeader';
-import DrinkDatasheetIngredients from 'components/DrinkDatasheetIngredients';
-import DrinkDatasheetPreparation from 'components/DrinkDatasheetPreparation';
+import { handleImageFormat } from 'shared/utils/handleImageFormat';
+import DrinkDatasheetHeader from 'pages/DrinkPage/DrinkDatasheetHeader';
+import DrinkDatasheetIngredients from 'pages/DrinkPage/DrinkDatasheetIngredients';
+import DrinkDatasheetPreparation from 'pages/DrinkPage/DrinkDatasheetPreparation';
 
 export default function DrinkPage() {
     const { collectionsList } = useContext(CollectionsContext)

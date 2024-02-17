@@ -27,6 +27,11 @@ yarn-error.log*
 --TO DO LIST
 
 TO DO
+- Refatorar colocando Routes em um componente único e cabeçalho/rodapé fora dele;
+- deixar componentes mais genéricos (?);
+- Montar testes automatizados;
+
+
  - ERRO setState fora de função ou useEffect em CollectionDatalist -> if (searchCollection) { setSelectedCollection(searchCollection) }
 - picture / source não funcionando para trocar webp -> jpg
 - Não permitir escrever datalist 
