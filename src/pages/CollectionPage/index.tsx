@@ -5,16 +5,16 @@ import { Link, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { CollectionsContext } from 'context/CollectionContext';
 import Button from 'components/Button';
-import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
+import { DynamicHeaderContext } from 'context/DisplayedHeaderContext';
 
 export default function CollectionPage() {
     const { collectionsList } = useContext(CollectionsContext);
-    const { setInputCollectionName } = useContext(DisplayedHeaderContext);
+    const { setInputCollectionName } = useContext(DynamicHeaderContext);
     const params = useParams();
 
     let collection = collectionsList.find(collection => collection.id.toString() === params.id);
     if (!collection) { collection = collectionsList[0] }
-    let drinkList = collection?.IDrinksList
+    let drinkList = collection?.drinksList
     let collectionId = collection.id;
     let collectionName = collection.name;
 

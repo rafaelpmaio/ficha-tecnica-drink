@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function IngredientsList() {
-    const { ingredientsList } = useContext(DrinkCreationContext);
+    const { ingredients } = useContext(DrinkCreationContext);
 
     return (
         <>
@@ -16,10 +16,10 @@ export default function IngredientsList() {
                 <b className={styles.coluna_custo}>Cost</b>
             </h3>
             <ul>
-                {ingredientsList.map((ingrediente) =>
+                {ingredients.map((ingredient) =>
                     <IngredientListItem
-                        key={ingrediente.id}
-                        ingredient={ingrediente}
+                        key={ingredient.id}
+                        ingredient={ingredient}
                     />)}
             </ul>
         </>

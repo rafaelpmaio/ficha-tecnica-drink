@@ -8,12 +8,12 @@ import DeleteButton from 'components/ButtonDelete';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function StepsList() {
-    const { stepsList, setStepsList } = useContext(DrinkCreationContext);
+    const { steps: stepsList, setSteps } = useContext(DrinkCreationContext);
     const [stepId, setStepId] = useState(0);
     const [passoInput, setPassoInput] = useState('');
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault()
-        setStepsList([...stepsList, newStep]);
+        setSteps([...stepsList, newStep]);
         setStepId(stepId + 1);
         setPassoInput('')
     }
@@ -29,7 +29,7 @@ export default function StepsList() {
                         <DeleteButton
                             itemId={step.id}
                             list={stepsList}
-                            setList={setStepsList}
+                            setList={setSteps}
                         />
                     </li>
                 )}

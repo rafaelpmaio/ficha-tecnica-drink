@@ -4,14 +4,14 @@
         "name": "Default Collection",
         "image": "drink-logo.png",
         "description": "Something went wrong! The selected collection wasn't found, we send your drink here keep it safe! :)",
-        "IDrinksList": []
+        "drinksList": []
     },
     {
         "id": 1,
         "name": "Summer Season",
         "image": "summer-collection.webp",
         "description": "Valid from December to March of 2023",
-        "IDrinksList": [
+        "drinksList": [
             {
                 "id": 1,
                 "name": "Caipirinha",
@@ -297,7 +297,7 @@
         "id": 2,
         "name": "Happy Hour",
         "image": "happy-hour.webp",
-        "IDrinksList": [
+        "drinksList": [
             {
                 "id": 1,
                 "name": "Negroni",
@@ -457,7 +457,7 @@
         "name": "Agave Festival",
         "image": "agave-festival.webp",
         "description": "Celebration of 'Dia de los Muertos'",
-        "IDrinksList": [
+        "drinksList": [
             {
                 "id": 1,
                 "name": "Paloma",
@@ -700,7 +700,7 @@
         "name": "Tropical",
         "image": "tropical-collection.webp",
         "description": "Tribute to 80 years of Tropicalia - Brazilian cultural movement",
-        "IDrinksList": [
+        "drinksList": [
             {
                 "id": 1,
                 "name": "Piña Colada",
@@ -939,12 +939,12 @@
         "id": 5,
         "name": "Holidays",
         "image": "holidays.webp",
-        "IDrinksList": []
+        "drinksList": []
     },
     {
         "id": 6,
         "name": "Women's Month",
         "image": "womens-month.webp",
-        "IDrinksList": []
+        "drinksList": []
     }
 ]

@@ -2,44 +2,40 @@ import styles from './CollectionDisplay.module.css';
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import headerInfosGetter from 'components/MainHeader/DynamicMainHeader/headerInfosGetter';
-import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
+import headerInfosGetterFromDiv from 'components/MainHeader/DynamicHeader/headerInfosGetterFromDiv';
+import { DynamicHeaderContext } from 'context/DisplayedHeaderContext';
 import { handleImageFormat } from 'shared/utils/handleImageFormat';
+import { ICollection } from 'shared/interfaces/Collection';
+import removeSpecialCharsFromString from 'shared/utils/removeSpecialCharsFromString';
 
-interface CollectionDisplayProps {
-    collectionName: string,
-    collectionImg: string,
-    collectionId: number,
-    collectionDescription?: string
-}
 
-export default function CollectionDisplay({ collectionName, collectionImg, collectionId, collectionDescription }: CollectionDisplayProps) {
-    let collectionNameWithoutSpecialChars = collectionName.replace(/[^\w]/g, '');
-    const { setHeaderInfos } = useContext(DisplayedHeaderContext);
+export default function CollectionDisplay({ name, image, id, description }: ICollection) {
 
-    const cardDisplayRef = React.useRef<HTMLDivElement>(null);
+    const { setHeaderInfos } = useContext(DynamicHeaderContext);
+    const collectionHtmlDivElement = React.useRef<HTMLDivElement>(null);
+    
     const handleMouseHover = () => {
-        const newHeader = headerInfosGetter(cardDisplayRef);
-        setHeaderInfos(newHeader)
+        const header = headerInfosGetterFromDiv(collectionHtmlDivElement);
+        setHeaderInfos(header)
     }
 
     return (
-        <Link to={`/collection/${collectionId}#${collectionNameWithoutSpecialChars}`}>
+        <Link to={`/collection/${id}#${removeSpecialCharsFromString(name)}`}>
             <div
                 className={`${pageStyles.card} ${styles.collection_display}`}
-                ref={cardDisplayRef}
+                ref={collectionHtmlDivElement}
                 onMouseEnter={handleMouseHover}
             >
                 <picture>
-                    <source type='image/webp' srcSet={handleImageFormat(collectionImg, 'collections')} />
+                    <source type='image/webp' srcSet={handleImageFormat(image, 'collections')} />
                     <img
-                        className={`${styles.collection_img} ${collectionId === 0 ? styles.default_img : styles.selected_collection_img}`}
-                        src={handleImageFormat(collectionImg, 'collections')}
-                        alt={`${collectionName}`}
+                        className={`${styles.collection_img} ${id === 0 ? styles.default_img : styles.selected_collection_img}`}
+                        src={handleImageFormat(image, 'collections')}
+                        alt={`${name}`}
                     />
                 </picture>
-                <h2 className={styles.collection_name}>{collectionName}</h2>
-                <p>{collectionDescription}</p>
+                <h2 className={styles.collection_name}>{name}</h2>
+                <p>{description}</p>
             </div>
         </Link>
     )

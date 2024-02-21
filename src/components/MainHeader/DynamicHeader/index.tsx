@@ -1,11 +1,11 @@
-import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
-import styles from './DynamicMainHeader.module.css'
+import { DynamicHeaderContext } from 'context/DisplayedHeaderContext';
+import styles from './DynamicHeader.module.css'
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css';
 import { useContext } from 'react';
 import { handleImageFormat } from 'shared/utils/handleImageFormat';
 
-export default function DynamicMainHeader() {
-    const {headerInfos} = useContext(DisplayedHeaderContext);
+export default function DynamicHeader() {
+    const {headerInfos} = useContext(DynamicHeaderContext);
 
     return (
         <section className={`${pageStyles.card} ${styles.header}`} >

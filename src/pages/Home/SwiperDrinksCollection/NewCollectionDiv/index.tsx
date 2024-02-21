@@ -1,74 +1,73 @@
-import { useContext, useEffect } from 'react';
-import styles from './NewCollectionDiv.module.css';
-import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
+import { useContext, useEffect } from "react";
+import styles from "./NewCollectionDiv.module.css";
+import pageStyles from "pages/DrinkSetupPage/DrinkSetupPage.module.css";
 import Input from "components/Input";
-import ButtonSubmit from 'components/ButtonSubmit';
-import { IDrinksCollection } from 'shared/interfaces/IDrinksCollection';
-import { CollectionsContext } from 'context/CollectionContext';
-import { useNavigate } from 'react-router-dom';
-import { DisplayedHeaderContext } from 'context/DisplayedHeaderContext';
-import { IHeader } from 'shared/interfaces/IHeader';
-import InputFile from 'components/InputFile';
+import ButtonSubmit from "components/ButtonSubmit";
+import { CollectionsContext } from "context/CollectionContext";
+import { useNavigate } from "react-router-dom";
+import { DynamicHeaderContext } from "context/DisplayedHeaderContext";
+import InputFile from "components/InputFile";
+import collectionBuilder from "shared/builders/collectionBuilder";
+import headerBuilder from "shared/builders/headerBuilder";
 
 export default function NewCollectionDiv() {
-    const {
-        collectionsList,
-        collectionId, setCollectionId,
-        collectionName, setCollectionName,
-        collectionDescription, setCollectionDescription,
-        collectionImage, setCollectionImage
-    } = useContext(CollectionsContext)
-    const { setHeaderInfos } = useContext(DisplayedHeaderContext)
-    const navigate = useNavigate();
 
-    let newCollection: IDrinksCollection = {
-        id: collectionId,
-        name: collectionName,
-        image: collectionImage,
-        description: collectionDescription,
-        IDrinksList: []
-    }
+  const collectionsContext = useContext(CollectionsContext);
+  const { setHeaderInfos } = useContext(DynamicHeaderContext);
+  const navigate = useNavigate();
 
-    let newHeader: IHeader = {
-        image: collectionImage,
-        title: collectionName,
-        description: collectionDescription
-    }
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const collection = collectionBuilder(
+      collectionsContext.collectionId,
+      collectionsContext.collectionImage,
+      collectionsContext.collectionName,
+      collectionsContext.collectionDescription
+    );
+    const header = headerBuilder(
+      collectionsContext.collectionImage,
+      collectionsContext.collectionName,
+      collectionsContext.collectionDescription
+    );
+    collectionsContext.collectionsList.push(collection);
+    setHeaderInfos(header);
+    navigate(
+      `/collection/${collectionsContext.collectionId}#${collection.name}`
+    );
+  };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        collectionsList.push(newCollection)
-        setHeaderInfos(newHeader)
-        navigate(`/collection/${collectionId}#${newCollection.name}`);
-    }
+  // useEffect(() =>
+  //   collectionsContext.setCollectionId(collectionsContext.collectionsList.length)
+  // );
 
-    useEffect(() => setCollectionId(collectionsList.length))
-
-    return (
-        <form className={`${pageStyles.card} ${styles.new_collection}`} onSubmit={handleSubmit}>
-            <Input
-                id="collection_name"
-                labelText="Collection Name"
-                value={collectionName}
-                onChange={valor => setCollectionName(valor)}
-                className={styles.input}
-                required
-            />
-            <Input
-                id="collection_description"
-                labelText="Collection Description"
-                value={collectionDescription}
-                onChange={valor => setCollectionDescription(valor)}
-                className={styles.input}
-                required
-            />
-            <InputFile
-                setImage={setCollectionImage}
-                classNameSelectionLabel={styles.fileSelectionArea}
-                classNameImage={styles.image}
-                classNameInput={styles.fileInput}
-            />
-            <ButtonSubmit buttonValue='Create Collection' className={styles.button} />
-        </form>
-    )
-};
+  return (
+    <form
+      className={`${pageStyles.card} ${styles.new_collection}`}
+      onSubmit={handleSubmit}
+    >
+      <Input
+        id="collection_name"
+        labelText="Collection Name"
+        value={collectionsContext.collectionName}
+        onChange={(valor) => collectionsContext.setCollectionName(valor)}
+        className={styles.input}
+        required
+      />
+      <Input
+        id="collection_description"
+        labelText="Collection Description"
+        value={collectionsContext.collectionDescription}
+        onChange={(valor) => collectionsContext.setCollectionDescription(valor)}
+        className={styles.input}
+        required
+      />
+      <InputFile
+        setImage={collectionsContext.setCollectionImage}
+        classNameSelectionLabel={styles.fileSelectionArea}
+        classNameImage={styles.image}
+        classNameInput={styles.fileInput}
+      />
+      <ButtonSubmit buttonValue="Create Collection" className={styles.button} />
+    </form>
+  );
+}

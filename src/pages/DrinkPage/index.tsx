@@ -12,8 +12,8 @@ export default function DrinkPage() {
     const { collectionsList } = useContext(CollectionsContext)
     const params = useParams();
     let collection = collectionsList.find(collection => collection.id.toString() === params.collectionId);
-    let drink = collection?.IDrinksList.find(drink => drink.id.toString() === params.drinkId)
-    if (!drink) { drink = collectionsList[0].IDrinksList[0] }
+    let drink = collection?.drinksList.find(drink => drink.id.toString() === params.drinkId)
+    if (!drink) { drink = collectionsList[0].drinksList[0] }
 
     return (
         <main className={`${pageStyles.card} ${styles.drink_page} `}>

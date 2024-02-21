@@ -4,14 +4,14 @@ import Input from '../../../../components/Input';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function DrinkName() {
-    const { drinkName, setDrinkName } = useContext(DrinkCreationContext);
+    const { name, setName } = useContext(DrinkCreationContext);
     const [nameInput, setNameInput] = useState('');
 
-    useEffect(() => setDrinkName(nameInput))
+    useEffect(() => setName(nameInput))
 
     return (
         <div className={styles.drink_name_div}>
-            <h1 className={styles.drink_name_title}>{drinkName}</h1>
+            <h1 className={styles.drink_name_title}>{name}</h1>
             <Input
                 id='drink-name'
                 labelText='Drink Name'

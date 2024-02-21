@@ -1,10 +1,10 @@
-import DynamicMainHeader from "components/MainHeader/DynamicMainHeader";
+import DynamicHeader from "components/MainHeader/DynamicHeader";
 import { Outlet } from "react-router-dom";
 
 export default function MainHeader() {
     return (
         <main>
-            <DynamicMainHeader />
+            <DynamicHeader />
             <Outlet />
         </main>
     )

@@ -7,14 +7,14 @@ import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function DrinkPhoto() {
 
-    const { setDrinkImage } = useContext(DrinkCreationContext);
+    const { setImage } = useContext(DrinkCreationContext);
 
     return (
         <InputFile
             classNameSelectionLabel={`${pageStyles.card} ${styles.drink_photo_div}`}
             classNameImage={styles.image}
             classNameInput={styles.input}
-            setImage={setDrinkImage}
+            setImage={setImage}
             pictureImageTxt='choose an image'
         />
     )

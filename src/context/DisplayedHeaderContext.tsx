@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import { IHeader } from "shared/interfaces/IHeader";
 import drinkLogo from 'assets/images/drink-logo.png';
-import { IDrinksCollection } from "shared/interfaces/IDrinksCollection";
+import { ICollection } from "shared/interfaces/Collection";
 import collectionsJson from 'shared/records/DrinksCollection.json';
 
 
-interface DisplayedHeaderContextProps {
+interface DynamicHeaderContextProps {
   headerInfos: IHeader,
   setHeaderInfos: (header: IHeader) => void,
-  selectedCollection: IDrinksCollection,
-  setSelectedCollection: (collection: IDrinksCollection) => void,
+  selectedCollection: ICollection,
+  setSelectedCollection: (collection: ICollection) => void,
   datalistSelectedId: number,
-  copyDatalistSelectedId: (id: number) => void,
+  setDatalistSelectedId: (id: number) => void,
   inputCollectionName: string,
   setInputCollectionName: (input: string) => void
 }
 
-export const DisplayedHeaderContext = React.createContext({} as DisplayedHeaderContextProps);
+export const DynamicHeaderContext = React.createContext({} as DynamicHeaderContextProps);
 
 const defaultHeader: IHeader = {
   id: 0,
@@ -26,20 +26,20 @@ const defaultHeader: IHeader = {
 
 export const DislpayedHeaderContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [headerInfos, setHeaderInfos] = useState<IHeader>(defaultHeader);
-  const [selectedCollection, setSelectedCollection] = useState<IDrinksCollection>(collectionsJson[0])
-  const [datalistSelectedId, copyDatalistSelectedId] = useState<number>(0);
+  const [selectedCollection, setSelectedCollection] = useState<ICollection>(collectionsJson[0])
+  const [datalistSelectedId, setDatalistSelectedId] = useState<number>(0);
   const [inputCollectionName, setInputCollectionName] = useState('');
 
   return (
-    <DisplayedHeaderContext.Provider
+    <DynamicHeaderContext.Provider
       value={{
         headerInfos, setHeaderInfos,
         selectedCollection, setSelectedCollection,
-        datalistSelectedId, copyDatalistSelectedId,
+        datalistSelectedId, setDatalistSelectedId: setDatalistSelectedId,
         inputCollectionName, setInputCollectionName
       }}
     >
       {children}
-    </DisplayedHeaderContext.Provider>
+    </DynamicHeaderContext.Provider>
   )
 } 

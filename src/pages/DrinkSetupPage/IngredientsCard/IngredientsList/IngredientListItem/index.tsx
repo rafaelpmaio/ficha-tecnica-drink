@@ -9,7 +9,7 @@ interface IngredientListItemProps {
 };
 
 export default function IngredientListItem({ ingredient }: IngredientListItemProps) {
-    const { setIngredientsList, ingredientsList = [] } = useContext(DrinkCreationContext);
+    const { setIngredients, ingredients = [] } = useContext(DrinkCreationContext);
     return (
         <>
             <li key={ingredient.id} className={styles.ingredients_list}>
@@ -19,8 +19,8 @@ export default function IngredientListItem({ ingredient }: IngredientListItemPro
                 <b className={styles.coluna_custo}>{ingredient.custo.toFixed(2)}</b>
                 <DeleteButton
                     itemId={ingredient.id}
-                    list={ingredientsList}
-                    setList={setIngredientsList}
+                    list={ingredients}
+                    setList={setIngredients}
                 />
             </li>
         </>

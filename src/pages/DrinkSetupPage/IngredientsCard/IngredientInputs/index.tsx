@@ -10,7 +10,7 @@ import calculateCostPrice from 'shared/utils/calculateCostPrice';
 import calculateCostPercentage from 'shared/utils/calculateCostPercentage';
 
 export default function IngredientInputs() {
-    const { ingredientsList, sellPrice, setIngredientsList, totalCostValue, setTotalCostValue, setCostPercentage } = useContext(DrinkCreationContext);
+    const { ingredients, sellPrice, setIngredients, confectionCost, setConfectionCost, setCostPercentage } = useContext(DrinkCreationContext);
     const [id, setId] = useState(0);
     const [quantidade, setQuantidade] = useState('');
     const [medida, setMedida] = useState('');
@@ -24,7 +24,7 @@ export default function IngredientInputs() {
         Number.parseFloat(custo)
     );
     const addIngredientToList = (newIngredient: IIngredient) => {
-        setIngredientsList([...ingredientsList, newIngredient]);
+        setIngredients([...ingredients, newIngredient]);
         setId(id + 1);
     }
     const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -35,9 +35,9 @@ export default function IngredientInputs() {
     };
 
     useEffect(() => {
-        setTotalCostValue(calculateCostPrice(ingredientsList));
-        setCostPercentage(calculateCostPercentage(totalCostValue, Number.parseFloat(sellPrice)));
-    }, [ingredientsList, sellPrice, totalCostValue])
+        setConfectionCost(calculateCostPrice(ingredients));
+        setCostPercentage(calculateCostPercentage(confectionCost, sellPrice));
+    }, [ingredients, sellPrice, confectionCost])
 
     return (
         <>

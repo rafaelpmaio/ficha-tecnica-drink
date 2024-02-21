@@ -3,19 +3,17 @@ import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import SwiperDrinksCollection from "pages/Home/SwiperDrinksCollection";
 import { useContext } from 'react';
 import { CollectionsContext } from 'context/CollectionContext';
+import hideDefaultCollectionIfEmpty from 'shared/utils/hideDefaultCollectionIfEmpty';
 
 export default function CollectionsCard() {
     const { collectionsList } = useContext(CollectionsContext);
 
-    let hideDefaultCollection = collectionsList;
-    if (collectionsList[0].IDrinksList.length === 0) {
-        hideDefaultCollection = collectionsList.filter(collection => collection.id !== 0)
-    }
+    let treatedCollectionsList = hideDefaultCollectionIfEmpty(collectionsList);
 
     return (
 
         <section className={`${pageStyles.card} ${styles.collections_card}`}>
-            <SwiperDrinksCollection collectionsList={hideDefaultCollection} />
+            <SwiperDrinksCollection collectionsList={treatedCollectionsList ? treatedCollectionsList : collectionsList } />
         </section >
     )
 };
