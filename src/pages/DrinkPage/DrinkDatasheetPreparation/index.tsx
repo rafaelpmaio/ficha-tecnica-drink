@@ -13,7 +13,7 @@ export default function DrinkDatasheetPreparation({ drink }: DrinkDatasheetPrepa
             <ul className={styles.list}>
                 {drink.steps.map((step, index) =>
                     <li className={styles.step_list_item}>
-                        <b className={pageStyle.highlight}>{`Step ${index + 1}: `}</b>{step.stepDescription}
+                        <b className={pageStyle.highlight}>{`Step ${index + 1}: `}</b>{step.step}
                     </li>)}
             </ul>
             <span className={styles.decoration_row}>

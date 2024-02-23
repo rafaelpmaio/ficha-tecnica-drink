@@ -3,7 +3,7 @@ import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import headerInfosGetterFromDiv from 'components/MainHeader/DynamicHeader/headerInfosGetterFromDiv';
-import { DynamicHeaderContext } from 'context/DisplayedHeaderContext';
+import { DynamicHeaderContext } from 'context/DynamicHeaderContext';
 import { handleImageFormat } from 'shared/utils/handleImageFormat';
 import { ICollection } from 'shared/interfaces/Collection';
 import removeSpecialCharsFromString from 'shared/utils/removeSpecialCharsFromString';
@@ -11,7 +11,7 @@ import removeSpecialCharsFromString from 'shared/utils/removeSpecialCharsFromStr
 
 export default function CollectionDisplay({ name, image, id, description }: ICollection) {
 
-    const { setHeaderInfos } = useContext(DynamicHeaderContext);
+    const { setHeaderData: setHeaderInfos } = useContext(DynamicHeaderContext);
     const collectionHtmlDivElement = React.useRef<HTMLDivElement>(null);
     
     const handleMouseHover = () => {

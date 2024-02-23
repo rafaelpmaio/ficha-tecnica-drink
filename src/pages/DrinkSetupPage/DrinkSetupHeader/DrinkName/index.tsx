@@ -1,6 +1,6 @@
 import styles from './DrinkName.module.css'
 import { useContext, useEffect, useState } from 'react';
-import Input from '../../../../components/Input';
+import Input from 'components/Input';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function DrinkName() {
@@ -16,7 +16,7 @@ export default function DrinkName() {
                 id='drink-name'
                 labelText='Drink Name'
                 value={nameInput}
-                onChange={valor => setNameInput(valor)}
+                onChange={setNameInput}
                 className={styles.drink_name_input}
                 required
             />

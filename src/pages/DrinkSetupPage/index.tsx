@@ -7,29 +7,18 @@ import ButtonSubmit from "components/ButtonSubmit";
 import DrinkPhoto from "pages/DrinkSetupPage/DrinkPhoto";
 import styles from "./DrinkSetupPage.module.css";
 import { DrinkCreationContext } from "context/DrinkCreationContext";
-import { DynamicHeaderContext } from "context/DisplayedHeaderContext";
+import { DynamicHeaderContext } from "context/DynamicHeaderContext";
 import drinkBuilder from "shared/builders/drinkBuilder";
 import removeSpecialCharsFromString from "shared/utils/removeSpecialCharsFromString";
 import headerBuilder from "shared/builders/headerBuilder";
-import validate from "errors";
+import validateDrink from "errors/validateDrink";
+import { CollectionsContext } from "context/CollectionContext";
 
 export default function DrinkSetupPage() {
   const navigate = useNavigate();
-  const {
-    id,
-    name,
-    image,
-    ingredients,
-    steps,
-    garnish,
-    glassware,
-    confectionCost,
-    sellPrice,
-    costPercentage,
-  } = useContext(DrinkCreationContext);
-  const { setHeaderInfos, selectedCollection, datalistSelectedId } = useContext(
-    DynamicHeaderContext
-  );
+  const drinkContext = useContext(DrinkCreationContext);
+  const { setHeaderData } = useContext(DynamicHeaderContext);
+  const { selectedCollection } = useContext(CollectionsContext);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,29 +26,18 @@ export default function DrinkSetupPage() {
     let collectionNameWithoutSpecialChars = removeSpecialCharsFromString(
       selectedCollection.name
     );
-    const drink = drinkBuilder(
-      id,
-      name,
-      image,
-      ingredients,
-      steps,
-      garnish,
-      glassware,
-      confectionCost,
-      sellPrice,
-      costPercentage
-    );
+    const drink = drinkBuilder(drinkContext);
     const header = headerBuilder(
       selectedCollection.image,
       selectedCollection.name,
       selectedCollection.description
     );
 
-    validate(ingredients, steps);
+    validateDrink(drinkContext);
     selectedCollection.drinksList.push(drink);
-    setHeaderInfos(header);
+    setHeaderData(header);
     navigate(
-      `/collection/${datalistSelectedId}#${collectionNameWithoutSpecialChars}`
+      `/collection/${selectedCollection.id}#${collectionNameWithoutSpecialChars}`
     );
   };
 

@@ -8,9 +8,9 @@ export default function headerBuilder(
 
 
   const header: IHeader = {
-    image,
-    title,
-    description,
+    collectionImage: image,
+    collectionName: title,
+    collectionDescription: description,
   };
 
   return header;

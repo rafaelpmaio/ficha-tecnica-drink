@@ -19,10 +19,10 @@ export default function DrinkDatasheetIngredients({ drink }: DrinkDatasheetIngre
             <ul className={styles.list}>
                 {drink?.ingredients.map(ingredient =>
                     <li className={styles.ingredients_row}>
-                        <b className={styles.amount_column}>{ingredient.quantidade}</b>
-                        <b className={styles.measure_unit_column}>{ingredient.medida}</b>
-                        <b className={styles.ingredient_column}>{ingredient.ingrediente}</b>
-                        <b className={styles.cost_column}>{ingredient.custo}</b>
+                        <b className={styles.amount_column}>{ingredient.amount}</b>
+                        <b className={styles.measure_unit_column}>{ingredient.measureUnit}</b>
+                        <b className={styles.ingredient_column}>{ingredient.ingredient}</b>
+                        <b className={styles.cost_column}>{ingredient.cost}</b>
                     </li>
                 )}
             </ul>

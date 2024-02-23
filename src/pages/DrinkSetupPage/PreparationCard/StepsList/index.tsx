@@ -3,32 +3,37 @@ import styles from './StepsList.module.css';
 import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import Input from 'components/Input';
 import Button from 'components/Button';
-import createStep from './createStep';
 import DeleteButton from 'components/ButtonDelete';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function StepsList() {
-    const { steps: stepsList, setSteps } = useContext(DrinkCreationContext);
-    const [stepId, setStepId] = useState(0);
-    const [passoInput, setPassoInput] = useState('');
-    const functionsExecutedOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+
+    const [id, setId] = useState(0);
+    const [stepInput, setStepInput] = useState('');
+
+    const { steps, setSteps } = useContext(DrinkCreationContext);
+
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault()
-        setSteps([...stepsList, newStep]);
-        setStepId(stepId + 1);
-        setPassoInput('')
+        let newStep = {
+            id,
+            step: stepInput
+        } 
+        setSteps([...steps, newStep]);
+        setId(id + 1);
+        setStepInput('')
     }
-    let newStep = createStep(stepId, passoInput);
 
     return (
         <>
             <h3>Describe the steps</h3>
             <ul>
-                {stepsList.map((step, index) =>
+                {steps.map((step, index) =>
                     <li key={step.id} className={styles.steps_list}>
-                        <b className={styles.step_prefix}>{`Step ${index + 1}:  `}</b>{step.stepDescription}
+                        <b className={styles.step_prefix}>{`Step ${index + 1}:  `}</b>{step.step}
                         <DeleteButton
                             itemId={step.id}
-                            list={stepsList}
+                            list={steps}
                             setList={setSteps}
                         />
                     </li>
@@ -38,11 +43,11 @@ export default function StepsList() {
                 <Input
                     id='step'
                     labelText='Next Step'
-                    value={passoInput}
-                    onChange={valor => setPassoInput(valor)}
+                    value={stepInput}
+                    onChange={setStepInput}
                     className={styles.input}
                 />
-                <Button value='+' aoClickado={functionsExecutedOnClick} />
+                <Button value='+' aoClickado={handleClick} />
             </span>
         </>
     )

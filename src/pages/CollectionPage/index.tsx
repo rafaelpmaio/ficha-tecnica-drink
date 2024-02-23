@@ -4,12 +4,9 @@ import styles from './CollectionPage.module.css'
 import { Link, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { CollectionsContext } from 'context/CollectionContext';
-import Button from 'components/Button';
-import { DynamicHeaderContext } from 'context/DisplayedHeaderContext';
 
 export default function CollectionPage() {
     const { collectionsList } = useContext(CollectionsContext);
-    const { setInputCollectionName } = useContext(DynamicHeaderContext);
     const params = useParams();
 
     let collection = collectionsList.find(collection => collection.id.toString() === params.id);
@@ -32,11 +29,7 @@ export default function CollectionPage() {
                             drinkImage={drink.image}
                         />)
                     : <Link to='/new_drink' className={styles.link_first_drink}>
-                        <p>let's start with the first drink!</p>
-                        <Button
-                            value='create drink'
-                            aoClickado={() => setInputCollectionName(`${collectionId}. ${collectionName}`)}
-                        />
+                        <p>let's start with the first drink?</p>
                     </Link>
                 }
             </section>

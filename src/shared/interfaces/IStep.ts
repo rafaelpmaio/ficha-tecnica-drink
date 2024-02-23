@@ -1,4 +1,4 @@
 export interface IStep {
     id: number,
-    stepDescription: string
+    step: string
 }

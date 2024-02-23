@@ -1,6 +1,6 @@
 export interface IHeader {
-    id?: number,
-    title: string,
-    image: string,
-    description?: string
+    collectionId?: number,
+    collectionName: string,
+    collectionImage: string,
+    collectionDescription?: string
 }

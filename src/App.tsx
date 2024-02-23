@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import CollectionPage from 'pages/CollectionPage';
 import MainHeader from 'components/MainHeader';
 import Footer from 'components/Footer';
-import { DislpayedHeaderContextProvider } from 'context/DisplayedHeaderContext';
+import { DynamicHeaderContextProvider } from 'context/DynamicHeaderContext';
 import { DrinkCreationContextProvider } from 'context/DrinkCreationContext';
 import { CollectionsContextProvider } from 'context/CollectionContext';
 import DrinkPage from 'pages/DrinkPage';
@@ -19,7 +19,7 @@ function App() {
       <CollectionsContextProvider>
         <DrinkCreationContextProvider>
           <NavMenu />
-          <DislpayedHeaderContextProvider>
+          <DynamicHeaderContextProvider>
             <Routes>
               <Route path='/' element={<MainHeader />}>
                 <Route index element={<Home />} />
@@ -29,7 +29,7 @@ function App() {
               <Route path='drink/:collectionId/:drinkId' element={<DrinkPage />}/>
               <Route path="*" element={<Page404/>}></Route>
             </Routes>
-          </DislpayedHeaderContextProvider>
+          </DynamicHeaderContextProvider>
         </DrinkCreationContextProvider>
       </CollectionsContextProvider>
       <Footer />

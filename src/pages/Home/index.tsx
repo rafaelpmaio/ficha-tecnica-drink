@@ -3,7 +3,7 @@ import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
 import SwiperDrinksCollection from "pages/Home/SwiperDrinksCollection";
 import { useContext } from 'react';
 import { CollectionsContext } from 'context/CollectionContext';
-import hideDefaultCollectionIfEmpty from 'shared/utils/hideDefaultCollectionIfEmpty';
+import hideDefaultCollectionIfEmpty from 'shared/functions/collection/hideDefaultCollectionIfEmpty';
 
 export default function CollectionsCard() {
     const { collectionsList } = useContext(CollectionsContext);

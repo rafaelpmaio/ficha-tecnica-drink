@@ -4,14 +4,16 @@ import collectionsJson from "shared/records/DrinksCollection.json";
 
 interface CollectionContextProps {
   collectionsList: ICollection[];
-  collectionId: number;
-  setCollectionId: (id: number) => void;
-  collectionName: string;
-  setCollectionName: (name: string) => void;
-  collectionDescription: string;
-  setCollectionDescription: (description: string) => void;
-  collectionImage: string;
-  setCollectionImage: (image: string) => void;
+  id: number;
+  setId: (id: number) => void;
+  name: string;
+  setName: (name: string) => void;
+  description: string;
+  setDescription: (description: string) => void;
+  image: string;
+  setImage: (image: string) => void;
+  selectedCollection: ICollection;
+  setSelectedCollection: (collection: ICollection) => void;
 }
 
 const CollectionsContext = React.createContext({} as CollectionContextProps);
@@ -21,24 +23,29 @@ const CollectionsContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  const [id, setId] = useState(0);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
   const [collectionsList] = useState<ICollection[]>(collectionsJson);
-  const [collectionId, setCollectionId] = useState(0);
-  const [collectionName, setCollectionName] = useState("");
-  const [collectionDescription, setCollectionDescription] = useState("");
-  const [collectionImage, setCollectionImage] = useState("");
+  const [selectedCollection, setSelectedCollection] = useState<ICollection>(
+    collectionsJson[0]
+  );
 
   return (
     <CollectionsContext.Provider
       value={{
         collectionsList,
-        collectionId,
-        setCollectionId,
-        collectionName,
-        setCollectionName,
-        collectionDescription,
-        setCollectionDescription,
-        collectionImage,
-        setCollectionImage,
+        id,
+        setId,
+        name,
+        setName,
+        description,
+        setDescription,
+        image,
+        setImage,
+        selectedCollection,
+        setSelectedCollection,
       }}
     >
       {children}

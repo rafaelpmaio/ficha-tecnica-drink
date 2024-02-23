@@ -4,8 +4,10 @@ import Input from 'components/Input';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function Glassware() {
-    const { glassware, setGlassware } = useContext(DrinkCreationContext);
+
     const [glasswareInput, setGlasswareInput] = useState('');
+    
+    const { glassware, setGlassware } = useContext(DrinkCreationContext);
 
     useEffect(() => setGlassware(glasswareInput))
 
@@ -16,7 +18,7 @@ export default function Glassware() {
                 id='glassware'
                 labelText='Wich glassware will be used?'
                 value={glasswareInput}
-                onChange={valor => setGlasswareInput(valor)}
+                onChange={setGlasswareInput}
                 required
                 className={styles.input}
             />

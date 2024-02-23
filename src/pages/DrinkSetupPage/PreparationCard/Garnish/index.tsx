@@ -4,8 +4,10 @@ import Input from 'components/Input';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function Garnish() {
-    const { garnish, setGarnish } = useContext(DrinkCreationContext)
+
     const [garnishInput, setGarnishInput] = useState('');
+
+    const { garnish, setGarnish } = useContext(DrinkCreationContext)
 
     useEffect(() => setGarnish(garnishInput))
 
@@ -16,7 +18,7 @@ export default function Garnish() {
                 id='garnish'
                 labelText='Wich garnish will be used?'
                 value={garnishInput}
-                onChange={valor => setGarnishInput(valor)}
+                onChange={setGarnishInput}
                 required
                 className={styles.input}
             />

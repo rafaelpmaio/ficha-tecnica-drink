@@ -4,8 +4,8 @@ import Input from 'components/Input';
 import { DrinkCreationContext } from 'context/DrinkCreationContext';
 
 export default function CostDisplay() {
-    const {  confectionCost, costPercentage, sellPrice, setSellPrice } = useContext(DrinkCreationContext);
     const [precoVendaInput, setPrecoVendaInput] = useState('');
+    const {  confectionCost, costPercentage, sellPrice, setSellPrice } = useContext(DrinkCreationContext);
 
     useEffect(() => setSellPrice(Number.parseFloat(precoVendaInput)), [precoVendaInput])
 
@@ -21,7 +21,7 @@ export default function CostDisplay() {
                 id='preco-venda'
                 labelText='Sell Price'
                 value={precoVendaInput}
-                onChange={valor => setPrecoVendaInput(valor)}
+                onChange={setPrecoVendaInput}
                 className={styles.input}
                 required
             />
