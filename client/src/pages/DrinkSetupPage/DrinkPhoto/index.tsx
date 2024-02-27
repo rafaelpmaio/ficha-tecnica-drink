@@ -11,11 +11,11 @@ export default function DrinkPhoto() {
 
     return (
         <InputFile
-            classNameSelectionLabel={`${pageStyles.card} ${styles.drink_photo_div}`}
-            classNameImage={styles.image}
-            classNameInput={styles.input}
+            labelStyle={`${pageStyles.card} ${styles.drink_photo_div}`}
+            imageStyle={styles.image}
+            inputStyle={styles.input}
             setImage={setImage}
-            pictureImageTxt='choose an image'
+            imageDescription='choose an image'
         />
     )
 };

@@ -15,7 +15,6 @@ export default function Footer() {
                     <img className={styles.footer_logo} src={githubLogo} alt="github logo" />
                 </Link>
             </address>
-
         </footer>
     )
 };

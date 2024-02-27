@@ -31,7 +31,9 @@ export default function CollectionDatalist() {
         arr={collectionsList}
         value={inputCollectionName}
         onChange={handleChange}
-        className={styles.input}
+        label="Collections"
+        datalistId={"collections_list"}
+
       />
     </div>
   );

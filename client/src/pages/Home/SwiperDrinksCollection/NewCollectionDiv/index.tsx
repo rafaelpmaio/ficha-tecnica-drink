@@ -2,7 +2,6 @@ import { useContext } from "react";
 import styles from "./NewCollectionDiv.module.css";
 import pageStyles from "pages/DrinkSetupPage/DrinkSetupPage.module.css";
 import Input from "components/Input";
-// import ButtonSubmit from "components/ButtonSubmit";
 import { CollectionsContext } from "context/CollectionContext";
 import { useNavigate } from "react-router-dom";
 import { DynamicHeaderContext } from "context/DynamicHeaderContext";
@@ -52,9 +51,9 @@ export default function NewCollectionDiv() {
       />
       <InputFile
         setImage={collectionsContext.setImage}
-        classNameSelectionLabel={styles.fileSelectionArea}
-        classNameImage={styles.image}
-        classNameInput={styles.fileInput}
+        labelStyle={styles.fileSelectionArea}
+        imageStyle={styles.image}
+        inputStyle={styles.fileInput}
       />
       <Button type="submit">Create Collection</Button>
     </form>
