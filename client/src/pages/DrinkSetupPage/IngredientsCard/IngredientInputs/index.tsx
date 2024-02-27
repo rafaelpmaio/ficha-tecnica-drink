@@ -94,7 +94,7 @@ export default function IngredientInputs() {
           onChange={(valor) => setCost(valor)}
         />
       </div>
-      <Button value="+" aoClickado={handleClick} />
+      <Button onClick={handleClick} >+</Button>
     </>
   );
 }

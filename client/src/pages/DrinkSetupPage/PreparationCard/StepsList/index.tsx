@@ -3,8 +3,8 @@ import styles from "./StepsList.module.css";
 import pageStyles from "pages/DrinkSetupPage/DrinkSetupPage.module.css";
 import Input from "components/Input";
 import Button from "components/Button";
-import DeleteButton from "components/ButtonDelete";
 import { DrinkCreationContext } from "context/DrinkCreationContext";
+import handleDelete from "shared/utils/handleDelete";
 
 export default function StepsList() {
   const [id, setId] = useState(0);
@@ -33,7 +33,7 @@ export default function StepsList() {
           <li key={step.id} className={styles.steps_list}>
             <b className={styles.step_prefix}>{`Step ${index + 1}:  `}</b>
             {step.step}
-            <DeleteButton itemId={step.id} list={steps} setList={setSteps} />
+            <Button type="delete"  onClick={() => handleDelete(step.id, steps, setSteps)}>x</Button>
           </li>
         ))}
       </ul>
@@ -45,7 +45,7 @@ export default function StepsList() {
           onChange={setStepInput}
           className={styles.input}
         />
-        <Button value="+" aoClickado={handleClick} />
+        <Button  onClick={handleClick} >+</Button>
       </span>
     </>
   );

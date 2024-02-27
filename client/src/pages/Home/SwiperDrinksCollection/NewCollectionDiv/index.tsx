@@ -2,13 +2,14 @@ import { useContext } from "react";
 import styles from "./NewCollectionDiv.module.css";
 import pageStyles from "pages/DrinkSetupPage/DrinkSetupPage.module.css";
 import Input from "components/Input";
-import ButtonSubmit from "components/ButtonSubmit";
+// import ButtonSubmit from "components/ButtonSubmit";
 import { CollectionsContext } from "context/CollectionContext";
 import { useNavigate } from "react-router-dom";
 import { DynamicHeaderContext } from "context/DynamicHeaderContext";
 import InputFile from "components/InputFile";
 import collectionBuilder from "shared/builders/collectionBuilder";
 import headerBuilder from "shared/builders/headerBuilder";
+import Button from "components/Button";
 
 export default function NewCollectionDiv() {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ export default function NewCollectionDiv() {
         classNameImage={styles.image}
         classNameInput={styles.fileInput}
       />
-      <ButtonSubmit buttonValue="Create Collection" className={styles.button} />
+      <Button type="submit">Create Collection</Button>
     </form>
   );
 }

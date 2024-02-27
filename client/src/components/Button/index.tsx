@@ -1,15 +1,16 @@
 import styles from './Button.module.css'
 
 interface ButtonProps {
-    value: string,
-    aoClickado: (valor: any) => void
+    children: string,
+    onClick?: (valor: any) => void, 
+    type?: string
 }
 
-export default function Button({ value, aoClickado }: ButtonProps) {
+export default function Button({ children, onClick: aoClickado, type = 'button' }: ButtonProps) {
 
     return (
-        <button className={styles.button} onClick={aoClickado}>
-            { value }
+        <button className={styles[type]} onClick={aoClickado}>
+            { children }
         </button >
     )
 };

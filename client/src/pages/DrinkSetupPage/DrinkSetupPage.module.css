@@ -19,11 +19,6 @@
     flex-grow: 1;
 }
 
-.submit_button {
-    padding: 2em 1em;
-    margin-left: 2em;
-}
-
 @media only screen and (max-width: 900px) {
     .preparation_and_drink_photo_block {
         display: block;
