@@ -4,6 +4,7 @@ import collectionsJson from "shared/records/DrinksCollection.json";
 
 interface CollectionContextProps {
   collectionsList: ICollection[];
+  setCollectionsList: (list: ICollection[]) => void,
   id: number;
   setId: (id: number) => void;
   name: string;
@@ -27,7 +28,7 @@ const CollectionsContextProvider = ({
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const [collectionsList] = useState<ICollection[]>(collectionsJson);
+  const [collectionsList, setCollectionsList] = useState<ICollection[]>([]);
   const [selectedCollection, setSelectedCollection] = useState<ICollection>(
     collectionsJson[0]
   );
@@ -36,6 +37,7 @@ const CollectionsContextProvider = ({
     <CollectionsContext.Provider
       value={{
         collectionsList,
+        setCollectionsList,
         id,
         setId,
         name,

@@ -1,4 +1,4 @@
-import drink from "../models/Drink.js";
+import { drink } from "../models/Drink.js";
 
 class DrinkController {
   static async listDrinks(req, res, next) {

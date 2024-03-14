@@ -7,7 +7,7 @@ const collectionSchema = new mongoose.Schema(
     name: { type: String, required: [true, "the collection name is missing"] },
     image: { type: String },
     description: { type: String },
-    drinksList: {type: drinkSchema, required: true},
+    drinksList: {type: [drinkSchema], required: true},
     deleted: { type: Boolean },
   },
   { versionKey: false }

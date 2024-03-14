@@ -32,21 +32,26 @@ class CollectionController {
     }
   }
 
-
-  //fiz funcionar pesquisando 1 drink e montando o drinklist, agora tenho que fazer funcionar armazenando um array
   static async updateCollection(req, res) {
     const updatedData = req.body;
-
+    const drinksIds = updatedData.drinksList;
     try {
       const id = req.params.id;
-      const selectedDrink = await drink.findById(updatedData.drinksList);
-      const updatedCollection = {
-        ...updatedData,
-        drinksList: { ...selectedDrink._doc },
-      };
+      const drinks = await drink.find().where("_id").in(drinksIds).exec();
 
-      await collection.findByIdAndUpdate(id, updatedCollection);
-      res.status(201).json({ message: "collection updated", updatedCol: updatedCollection });
+      // eslint-disable-next-line no-unused-vars
+      const { drinksList, ...data } = updatedData;
+      const updatedCollection = { ...data };
+
+      await collection.updateOne(
+        { _id: id },
+        {
+          ...updatedCollection,
+          $push: { drinksList: { $each: drinks } },
+        }
+      );
+
+      res.status(201).json({ message: "collection updated", drinks: drinks });
     } catch (error) {
       console.log(error);
     }

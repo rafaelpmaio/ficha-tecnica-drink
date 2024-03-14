@@ -1,19 +1,24 @@
-import styles from './Home.module.css'
-import pageStyles from 'pages/DrinkSetupPage/DrinkSetupPage.module.css'
+import styles from "./Home.module.css";
+import pageStyles from "pages/DrinkSetupPage/DrinkSetupPage.module.css";
 import SwiperDrinksCollection from "pages/Home/SwiperDrinksCollection";
-import { useContext } from 'react';
-import { CollectionsContext } from 'context/CollectionContext';
-import hideDefaultCollectionIfEmpty from 'shared/functions/collection/hideDefaultCollectionIfEmpty';
+import { useContext, useEffect } from "react";
+import { CollectionsContext } from "context/CollectionContext";
+import { httpCollections } from "httpApi";
 
 export default function CollectionsCard() {
-    const { collectionsList } = useContext(CollectionsContext);
+  const { collectionsList, setCollectionsList } =
+    useContext(CollectionsContext);
 
-    let treatedCollectionsList = hideDefaultCollectionIfEmpty(collectionsList);
+  useEffect(() => {
+    httpCollections
+      .get("collections")
+      .then((res) => JSON.parse(res.request.response))
+      .then((collections) => setCollectionsList(collections));
+  }, []);
 
-    return (
-
-        <section className={`${pageStyles.card} ${styles.collections_card}`}>
-            <SwiperDrinksCollection collectionsList={treatedCollectionsList ? treatedCollectionsList : collectionsList } />
-        </section >
-    )
-};
+  return (
+    <section className={`${pageStyles.card} ${styles.collections_card}`}>
+      <SwiperDrinksCollection collectionsList={collectionsList} />
+    </section>
+  );
+}
