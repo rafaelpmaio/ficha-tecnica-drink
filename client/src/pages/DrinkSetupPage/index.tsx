@@ -37,7 +37,7 @@ export default function DrinkSetupPage() {
     selectedCollection.drinksList.push(drink);
     setHeaderData(header);
     navigate(
-      `/collection/${selectedCollection.id}#${collectionNameWithoutSpecialChars}`
+      `/collection/${selectedCollection._id}#${collectionNameWithoutSpecialChars}`
     );
   };
 

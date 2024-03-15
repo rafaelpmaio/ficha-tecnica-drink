@@ -2,7 +2,7 @@ import { IIngredient } from "./IIngredient";
 import { IStep } from "./IStep";
 
 export interface IDrink {
-    id: number,
+    _id: string,
     name: string,
     image: string,
     ingredients: IIngredient[],

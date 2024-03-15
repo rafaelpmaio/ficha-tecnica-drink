@@ -4,13 +4,13 @@ import styles from "./CollectionPage.module.css";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CollectionsContext } from "context/CollectionContext";
-import getFromList from "shared/functions/collection/getFromList";
+import getFromList from "shared/utils/getFromList";
 
 export default function CollectionPage() {
   const { collectionsList } = useContext(CollectionsContext);
 
   const params = useParams();
-  const paramsCollectionId = Number(params.id);
+  let paramsCollectionId = params.id;
 
   let collection = getFromList(paramsCollectionId, collectionsList);
 
@@ -19,7 +19,12 @@ export default function CollectionPage() {
   }
 
   let drinkList = collection.drinksList;
-  let collectionId = collection.id;
+  let collectionId = collection._id;
+
+  console.log(collectionsList)
+  console.log(collection)
+  console.log(drinkList)
+
 
   return (
     <section className={`${styles.collectionPage} ${pageStyles.card}`}>

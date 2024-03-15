@@ -3,6 +3,8 @@ import { drink } from "../models/Drink.js";
 
 class CollectionController {
   static async listCollections(req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+
     try {
       const collectionsList = await collection.find({});
       res.status(200).json(collectionsList);

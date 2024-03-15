@@ -3,8 +3,8 @@ import { IIngredient } from "shared/interfaces/IIngredient";
 import { IStep } from "shared/interfaces/IStep";
 
 interface DrinkCreationContextProps {
-  id: number;
-  setId: (id: number) => void;
+  _id: string;
+  setId: (id: string) => void;
   ingredients: IIngredient[];
   setIngredients: (ingredients: IIngredient[]) => void;
   name: string;
@@ -34,7 +34,7 @@ export const DrinkCreationContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [id, setId] = useState<number>(0);
+  const [_id, setId] = useState<string>('');
   const [ingredients, setIngredients] = useState<IIngredient[]>([]);
   const [name, setName] = useState<string>("");
   const [steps, setSteps] = useState<IStep[]>([]);
@@ -48,7 +48,7 @@ export const DrinkCreationContextProvider = ({
   return (
     <DrinkCreationContext.Provider
       value={{
-        id,
+        _id,
         setId,
         ingredients,
         setIngredients,

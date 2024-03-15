@@ -1,13 +1,13 @@
 [
     {
-        "id": 0,
+        "_id": "0",
         "name": "Default Collection",
         "image": "drink-logo.png",
         "description": "Something went wrong! The selected collection wasn't found, we send your drink here keep it safe! :)",
         "drinksList": []
     },
     {
-        "id": 1,
+        "_id": "1",
         "name": "Summer Season",
         "image": "summer-collection.webp",
         "description": "Valid from December to March of 2023",
@@ -294,7 +294,7 @@
         ]
     },
     {
-        "id": 2,
+        "_id": "2",
         "name": "Happy Hour",
         "image": "happy-hour.webp",
         "drinksList": [

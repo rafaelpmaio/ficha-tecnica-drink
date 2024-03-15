@@ -1,7 +1,7 @@
 import { IDrink } from "shared/interfaces/IDrink";
 
 export default function drinkBuilder(
-  {id,
+  {_id,
   name,
   image,
   ingredients,
@@ -14,7 +14,7 @@ export default function drinkBuilder(
 ) {
 
   const drink: IDrink = {
-    id,
+    _id,
     name,
     image,
     ingredients,

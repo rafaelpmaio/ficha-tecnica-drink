@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { ICollection } from "shared/interfaces/Collection";
-import collectionsJson from "shared/records/DrinksCollection.json";
+import { ICollection } from "shared/interfaces/ICollection";
 
 interface CollectionContextProps {
   collectionsList: ICollection[];
   setCollectionsList: (list: ICollection[]) => void,
-  id: number;
-  setId: (id: number) => void;
+  _id: string;
+  setId: (id: string) => void;
   name: string;
   setName: (name: string) => void;
   description: string;
@@ -24,13 +23,13 @@ const CollectionsContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [id, setId] = useState(0);
+  const [_id, setId] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [collectionsList, setCollectionsList] = useState<ICollection[]>([]);
   const [selectedCollection, setSelectedCollection] = useState<ICollection>(
-    collectionsJson[0]
+    collectionsList[0]
   );
 
   return (
@@ -38,7 +37,7 @@ const CollectionsContextProvider = ({
       value={{
         collectionsList,
         setCollectionsList,
-        id,
+        _id,
         setId,
         name,
         setName,

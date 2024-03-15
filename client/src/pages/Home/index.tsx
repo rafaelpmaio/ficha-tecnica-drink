@@ -13,7 +13,9 @@ export default function CollectionsCard() {
     httpCollections
       .get("collections")
       .then((res) => JSON.parse(res.request.response))
-      .then((collections) => setCollectionsList(collections));
+      .then((collections) => {
+        setCollectionsList(collections)
+    });
   }, []);
 
   return (

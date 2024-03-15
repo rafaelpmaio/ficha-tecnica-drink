@@ -1,19 +1,19 @@
-import { ICollection } from "shared/interfaces/Collection";
+import { ICollection } from "shared/interfaces/ICollection";
 import { IDrink } from "shared/interfaces/IDrink";
 
 interface data {
-  id: number;
+  _id: string;
   name: string;
   image: string;
   description: string;
 }
 
 export default function collectionBuilder(
-  { id, name, image, description }: data,
+  { _id, name, image, description }: data,
   drinksList: IDrink[]
 ) {
   const collection: ICollection = {
-    id,
+    _id,
     name,
     image,
     description,

@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import headerInfosGetterFromDiv from 'components/MainHeader/DynamicHeader/headerInfosGetterFromDiv';
 import { DynamicHeaderContext } from 'context/DynamicHeaderContext';
 import { handleImageFormat } from 'shared/utils/handleImageFormat';
-import { ICollection } from 'shared/interfaces/Collection';
+import { ICollection } from 'shared/interfaces/ICollection';
 import removeSpecialCharsFromString from 'shared/utils/removeSpecialCharsFromString';
 
 
-export default function CollectionDisplay({ name, image, id, description }: ICollection) {
+export default function CollectionDisplay({ name, image, _id, description }: ICollection) {
 
     const { setHeaderData: setHeaderInfos } = useContext(DynamicHeaderContext);
     const collectionHtmlDivElement = React.useRef<HTMLDivElement>(null);
@@ -20,7 +20,7 @@ export default function CollectionDisplay({ name, image, id, description }: ICol
     }
 
     return (
-        <Link to={`/collection/${id}#${removeSpecialCharsFromString(name)}`}>
+        <Link to={`/collection/${_id}#${removeSpecialCharsFromString(name)}`}>
             <div
                 className={`${pageStyles.card} ${styles.collection_display}`}
                 ref={collectionHtmlDivElement}
@@ -29,7 +29,7 @@ export default function CollectionDisplay({ name, image, id, description }: ICol
                 <picture>
                     <source type='image/webp' srcSet={handleImageFormat(image, 'collections')} />
                     <img
-                        className={`${styles.collection_img} ${id === 0 ? styles.default_img : styles.selected_collection_img}`}
+                        className={`${styles.collection_img} ${_id === '0' ? styles.default_img : styles.selected_collection_img}`}
                         src={handleImageFormat(image, 'collections')}
                         alt={`${name}`}
                     />

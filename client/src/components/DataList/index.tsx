@@ -1,6 +1,6 @@
 import Input from "components/Input";
 
-interface DataListProps<T extends { id: number; name: string }> {
+interface DataListProps<T extends { _id: string; name: string }> {
   arr: T[];
   value: string,
   onChange: (value: string) => void,
@@ -10,7 +10,7 @@ interface DataListProps<T extends { id: number; name: string }> {
   label?: string,
 }
 
-export default function DataList<T extends { id: number; name: string }>({
+export default function DataList<T extends { _id: string; name: string }>({
   arr,
   value,
   onChange,
@@ -32,7 +32,7 @@ export default function DataList<T extends { id: number; name: string }>({
       />
       <datalist id={datalistId}>
         {arr.map((item) => (
-          <option key={item.id} value={`${item.id}. ${item.name}`} />
+          <option key={item._id} value={`${item._id}. ${item.name}`} />
         ))}
       </datalist>
     </>

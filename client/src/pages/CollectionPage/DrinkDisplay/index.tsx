@@ -7,7 +7,7 @@ import { handleImageFormat } from "shared/utils/handleImageFormat";
 import removeSpecialCharsFromString from "shared/utils/removeSpecialCharsFromString";
 
 interface DrinkDisplayProps {
-  collectionId: number;
+  collectionId: string;
   drink: IDrink;
 }
 
@@ -18,12 +18,12 @@ export default function DrinkDisplay({
 
   const cardDisplayRef = React.useRef(null);
   
-  const { name, id, image } = drink;
+  const { name, _id, image } = drink;
 
   let drinkNameWithoutSpecialChars = removeSpecialCharsFromString(name);
 
   return (
-    <Link to={`/drink/${collectionId}/${id}#${drinkNameWithoutSpecialChars}`}>
+    <Link to={`/drink/${collectionId}/${_id}#${drinkNameWithoutSpecialChars}`}>
       <div
         className={`${pageStyles.card} ${styles.drinkDisplay}`}
         ref={cardDisplayRef}

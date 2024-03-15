@@ -25,7 +25,7 @@ export default function NewCollectionDiv() {
     );
     collectionsContext.collectionsList.push(collection);
     setHeaderData(header);
-    navigate(`/collection/${collectionsContext.id}#${collection.name}`);
+    navigate(`/collection/${collectionsContext._id}#${collection.name}`);
   };
 
   return (

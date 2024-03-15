@@ -2,7 +2,7 @@ import CollectionDisplay from "./CollectionDisplay";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ICollection } from "shared/interfaces/Collection";
+import { ICollection } from "shared/interfaces/ICollection";
 import { Navigation, Pagination, Scrollbar } from "swiper";
 import NewCollectionDiv from "pages/Home/SwiperDrinksCollection/NewCollectionDiv";
 
@@ -34,7 +34,7 @@ export default function SwiperDrinksCollection({collectionsList}: SwiperDrinksCo
         <NewCollectionDiv />
       </SwiperSlide>
       {collectionsList.map(collection => (
-        <SwiperSlide key={collection.id}>
+        <SwiperSlide key={collection._id}>
           <CollectionDisplay {...collection}/>
         </SwiperSlide>
       ))}

@@ -1,9 +1,9 @@
 interface Type {
-  id: number
+  _id: string
 }
 
-export default function getFromList<T extends Type> (id: number, list: T[])  {
+export default function getFromList<T extends Type> (id: string = '', list: T[])  {
     return list.find(
-      (item) => id === item.id
+      (item) => id === item._id
     );
   };

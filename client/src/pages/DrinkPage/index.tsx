@@ -7,21 +7,21 @@ import { handleImageFormat } from "shared/utils/handleImageFormat";
 import DrinkDatasheetHeader from "pages/DrinkPage/DrinkDatasheetHeader";
 import DrinkDatasheetIngredients from "pages/DrinkPage/DrinkDatasheetIngredients";
 import DrinkDatasheetPreparation from "pages/DrinkPage/DrinkDatasheetPreparation";
-import getFromList from "shared/functions/collection/getFromList";
+import getFromList from "shared/utils/getFromList";
 import { IDrink } from "shared/interfaces/IDrink";
 
 export default function DrinkPage() {
   const { collectionsList } = useContext(CollectionsContext);
 
   const params = useParams();
-  const collectionId = Number(params.collectionId);
-  const drinkId = Number(params.drinkId);
+  let collectionId = params.collectionId;
+  let drinkId = params.drinkId;
 
   let collection = getFromList(collectionId, collectionsList);
   let drink: IDrink | undefined;
 
   if (collection) {
-    drink = getFromList(drinkId, collection.drinksList);
+    drink = getFromList(drinkId , collection.drinksList);
   }
   
   if (!drink) {

@@ -4,7 +4,6 @@ import collections from "./collectionsRoutes.js";
 
 const routes = (app) => {
   app.route("/").get((req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).send("Server Online");
   });
 

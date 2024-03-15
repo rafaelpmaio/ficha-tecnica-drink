@@ -1,7 +1,7 @@
 import { IDrink } from "./IDrink";
 
 export interface ICollection {
-    id: number,
+    _id: string,
     name: string,
     image: string,
     description?: string,
